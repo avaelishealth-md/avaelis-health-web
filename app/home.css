@@ -441,36 +441,42 @@
   }
 
   /* ───────────────────────────────────────────────────────────
-     Mobile polish — round 2 (appended last so it wins)
+     Mobile alignment & layout — round 3 (clean & consistent)
      ─────────────────────────────────────────────────────────── */
   @media(max-width:640px){
-    /* 1 + 2 — Hero: Danny's face up top, content centred and dropped to the bottom */
-    .hero-fb{align-items:flex-end;min-height:86vh}
-    .hero-fb-scrim{background:linear-gradient(180deg,rgba(26,17,11,.12) 0%,rgba(26,17,11,.45) 52%,rgba(26,17,11,.92) 100%)}
-    .hero-fb-in{text-align:center;max-width:none;padding-left:24px;padding-right:24px;padding-bottom:34px}
+    /* Hero: face up top; content centred & dropped to the bottom; the
+       "Speaking" chip now stacks BELOW the content (it was overflowing off-screen). */
+    .hero-fb{flex-direction:column;justify-content:flex-end;align-items:center;min-height:86vh}
+    .hero-fb-scrim{background:linear-gradient(180deg,rgba(26,17,11,.10) 0%,rgba(26,17,11,.42) 50%,rgba(26,17,11,.92) 100%)}
+    .hero-fb-in{text-align:center;max-width:none;width:100%;padding-left:24px;padding-right:24px;padding-bottom:6px}
     .hero-fb-in h1{margin-left:auto;margin-right:auto;font-size:clamp(31px,8.2vw,40px)}
     .hero-fb-in .lede{display:none}
     .hero-fb .acts{justify-content:center;margin-top:22px}
-    .hero-creds{display:block!important;text-align:center;margin-top:20px;color:#C7B7A0}
+    .hero-creds{display:block!important;text-align:center;margin-top:18px;color:#C7B7A0}
+    .hero-ann-wrap{position:static!important;left:auto!important;bottom:auto!important;transform:none!important;margin:18px auto 26px!important;text-align:center;width:auto;max-width:92%}
+    .hero-ann{white-space:normal}
 
-    /* 3 — swipe carousels: horizontal only (no vertical pull) */
+    /* Swipe carousels: horizontal only (no vertical pull-through) */
     .svc-track,.triad,.gauges{touch-action:pan-x;overscroll-behavior-x:contain}
 
-    /* 4 — remove the "Swipe →" hint */
+    /* Remove the "Swipe →" hint */
     .who .sec-h::after,.index-sec .sec-h::after,#services .sec-h::after{content:none!important;display:none!important}
 
-    /* 5 — centre all headings & text (forms stay left for usability) */
-    section{text-align:center}
-    .sec-h{margin-left:auto;margin-right:auto}
-    .gwrap{justify-content:center}
-    .qbody,.tc,.gcol,.ep,.door,.filt,.man-grid>div,.meet-in>div,.enq-in>div,.band-hero-in{text-align:center}
-    .gcol ul{display:inline-block;text-align:left}
-    .door .lk,.qcard.prog .btn{align-self:center}
+    /* Alignment: centred section headers (hero, enquiry & targets keep their centring);
+       card & body copy LEFT-aligned for a clean, readable, consistent grid. */
+    .sec-h{text-align:center;margin-left:auto;margin-right:auto}
+    .qbody,.tc,.gcol,.ep,.door{text-align:left}
     .frm,.frm label,.frm .fine{text-align:left}
 
-    /* 6 — How it works: clean scroll-driven line; nodes reveal as you scroll */
-    .journey .track::before{display:none}
-    .journey .jn{padding-bottom:44px}
+    /* How it works → clean left-edge vertical timeline: line follows scroll, steps reveal */
+    .journey .track{display:block;position:relative;margin-top:22px;padding:2px 0 0}
+    .journey .track::before{display:block!important;content:"";position:absolute;left:13px;right:auto;top:8px;bottom:12px;width:2px;height:auto;transform:none;background:var(--line-2);opacity:.55}
+    .journey .jline{display:block!important;position:absolute;left:13px;right:auto;top:8px;width:2px!important;height:calc(100% - 20px);transform:scaleY(1);transform-origin:top center;background:var(--bronze);transition:none;z-index:1}
+    .journey .jn,.journey .jn:nth-child(odd),.journey .jn:nth-child(even){width:auto;margin:0;padding:0 0 30px 44px;text-align:left}
+    .journey .jn:last-child{padding-bottom:2px}
+    .journey .jn .dot,.journey .jn:nth-child(odd) .dot,.journey .jn:nth-child(even) .dot{position:absolute;left:0;right:auto;top:-1px;margin:0;z-index:2;background:var(--paper)}
+    .journey .jn h4{margin-top:0;font-size:18px}
+    .journey .jn p{font-size:13.5px}
   }
 
   /* 7 — Hamburger menu: centred items, sequenced, animated open */
