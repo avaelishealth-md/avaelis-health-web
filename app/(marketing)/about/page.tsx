@@ -20,8 +20,8 @@ export default function AboutPage() {
         <div className="creds">
           <div className="cred"><b>25 yrs</b><span>In clinical general practice</span></div>
           <div className="cred"><b>Commonwealth</b><span>Former medical advisor</span></div>
-          <div className="cred"><b>FRACGP</b><span>Fellow of the College (RACGP)</span></div>
-          <div className="cred"><b>MBBS</b><span>Bachelor of Medicine &amp; Surgery</span></div>
+          <div className="cred"><b>FRACGP</b><span>RACGP Fellow</span></div>
+          <div className="cred"><b>MBBS</b><span>Medicine &amp; Surgery</span></div>
         </div>
       </div>
       {/* philosophy / narrative */}
@@ -30,8 +30,8 @@ export default function AboutPage() {
         <div>
           <div className="rule"></div>
           <span className="ov">In his words</span>
-          <h2 className="big" style={{ marginTop: "14px" }}>“The most valuable thing a doctor offers today isn't more information, it's <em>trusted interpretation.</em>”</h2>
-          <p className="lede" style={{ marginTop: "20px" }}>I spent a career watching people chase the next test, the next supplement, the next headline. AvaElis exists to do the opposite: measure what genuinely matters, read it honestly, and build a plan you can actually live.</p>
+          <h2 className="big" style={{ marginTop: "14px" }}>“A doctor's most valuable offer today isn't more information — it's <em>trusted interpretation.</em>”</h2>
+          <p className="lede" style={{ marginTop: "20px" }}>For years I watched people chase the next test, supplement, headline. AvaElis does the opposite: measure what matters, read it honestly, build a plan you can live.</p>
         </div>
       </div>
       {/* timeline */}
@@ -39,18 +39,18 @@ export default function AboutPage() {
         <div className="rule"></div><span className="ov">Career</span>
         <h2 className="big" style={{ margin: "14px 0 30px" }}>A measured path.</h2>
         <div className="tl">
-          <div className="row"><span className="yr">1999</span><div><b>MBBS, clinical training</b><p>Qualifies in medicine and begins hospital rotations.</p></div></div>
-          <div className="row"><span className="yr">2004</span><div><b>General practice</b><p>Enters GP practice; FRACGP fellowship; builds a long-term patient base.</p></div></div>
-          <div className="row"><span className="yr">2015</span><div><b>Commonwealth medical advisor</b><p>Advises on health policy and clinical standards at a national level.</p></div></div>
-          <div className="row"><span className="yr">2023</span><div><b>Longevity focus</b><p>Turns to precision diagnostics and healthspan as the frontier of preventive care.</p></div></div>
-          <div className="row"><span className="yr">2026</span><div><b>Founds AvaElis Health</b><p>Opens a boutique longevity atelier, one doctor, real data, no hype.</p></div></div>
+          <div className="row"><span className="yr">1999</span><div><b>MBBS, clinical training</b><p>Qualifies; begins hospital rotations.</p></div></div>
+          <div className="row"><span className="yr">2004</span><div><b>General practice</b><p>FRACGP fellowship; long-term patient base.</p></div></div>
+          <div className="row"><span className="yr">2015</span><div><b>Commonwealth medical advisor</b><p>Health policy &amp; clinical standards, national level.</p></div></div>
+          <div className="row"><span className="yr">2023</span><div><b>Longevity focus</b><p>Precision diagnostics &amp; healthspan.</p></div></div>
+          <div className="row"><span className="yr">2026</span><div><b>Founds AvaElis Health</b><p>A boutique longevity atelier. One doctor, real data, no hype.</p></div></div>
         </div>
       </div>
       {/* featured / speaking */}
       <div className="band"><div className="pad wrap" style={{ textAlign: "center" }}>
         <span className="ov">As featured &amp; speaking</span>
-        <h2 className="big" style={{ color: "#fff", marginTop: "12px", maxWidth: "16em", marginLeft: "auto", marginRight: "auto" }}>Sharing the evidence-led view, on the record.</h2>
-        <p className="lede" style={{ color: "var(--muted-l)", maxWidth: "34em", margin: "16px auto 0" }}>Speaking at the Lifestyle Health Summit 2026, and writing for clinicians and patients on precision longevity.</p>
+        <h2 className="big" style={{ color: "#fff", marginTop: "12px", maxWidth: "16em", marginLeft: "auto", marginRight: "auto" }}>On the record.</h2>
+        <p className="lede" style={{ color: "var(--muted-l)", maxWidth: "34em", margin: "16px auto 0" }}>Speaking at the Lifestyle Health Summit 2026. Writing on precision longevity for clinicians and patients.</p>
       </div></div>
     </>
   );

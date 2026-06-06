@@ -6,7 +6,7 @@ export default function PodcastPage() {
           <div className="breadcrumb"><a href="#home">Home</a> / Podcast</div>
           <span className="ov">The AvaElis Conversations</span>
           <h1>Longevity, <em>decoded.</em></h1>
-          <p className="lede">Unhurried conversations on living well for longer, the evidence, the nuance and the honest middle ground between denial and hype.</p>
+          <p className="lede">Unhurried conversations on living well for longer, the evidence and the honest middle ground.</p>
           <div className="subscribe" style={{ marginTop: "22px" }}><a href="#">Apple Podcasts</a><a href="#">Spotify</a><a href="#">YouTube</a><a href="#">RSS</a></div>
         </div>
       </div>

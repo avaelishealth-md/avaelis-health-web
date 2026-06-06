@@ -362,3 +362,27 @@ footer .brand{color:#fff}footer .brand .sub{color:#9A8C76}
   footer .disclaim{text-align:center;margin-left:auto;margin-right:auto}
   footer .foot-bot{justify-content:center;text-align:center}
 }
+
+/* ───────────────────────────────────────────────────────────────
+   Mobile simplification pass (UX) — sub-pages (appended last)
+   ─────────────────────────────────────────────────────────────── */
+@media(max-width:640px){
+  /* Quieter lede hierarchy + tighter hero spacing */
+  .lede{font-size:16px;line-height:1.55}
+  .phero .lede{margin-top:14px}
+  /* About: hide the hero overline, stack hero CTAs full-width, calmer timeline */
+  .phero-fb .ov{display:none}
+  .phero-fb .wrap.ctr .btn{width:100%;justify-content:center}
+  .phero-fb .wrap.ctr>div:last-child{flex-direction:column;width:100%;gap:10px}
+  .tl .row{padding:18px 0}
+  /* Podcast: defer episode descriptions; bigger subscribe tap targets */
+  .epitem p{display:none}
+  .subscribe a{padding:13px 18px}
+  /* Writing: defer card descriptions; comfier featured padding; a11y-hidden
+     labels (kept for screen readers); bigger email input; consistent grid gap */
+  .artcard p{display:none}
+  .feat-art .ab{padding:24px 22px 28px}
+  .form .field label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .form .field input{padding:15px}
+  .g3{gap:30px}
+}

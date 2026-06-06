@@ -420,3 +420,22 @@
   @media(prefers-reduced-motion:reduce){.hero-ann,.ann-dot,.hero-ann-wrap{animation:none}}
   /* headings: one consistent face — no italic, no recolour */
   h1 em,h2 em,h3 em,h4 em,blockquote em,.man-q em,.sec-h h2 em{font-style:normal !important;color:inherit !important}
+
+  /* ───────────────────────────────────────────────────────────
+     Mobile simplification pass (UX) — appended last so it wins
+     ─────────────────────────────────────────────────────────── */
+  @media(max-width:640px){
+    /* Hero: drop the duplicate credential line (the marquee below repeats it),
+       soften the lede, and lift the "Speaking" chip out of the hero zone. */
+    .hero-creds{display:none}
+    .hero-fb-in .lede{font-size:16.5px;margin-top:18px}
+    .hero-ann-wrap{position:static;left:auto;bottom:auto;transform:none;margin:14px auto 0;text-align:center}
+    /* Calmer vertical rhythm between sections (hero keeps its own height) */
+    section:not(.hero-fb){padding:60px 0}
+    .sec-h{margin-bottom:32px}
+    /* Footer: two tidy columns with bigger tap rows; drop the repeated tagline.
+       (The medical disclaimer stays.) */
+    footer .foot-cols{grid-template-columns:repeat(2,1fr);gap:22px 18px}
+    footer .fcol a{display:inline-block;padding:6px 0;margin-bottom:4px}
+    .foot-top>div:first-child p{display:none}
+  }
