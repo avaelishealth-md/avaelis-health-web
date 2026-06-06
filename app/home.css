@@ -200,7 +200,7 @@
   .qcard.prog .ph-lab{font-family:'Albert Sans',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-l)}
   .qcard.prog h3,.qcard.prog .qprice{color:#fff}.qcard.prog p{color:#D8C4BE}.qcard.prog .qprice small{color:#C2A89F}
   .qcard.prog .btn{align-self:flex-start;white-space:nowrap}
-  .svc-nav{display:none;gap:10px;margin-top:20px}
+  .svc-nav{display:flex;gap:10px;margin-top:20px}
   .svc-nav button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line-2);background:var(--paper);cursor:pointer;font-size:18px;color:var(--ink);transition:.2s;display:flex;align-items:center;justify-content:center}
   .svc-nav button:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
   .svc-carousel .svc-note{margin-top:22px}
@@ -273,7 +273,7 @@
 
   /* enquire */
   .enq{background:var(--cream-2)}
-  .enq-in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .enq-in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
   .enq h2{font-size:clamp(34px,4.4vw,58px);font-weight:300}
   .enq h2 em{font-style:italic;color:var(--clay)}
   .enq .lede{font-size:17px;color:var(--ink-2);font-weight:300;margin-top:18px;max-width:26em}

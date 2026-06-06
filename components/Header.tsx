@@ -13,12 +13,12 @@ export default function Header() {
         <Link className="brand" href="/" onClick={close}>
           <span className="em">A</span>
           <span>
-            AvaElis Health<span className="sub">Longevity Atelier</span>
+            AvaElis Health<span className="sub">Longevity Clinic</span>
           </span>
         </Link>
         <nav className="lk">
-          <Link href="/#approach" onClick={close}>The Science</Link>
           <Link href="/#services" onClick={close}>Services</Link>
+          <Link href="/#approach" onClick={close}>The Science</Link>
           <Link href="/#index" onClick={close}>Evidence</Link>
           <Link href="/about" onClick={close}>Dr. Danny</Link>
           <Link href="/podcast" onClick={close}>Podcast</Link>

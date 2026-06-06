@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AvaElis Health — Longevity Atelier",
+  title: "AvaElis Health — Longevity Clinic",
   description:
     "More years thriving, less years declining. A boutique longevity practice with Dr. Danny Cai.",
 };

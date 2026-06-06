@@ -32,3 +32,4 @@ Thumbs.db
 
 # local preview tooling (Claude)
 .claude/
+.vercel

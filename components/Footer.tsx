@@ -14,7 +14,7 @@ export default function Footer() {
                 A
               </span>
               <span>
-                AvaElis Health<span className="sub">Longevity Atelier</span>
+                AvaElis Health<span className="sub">Longevity Clinic</span>
               </span>
             </Link>
             <p
@@ -33,8 +33,8 @@ export default function Footer() {
           <div className="foot-cols">
             <div className="fcol">
               <h5>Practice</h5>
-              <Link href="/#approach">The Science</Link>
               <Link href="/#services">Services &amp; pricing</Link>
+              <Link href="/#approach">The Science</Link>
               <Link href="/#index">Evidence Index</Link>
               <Link href="/about">Dr. Danny</Link>
             </div>

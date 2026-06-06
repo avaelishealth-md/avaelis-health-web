@@ -8,10 +8,10 @@ export default function HomePage() {
     <>
       <header className="nav">
         <div className="wrap nav-in">
-          <a className="brand" href="/#top"><span className="em">A</span><span>AvaElis Health<span className="sub">Longevity Atelier</span></span></a>
+          <a className="brand" href="/#top"><span className="em">A</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
           <nav className="lk">
-            <a href="/#approach">The Science</a>
             <a href="/#services">Services</a>
+            <a href="/#approach">The Science</a>
             <a href="/#index">Evidence</a>
             <a href="/about">Dr. Danny</a>
             <a href="/podcast">Podcast</a>
@@ -101,6 +101,21 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="journey" id="approach">
+          <div className="wrap">
+            <div className="sec-h reveal"><h2>How it works.</h2><p>One continuous path, measured, multidisciplinary and ongoing. Evidence first, always.</p></div>
+            <div className="track reveal">
+              <div className="jline"></div>
+              <div className="jn"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
+              <div className="jn"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny.</p></div>
+              <div className="jn"><div className="dot">3</div><h4>Measure</h4><p>Diagnostics establish your honest baseline.</p></div>
+              <div className="jn"><div className="dot">4</div><h4>Plan</h4><p>A personalised plan, built with a team around you.</p></div>
+              <div className="jn"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine — never single consults.</p></div>
+            </div>
+            <div className="flow-cycle reveal d2"><span className="cyc-lab">↻&nbsp;&nbsp;Ongoing, we measure again, and refine</span></div>
+          </div>
+        </section>
+
         <section className="index-sec" id="index">
           <div className="wrap">
             <div className="sec-h ctr reveal"><h2>The Evidence Index.</h2><p>Every popular longevity intervention, weighted by the strength of evidence behind it.</p></div>
@@ -143,27 +158,12 @@ export default function HomePage() {
           <div className="wrap">
             <div className="sec-h reveal"><h2>What longevity medicine targets.</h2><p>Five predictable destinations — almost all with modifiable risk factors.</p></div>
             <div className="dest-grid">
-              <div className="dest reveal"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "120" }} d="M6 27h7l3-7 5 14 4-19 4 12 2-5h6"/><path className="pulse" d="M40 13.5a4.4 4.4 0 0 0-7-1.2" style={{ opacity: ".6" }}/></svg></span><div className="dn">i.</div><h3>Cardiovascular</h3><p>Blood pressure, lipids, and the events we prevent.</p></div>
-              <div className="dest reveal d1"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "150" }} d="M24 9c-5 0-8 3-8 7-3 1-4 4-2.5 6.5C12 25 13 29 17 30c0 4 3 6 7 6"/><path className="draw" style={{ ["--len" as string]: "150" }} d="M24 9c5 0 8 3 8 7 3 1 4 4 2.5 6.5C36 25 35 29 31 30c0 4-3 6-7 6"/><line className="draw" style={{ ["--len" as string]: "30" }} x1="24" y1="12" x2="24" y2="36"/><circle className="pulse" cx="19" cy="20" r="1.6" style={{ fill: "currentColor", stroke: "none" }}/><circle className="pulse" cx="29" cy="24" r="1.6" style={{ fill: "currentColor", stroke: "none" }}/></svg></span><div className="dn">ii.</div><h3>Neurocognitive</h3><p>Cognition, and long-term protection of the brain.</p></div>
-              <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "110" }} d="M37 17a15 15 0 1 0 2 12"/><polyline className="draw" style={{ ["--len" as string]: "30" }} points="33,9 38,17 30,20"/><circle className="pulse" cx="24" cy="24" r="5"/></svg></span><div className="dn">iii.</div><h3>Metabolic</h3><p>Insulin, glucose and liver health.</p></div>
-              <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "90" }} d="M16 16c-3-1-6 1-5 4 .6 2 3 2 4 1l8 8c-1 1-1 3.4 1 4 3 1 5-2 4-5"/><path className="draw" style={{ ["--len" as string]: "90" }} d="M32 32c3 1 6-1 5-4-.6-2-3-2-4-1l-8-8c1-1 1-3.4-1-4-3-1-5 2-4 5"/><circle className="pulse" cx="24" cy="24" r="2" style={{ fill: "currentColor", stroke: "none" }}/></svg></span><div className="dn">iv.</div><h3>Musculoskeletal</h3><p>Strength and muscle — the guard against frailty.</p></div>
-              <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "120" }} d="M24 7l13 5v9c0 8-5.5 14-13 16-7.5-2-13-8-13-16v-9z"/><circle className="pulse" cx="24" cy="22" r="4.5"/><circle className="draw" style={{ ["--len" as string]: "60", opacity: ".45" }} cx="24" cy="22" r="9"/></svg></span><div className="dn">v.</div><h3>Cancer</h3><p>Risk reduction and earlier detection.</p></div>
+              <div className="dest reveal"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "120" }} d="M6 27h7l3-7 5 14 4-19 4 12 2-5h6"/><path className="pulse" d="M40 13.5a4.4 4.4 0 0 0-7-1.2" style={{ opacity: ".6" }}/></svg></span><h3>Cardiovascular</h3><p>Blood pressure, lipids, and the events we prevent.</p></div>
+              <div className="dest reveal d1"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "150" }} d="M24 9c-5 0-8 3-8 7-3 1-4 4-2.5 6.5C12 25 13 29 17 30c0 4 3 6 7 6"/><path className="draw" style={{ ["--len" as string]: "150" }} d="M24 9c5 0 8 3 8 7 3 1 4 4 2.5 6.5C36 25 35 29 31 30c0 4-3 6-7 6"/><line className="draw" style={{ ["--len" as string]: "30" }} x1="24" y1="12" x2="24" y2="36"/><circle className="pulse" cx="19" cy="20" r="1.6" style={{ fill: "currentColor", stroke: "none" }}/><circle className="pulse" cx="29" cy="24" r="1.6" style={{ fill: "currentColor", stroke: "none" }}/></svg></span><h3>Neurocognitive</h3><p>Cognition, and long-term protection of the brain.</p></div>
+              <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "110" }} d="M37 17a15 15 0 1 0 2 12"/><polyline className="draw" style={{ ["--len" as string]: "30" }} points="33,9 38,17 30,20"/><circle className="pulse" cx="24" cy="24" r="5"/></svg></span><h3>Metabolic</h3><p>Insulin, glucose and liver health.</p></div>
+              <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "90" }} d="M16 16c-3-1-6 1-5 4 .6 2 3 2 4 1l8 8c-1 1-1 3.4 1 4 3 1 5-2 4-5"/><path className="draw" style={{ ["--len" as string]: "90" }} d="M32 32c3 1 6-1 5-4-.6-2-3-2-4-1l-8-8c1-1 1-3.4-1-4-3-1-5 2-4 5"/><circle className="pulse" cx="24" cy="24" r="2" style={{ fill: "currentColor", stroke: "none" }}/></svg></span><h3>Musculoskeletal</h3><p>Strength and muscle — the guard against frailty.</p></div>
+              <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "120" }} d="M24 7l13 5v9c0 8-5.5 14-13 16-7.5-2-13-8-13-16v-9z"/><circle className="pulse" cx="24" cy="22" r="4.5"/><circle className="draw" style={{ ["--len" as string]: "60", opacity: ".45" }} cx="24" cy="22" r="9"/></svg></span><h3>Cancer</h3><p>Risk reduction and earlier detection.</p></div>
             </div>
-          </div>
-        </section>
-
-        <section className="journey" id="approach">
-          <div className="wrap">
-            <div className="sec-h reveal"><h2>How it works.</h2><p>One continuous path, measured, multidisciplinary and ongoing. Evidence first, always.</p></div>
-            <div className="track reveal">
-              <div className="jline"></div>
-              <div className="jn"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
-              <div className="jn"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny.</p></div>
-              <div className="jn"><div className="dot">3</div><h4>Measure</h4><p>Diagnostics establish your honest baseline.</p></div>
-              <div className="jn"><div className="dot">4</div><h4>Plan</h4><p>A personalised plan, built with a team around you.</p></div>
-              <div className="jn"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine — never single consults.</p></div>
-            </div>
-            <div className="flow-cycle reveal d2"><span className="cyc-lab">↻&nbsp;&nbsp;Ongoing, we measure again, and refine</span></div>
           </div>
         </section>
 
@@ -242,11 +242,11 @@ export default function HomePage() {
         <div className="wrap">
           <div className="foot-top">
             <div>
-              <a className="brand" href="/#top"><span className="em" style={{ borderColor: "var(--bronze-l)", color: "var(--bronze-l)" }}>A</span><span>AvaElis Health<span className="sub">Longevity Atelier</span></span></a>
+              <a className="brand" href="/#top"><span className="em" style={{ borderColor: "var(--bronze-l)", color: "var(--bronze-l)" }}>A</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
               <p style={{ fontSize: "14px", fontWeight: "300", marginTop: "14px", maxWidth: "24em", color: "#D5C8B4" }}>More years thriving, less years declining. A boutique longevity practice, Dr. Danny Cai.</p>
             </div>
             <div className="foot-cols">
-              <div className="fcol"><h5>Practice</h5><a href="/#approach">The Science</a><a href="/#services">Services &amp; pricing</a><a href="/#index">Evidence Index</a><a href="/about">Dr. Danny</a></div>
+              <div className="fcol"><h5>Practice</h5><a href="/#services">Services &amp; pricing</a><a href="/#approach">The Science</a><a href="/#index">Evidence Index</a><a href="/about">Dr. Danny</a></div>
               <div className="fcol"><h5>Enquire</h5><a href="/#enquire">Patients</a><a href="/#enquire">Clinicians</a><a href="/#enquire">Partners</a></div>
               <div className="fcol"><h5>Follow</h5><a href="#">LinkedIn</a><a href="#">YouTube</a><a href="#">Instagram</a><a href="/writing">Writing</a><a href="/podcast">Podcast</a></div>
             </div>
