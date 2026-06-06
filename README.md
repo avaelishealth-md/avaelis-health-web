@@ -1,17 +1,28 @@
-# AvaElis Health — Website (mock)
+# AvaElis Health — Marketing Site
 
-Client: **Dr Danny Cai — AvaElis Health** (precision wellness / longevity medicine).
-Status: **scaffold / placeholder.** The real design (from Claude Design) drops in here.
+Boutique longevity-medicine practice site for **Dr Danny Cai / AvaElis Health**.
+"Atelier" design direction — warm, editorial, quiet-luxury.
+Tagline: *More years thriving, less years declining.*
+
+## Status: live mock (static)
+This is the high-fidelity design prototype (HTML/CSS/JS) deployed as a shareable
+preview. Full design spec in [`DESIGN_HANDOFF.md`](./DESIGN_HANDOFF.md).
+
+Pages: Home (`index.html`), About (`about.html`), Podcast (`podcast.html`),
+Writing (`writing.html`). Shared `styles/atelier-system.css` + `scripts/site.js`.
 
 ## Hosting
-- Deployed on **Vercel**, auto-deploys on every push to `main`.
-- Currently a static placeholder (`index.html`). Stack (static vs Next.js + Tailwind)
-  is finalised once the design lands.
+- **Vercel** — auto-deploys on every push to `main`. Zero-config static (no build step).
+- Repo owned by `avaelishealth-md`; built & maintained by `jasonwhodisco` (collaborator).
 
-## Local
+## Local preview
 ```
-# static preview
 npx serve .        # or just open index.html
 ```
 
-Part of Jason Lu's AI consultancy — internal client build.
+## Before production launch
+- **Rebuild in a framework** (Astro or Next.js) per `DESIGN_HANDOFF.md` — componentised,
+  with podcast/writing as content collections.
+- Swap **Pexels placeholder images** (hot-linked) for licensed/owned assets.
+- Wire the enquiry + newsletter forms to a real endpoint (CRM / form service).
+- Retain the footer medical disclaimer and the "no medicines named or priced" compliance constraint.
