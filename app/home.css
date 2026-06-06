@@ -439,3 +439,52 @@
     footer .fcol a{display:inline-block;padding:6px 0;margin-bottom:4px}
     .foot-top>div:first-child p{display:none}
   }
+
+  /* ───────────────────────────────────────────────────────────
+     Mobile polish — round 2 (appended last so it wins)
+     ─────────────────────────────────────────────────────────── */
+  @media(max-width:640px){
+    /* 1 + 2 — Hero: Danny's face up top, content centred and dropped to the bottom */
+    .hero-fb{align-items:flex-end;min-height:86vh}
+    .hero-fb-scrim{background:linear-gradient(180deg,rgba(26,17,11,.12) 0%,rgba(26,17,11,.45) 52%,rgba(26,17,11,.92) 100%)}
+    .hero-fb-in{text-align:center;max-width:none;padding-left:24px;padding-right:24px;padding-bottom:34px}
+    .hero-fb-in h1{margin-left:auto;margin-right:auto;font-size:clamp(31px,8.2vw,40px)}
+    .hero-fb-in .lede{display:none}
+    .hero-fb .acts{justify-content:center;margin-top:22px}
+    .hero-creds{display:block!important;text-align:center;margin-top:20px;color:#C7B7A0}
+
+    /* 3 — swipe carousels: horizontal only (no vertical pull) */
+    .svc-track,.triad,.gauges{touch-action:pan-x;overscroll-behavior-x:contain}
+
+    /* 4 — remove the "Swipe →" hint */
+    .who .sec-h::after,.index-sec .sec-h::after,#services .sec-h::after{content:none!important;display:none!important}
+
+    /* 5 — centre all headings & text (forms stay left for usability) */
+    section{text-align:center}
+    .sec-h{margin-left:auto;margin-right:auto}
+    .gwrap{justify-content:center}
+    .qbody,.tc,.gcol,.ep,.door,.filt,.man-grid>div,.meet-in>div,.enq-in>div,.band-hero-in{text-align:center}
+    .gcol ul{display:inline-block;text-align:left}
+    .door .lk,.qcard.prog .btn{align-self:center}
+    .frm,.frm label,.frm .fine{text-align:left}
+
+    /* 6 — How it works: clean scroll-driven line; nodes reveal as you scroll */
+    .journey .track::before{display:none}
+    .journey .jn{padding-bottom:44px}
+  }
+
+  /* 7 — Hamburger menu: centred items, sequenced, animated open */
+  @media(max-width:1024px){
+    header.nav.open nav.lk{align-items:center;text-align:center;gap:6px;animation:navDrop .34s cubic-bezier(.16,1,.3,1) both}
+    header.nav.open nav.lk a{opacity:0;animation:navItem .5s cubic-bezier(.16,1,.3,1) forwards}
+    header.nav.open nav.lk a:nth-child(1){animation-delay:.05s}
+    header.nav.open nav.lk a:nth-child(2){animation-delay:.11s}
+    header.nav.open nav.lk a:nth-child(3){animation-delay:.17s}
+    header.nav.open nav.lk a:nth-child(4){animation-delay:.23s}
+    header.nav.open nav.lk a:nth-child(5){animation-delay:.29s}
+    header.nav.open nav.lk a:nth-child(6){animation-delay:.35s}
+    header.nav.open nav.lk a:nth-child(7){animation-delay:.41s}
+    header.nav.open nav.lk .navbook{align-self:center;margin-top:8px}
+  }
+  @keyframes navDrop{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes navItem{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}

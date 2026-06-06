@@ -33,7 +33,6 @@ export default function HomePage() {
               <p className="lede">A boutique longevity practice, led personally by a credentialled doctor. Rigorous, evidence-led, the considered alternative to hype.</p>
               <div className="acts">
                 <a href="/#enquire" className="btn btn-f">Book a consultation</a>
-                <a href="/#index" className="btn btn-l">The evidence</a>
               </div>
               <p className="hero-creds">MBBS · FRACGP · Former Commonwealth medical advisor</p>
             </div>
@@ -106,11 +105,11 @@ export default function HomePage() {
             <div className="sec-h reveal"><h2>How it works.</h2><p>One continuous path, measured, multidisciplinary and ongoing. Evidence first, always.</p></div>
             <div className="track reveal">
               <div className="jline"></div>
-              <div className="jn"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
-              <div className="jn"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny.</p></div>
-              <div className="jn"><div className="dot">3</div><h4>Measure</h4><p>Diagnostics establish your honest baseline.</p></div>
-              <div className="jn"><div className="dot">4</div><h4>Plan</h4><p>A personalised plan, built with a team around you.</p></div>
-              <div className="jn"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine — never single consults.</p></div>
+              <div className="jn reveal"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
+              <div className="jn reveal"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny.</p></div>
+              <div className="jn reveal"><div className="dot">3</div><h4>Measure</h4><p>Diagnostics establish your honest baseline.</p></div>
+              <div className="jn reveal"><div className="dot">4</div><h4>Plan</h4><p>A personalised plan, built with a team around you.</p></div>
+              <div className="jn reveal"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine — never single consults.</p></div>
             </div>
             <div className="flow-cycle reveal d2"><span className="cyc-lab">↻&nbsp;&nbsp;Ongoing, we measure again, and refine</span></div>
           </div>
