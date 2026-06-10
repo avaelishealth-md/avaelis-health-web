@@ -105,8 +105,7 @@ export default function HomePage() {
             <div className="sec-h reveal"><h2>How it works.</h2><p>Consultation-first: you book the consult, and testing runs in the background — not the other way around. One continuous, evidence-led path.</p></div>
             <div className="track reveal">
               <div className="jline"></div>
-              <svg className="jrepeat" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M81 100 C81 16 21 16 21 100" pathLength="100"></path></svg>
-              <span className="jrepeat-arrow" aria-hidden="true"></span>
+              <div className="jrepeat" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M81 100 C81 16 21 16 21 100" pathLength="100"></path></svg></div>
               <span className="jrepeat-lab" aria-hidden="true">Review &amp; refine — on repeat</span>
               <div className="jn reveal"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
               <div className="jn reveal"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny — we start here, no waiting on results.</p></div>
