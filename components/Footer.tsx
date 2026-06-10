@@ -9,9 +9,9 @@ export default function Footer() {
             <Link className="brand" href="/">
               <span
                 className="em"
-                style={{ borderColor: "var(--bronze-l)", color: "var(--bronze-l)" }}
+                style={{ background: "var(--bronze-l)", color: "var(--ink)" }}
               >
-                AE
+                Æ
               </span>
               <span>
                 AvaElis Health<span className="sub">Longevity Clinic</span>

@@ -8,7 +8,7 @@ export default function HomePage() {
     <>
       <header className="nav">
         <div className="wrap nav-in">
-          <a className="brand" href="/#top"><span className="em">AE</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
+          <a className="brand" href="/#top"><span className="em">Æ</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
           <nav className="lk">
             <a href="/#services">Services</a>
             <a href="/#approach">The Science</a>
@@ -105,7 +105,7 @@ export default function HomePage() {
             <div className="sec-h reveal"><h2>How it works.</h2><p>Consultation-first: you book the consult, and testing runs in the background — not the other way around. One continuous, evidence-led path.</p></div>
             <div className="track reveal">
               <div className="jline"></div>
-              <div className="jrepeat" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M81 100 C81 16 21 16 21 100" pathLength="100"></path></svg></div>
+              <div className="jrepeat" aria-hidden="true"></div>
               <span className="jrepeat-lab" aria-hidden="true">Review &amp; refine — on repeat</span>
               <div className="jn reveal"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
               <div className="jn reveal"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny — we start here, no waiting on results.</p></div>
@@ -243,7 +243,7 @@ export default function HomePage() {
         <div className="wrap">
           <div className="foot-top">
             <div>
-              <a className="brand" href="/#top"><span className="em" style={{ borderColor: "var(--bronze-l)", color: "var(--bronze-l)" }}>AE</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
+              <a className="brand" href="/#top"><span className="em" style={{ background: "var(--bronze-l)", color: "var(--ink)" }}>Æ</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
               <p style={{ fontSize: "14px", fontWeight: "300", marginTop: "14px", maxWidth: "24em", color: "#D5C8B4" }}>More years thriving, less years declining. A boutique longevity practice, Dr. Danny Cai.</p>
             </div>
             <div className="foot-cols">

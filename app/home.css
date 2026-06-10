@@ -27,7 +27,7 @@
   header.nav{position:sticky;top:0;z-index:50;background:rgba(242,235,221,.84);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:80px}
   .brand{font-family:'Spectral';font-size:25px;letter-spacing:.01em;display:flex;align-items:center;gap:11px;white-space:nowrap;flex:none}
-  .brand .em{width:30px;height:30px;border:1px solid var(--bronze);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.02em;font-weight:500;color:var(--bronze);flex:none}
+  .brand .em{width:38px;height:38px;background:var(--bronze);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--cream);flex:none;letter-spacing:.01em}
   .brand .sub{display:block;font-family:'Albert Sans';font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:-3px}
   nav.lk{display:flex;gap:30px;font-size:14px;letter-spacing:.02em;color:var(--ink-2);white-space:nowrap}
   nav.lk a{position:relative;transition:color .2s}
@@ -144,7 +144,7 @@
 
   /* journey horizontal */
   .journey{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .track{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:64px;position:relative}
+  .track{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:70px;position:relative}
   .track::before{content:"";position:absolute;left:0;right:20%;top:13px;height:1px;background:var(--line-2)}
   .jline{position:absolute;left:0;top:13px;height:1px;background:var(--bronze);width:0;transition:width 1.6s cubic-bezier(.16,1,.3,1)}
   .track.in .jline{width:80%}
@@ -166,11 +166,9 @@
 
   .flow-cycle{margin-top:34px;display:none;justify-content:center}
   .cyc-lab{font-family:'Albert Sans',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);border:1px dashed var(--line-2);border-radius:100px;padding:11px 24px;white-space:nowrap}
-  .jrepeat{position:absolute;left:0;right:0;top:-44px;height:57px;overflow:visible;pointer-events:none;z-index:1}
-  .jrepeat svg{display:block;width:100%;height:100%;overflow:visible}
-  .jrepeat path{fill:none;stroke:var(--bronze);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1.15s cubic-bezier(.16,1,.3,1) 1.2s}
-  .track.in .jrepeat path{stroke-dashoffset:0}
-  .jrepeat-lab{position:absolute;left:51%;top:-40px;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);background:var(--paper);padding:0 10px;white-space:nowrap;opacity:0;transition:opacity .6s ease 2.1s;z-index:2}
+  .jrepeat{position:absolute;left:21%;right:19%;top:-34px;height:47px;border:1px dashed var(--bronze);border-bottom:none;border-radius:50% 50% 0 0 / 100% 100% 0 0;opacity:.8;pointer-events:none;z-index:1;clip-path:inset(0 0 0 100%);transition:clip-path 1.3s cubic-bezier(.16,1,.3,1) 1s}
+  .track.in .jrepeat{clip-path:inset(0 0 0 0)}
+  .jrepeat-lab{position:absolute;left:51%;top:-50px;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);white-space:nowrap;opacity:0;transition:opacity .6s ease 1.7s;z-index:2}
   .track.in .jrepeat-lab{opacity:1}
 
   /* in-practice hero */
