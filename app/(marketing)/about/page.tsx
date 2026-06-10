@@ -19,7 +19,7 @@ export default function AboutPage() {
       <div className="pad-s wrap">
         <div className="creds">
           <div className="cred"><b>25 yrs</b><span>In clinical general practice</span></div>
-          <div className="cred"><b>Commonwealth</b><span>Former medical advisor</span></div>
+          <div className="cred"><b>Gov.</b><span>Australian Government medical advisor</span></div>
           <div className="cred"><b>FRACGP</b><span>RACGP Fellow</span></div>
           <div className="cred"><b>MBBS</b><span>Medicine &amp; Surgery</span></div>
         </div>
@@ -41,9 +41,9 @@ export default function AboutPage() {
         <div className="tl">
           <div className="row"><span className="yr">1999</span><div><b>MBBS, clinical training</b><p>Qualifies; begins hospital rotations.</p></div></div>
           <div className="row"><span className="yr">2004</span><div><b>General practice</b><p>FRACGP fellowship; long-term patient base.</p></div></div>
-          <div className="row"><span className="yr">2015</span><div><b>Commonwealth medical advisor</b><p>Health policy &amp; clinical standards, national level.</p></div></div>
+          <div className="row"><span className="yr">2015</span><div><b>Australian Government medical advisor</b><p>Health policy &amp; clinical standards, national level.</p></div></div>
           <div className="row"><span className="yr">2023</span><div><b>Longevity focus</b><p>Precision diagnostics &amp; healthspan.</p></div></div>
-          <div className="row"><span className="yr">2026</span><div><b>Founds AvaElis Health</b><p>A boutique longevity atelier. One doctor, real data, no hype.</p></div></div>
+          <div className="row"><span className="yr">2026</span><div><b>Founds AvaElis Health</b><p>A boutique longevity clinic. One doctor, real data, no hype.</p></div></div>
         </div>
       </div>
       {/* featured / speaking */}

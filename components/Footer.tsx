@@ -11,7 +11,7 @@ export default function Footer() {
                 className="em"
                 style={{ borderColor: "var(--bronze-l)", color: "var(--bronze-l)" }}
               >
-                A
+                AE
               </span>
               <span>
                 AvaElis Health<span className="sub">Longevity Clinic</span>
@@ -46,9 +46,7 @@ export default function Footer() {
             </div>
             <div className="fcol">
               <h5>Follow</h5>
-              <a href="#">LinkedIn</a>
-              <a href="#">YouTube</a>
-              <a href="#">Instagram</a>
+              <a href="https://au.linkedin.com/in/dr-danny-cai-4a7ab093" target="_blank" rel="noopener">LinkedIn</a>
               <Link href="/writing">Writing</Link>
               <Link href="/podcast">Podcast</Link>
             </div>

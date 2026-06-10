@@ -8,7 +8,7 @@ export default function HomePage() {
     <>
       <header className="nav">
         <div className="wrap nav-in">
-          <a className="brand" href="/#top"><span className="em">A</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
+          <a className="brand" href="/#top"><span className="em">AE</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
           <nav className="lk">
             <a href="/#services">Services</a>
             <a href="/#approach">The Science</a>
@@ -34,7 +34,7 @@ export default function HomePage() {
               <div className="acts">
                 <a href="/#enquire" className="btn btn-f">Book a consultation</a>
               </div>
-              <p className="hero-creds">MBBS · FRACGP · Former Commonwealth medical advisor</p>
+              <p className="hero-creds">MBBS · FRACGP · Australian Government medical advisor</p>
             </div>
           </div>
           <div className="hero-ann-wrap">
@@ -49,8 +49,8 @@ export default function HomePage() {
           <div className="wrap">
             <div className="hero-marq">
               <div className="hm-tr">
-                <span>MBBS, FRACGP</span><span>Former Commonwealth medical advisor</span><span>DHF26 keynote, Science vs Hype</span><span>YPO longevity address</span><span>25 years in medicine</span>
-                <span>MBBS, FRACGP</span><span>Former Commonwealth medical advisor</span><span>DHF26 keynote, Science vs Hype</span><span>YPO longevity address</span><span>25 years in medicine</span>
+                <span>MBBS, FRACGP</span><span>Australian Government medical advisor</span><span>DHF26 keynote, Science vs Hype</span><span>YPO longevity address</span><span>25 years in medicine</span>
+                <span>MBBS, FRACGP</span><span>Australian Government medical advisor</span><span>DHF26 keynote, Science vs Hype</span><span>YPO longevity address</span><span>25 years in medicine</span>
               </div>
             </div>
           </div>
@@ -102,12 +102,12 @@ export default function HomePage() {
 
         <section className="journey" id="approach">
           <div className="wrap">
-            <div className="sec-h reveal"><h2>How it works.</h2><p>One continuous path, measured, multidisciplinary and ongoing. Evidence first, always.</p></div>
+            <div className="sec-h reveal"><h2>How it works.</h2><p>Consultation-first: you book the consult, and testing runs in the background — not the other way around. One continuous, evidence-led path.</p></div>
             <div className="track reveal">
               <div className="jline"></div>
               <div className="jn reveal"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
-              <div className="jn reveal"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny.</p></div>
-              <div className="jn reveal"><div className="dot">3</div><h4>Measure</h4><p>Diagnostics establish your honest baseline.</p></div>
+              <div className="jn reveal"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny — we start here, no waiting on results.</p></div>
+              <div className="jn reveal"><div className="dot">3</div><h4>Measure</h4><p>Diagnostics run in the background to build your honest baseline.</p></div>
               <div className="jn reveal"><div className="dot">4</div><h4>Plan</h4><p>A personalised plan, built with a team around you.</p></div>
               <div className="jn reveal"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine — never single consults.</p></div>
             </div>
@@ -187,7 +187,7 @@ export default function HomePage() {
               <div className="creds">
                 <div className="cr"><b>25 years</b><span>In clinical medicine</span></div>
                 <div className="cr"><b>FRACGP</b><span>Fellow, RACGP</span></div>
-                <div className="cr"><b>Commonwealth</b><span>Former medical advisor</span></div>
+                <div className="cr"><b>Gov.</b><span>Australian Government medical advisor</span></div>
                 <div className="cr"><b>DHF26</b><span>Keynote speaker</span></div>
               </div>
               <a href="/about" className="btn btn-l" style={{ marginTop: "28px" }}>Learn more about Danny →</a>
@@ -241,13 +241,13 @@ export default function HomePage() {
         <div className="wrap">
           <div className="foot-top">
             <div>
-              <a className="brand" href="/#top"><span className="em" style={{ borderColor: "var(--bronze-l)", color: "var(--bronze-l)" }}>A</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
+              <a className="brand" href="/#top"><span className="em" style={{ borderColor: "var(--bronze-l)", color: "var(--bronze-l)" }}>AE</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
               <p style={{ fontSize: "14px", fontWeight: "300", marginTop: "14px", maxWidth: "24em", color: "#D5C8B4" }}>More years thriving, less years declining. A boutique longevity practice, Dr. Danny Cai.</p>
             </div>
             <div className="foot-cols">
               <div className="fcol"><h5>Practice</h5><a href="/#services">Services &amp; pricing</a><a href="/#approach">The Science</a><a href="/#index">Evidence Index</a><a href="/about">Dr. Danny</a></div>
               <div className="fcol"><h5>Enquire</h5><a href="/#enquire">Patients</a><a href="/#enquire">Clinicians</a><a href="/#enquire">Partners</a></div>
-              <div className="fcol"><h5>Follow</h5><a href="#">LinkedIn</a><a href="#">YouTube</a><a href="#">Instagram</a><a href="/writing">Writing</a><a href="/podcast">Podcast</a></div>
+              <div className="fcol"><h5>Follow</h5><a href="https://au.linkedin.com/in/dr-danny-cai-4a7ab093" target="_blank" rel="noopener">LinkedIn</a><a href="/writing">Writing</a><a href="/podcast">Podcast</a></div>
             </div>
           </div>
           <p className="disclaim">AvaElis Health provides general longevity and preventive care and is not a substitute for emergency or acute treatment. Public content is general education, not individual medical advice. No prescription medicines are advertised; personalised treatment follows clinical consultation.</p>

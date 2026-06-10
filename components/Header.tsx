@@ -11,7 +11,7 @@ export default function Header() {
     <header className={"nav" + (open ? " open" : "")}>
       <div className="wrap nav-in">
         <Link className="brand" href="/" onClick={close}>
-          <span className="em">A</span>
+          <span className="em">AE</span>
           <span>
             AvaElis Health<span className="sub">Longevity Clinic</span>
           </span>
