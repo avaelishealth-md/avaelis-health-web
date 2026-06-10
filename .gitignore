@@ -33,3 +33,6 @@ Thumbs.db
 # local preview tooling (Claude)
 .claude/
 .vercel
+
+# local-only working artifacts (not for deploy)
+public/logos.html
