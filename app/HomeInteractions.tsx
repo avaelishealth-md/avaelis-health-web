@@ -77,7 +77,10 @@ export default function HomeInteractions() {
         const io = new IntersectionObserver(
           function (es) {
             es.forEach(function (e) {
-              e.target.classList.toggle("in", e.isIntersecting);
+              if (e.isIntersecting) {
+                show(e.target);
+                io.unobserve(e.target);
+              }
             });
           },
           { threshold: 0.14 }
@@ -100,7 +103,10 @@ export default function HomeInteractions() {
         const io2 = new IntersectionObserver(
           function (es) {
             es.forEach(function (e) {
-              e.target.classList.toggle("in", e.isIntersecting);
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io2.unobserve(e.target);
+              }
             });
           },
           { threshold: 0.25 }

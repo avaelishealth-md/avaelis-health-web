@@ -386,3 +386,14 @@ footer .brand{color:#fff}footer .brand .sub{color:#9A8C76}
   .form .field input{padding:15px}
   .g3{gap:30px}
 }
+
+/* Mobile smoothness pass — scroll perf + tap feedback (subpages) */
+a,button,input,select,textarea{-webkit-tap-highlight-color:transparent}
+@media(max-width:1024px){
+  header.nav{background:rgba(242,235,221,.97);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media(hover:none){
+  .btn-f,.btn-l,.btn-o,.tbtn,.subscribe a,.form button,.nbtn,.navbook{transition:transform .12s ease,background .2s,color .2s}
+  .btn-f:active,.btn-l:active,.btn-o:active,.tbtn:active,.subscribe a:active,.form button:active,.nbtn:active,.navbook:active{transform:scale(.96)}
+  nav.lk a:active,.brand:active,.pageindex a:active{opacity:.55}
+}
