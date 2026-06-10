@@ -103,6 +103,7 @@ export default function HomePage() {
         <section className="journey" id="approach">
           <div className="wrap">
             <div className="sec-h reveal"><h2>How it works.</h2><p>Consultation-first: you book the consult, and testing runs in the background — not the other way around. One continuous, evidence-led path.</p></div>
+            <div className="jflow">
             <div className="track reveal">
               <div className="jline"></div>
               <div className="jn reveal"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
@@ -111,7 +112,9 @@ export default function HomePage() {
               <div className="jn reveal"><div className="dot">4</div><h4>Plan</h4><p>A personalised plan, built with a team around you.</p></div>
               <div className="jn reveal"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine — never single consults.</p></div>
             </div>
+            <span className="jreturn" aria-hidden="true"></span>
             <div className="flow-cycle reveal d2"><span className="cyc-lab">↻&nbsp;&nbsp;Ongoing, we measure again, and refine</span></div>
+            </div>
           </div>
         </section>
 
