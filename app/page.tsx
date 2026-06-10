@@ -103,18 +103,18 @@ export default function HomePage() {
         <section className="journey" id="approach">
           <div className="wrap">
             <div className="sec-h reveal"><h2>How it works.</h2><p>Consultation-first: you book the consult, and testing runs in the background — not the other way around. One continuous, evidence-led path.</p></div>
-            <div className="jflow">
             <div className="track reveal">
               <div className="jline"></div>
+              <svg className="jrepeat" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M81 100 C81 16 21 16 21 100" pathLength="100"></path></svg>
+              <span className="jrepeat-arrow" aria-hidden="true"></span>
+              <span className="jrepeat-lab" aria-hidden="true">Review &amp; refine — on repeat</span>
               <div className="jn reveal"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
               <div className="jn reveal"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny — we start here, no waiting on results.</p></div>
               <div className="jn reveal"><div className="dot">3</div><h4>Measure</h4><p>Diagnostics run in the background to build your honest baseline.</p></div>
               <div className="jn reveal"><div className="dot">4</div><h4>Plan</h4><p>A personalised plan, built with a team around you.</p></div>
               <div className="jn reveal"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine — never single consults.</p></div>
             </div>
-            <span className="jreturn" aria-hidden="true"></span>
             <div className="flow-cycle reveal d2"><span className="cyc-lab">↻&nbsp;&nbsp;Ongoing, we measure again, and refine</span></div>
-            </div>
           </div>
         </section>
 
