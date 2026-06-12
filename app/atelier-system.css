@@ -67,7 +67,7 @@ body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--cream);colo
 .browser{border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line-2);box-shadow:0 50px 90px -60px rgba(36,29,23,.6)}
 .chrome{height:44px;background:#E8DFCD;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 18px}
 .chrome i{width:11px;height:11px;border-radius:50%;display:block}
-.d1{background:#C8857B}.d2{background:#D8B26A}.d3{background:#9DB082}
+.chrome .d1{background:#C8857B}.chrome .d2{background:#D8B26A}.chrome .d3{background:#9DB082}
 .chrome .url{margin-left:14px;flex:1;max-width:520px;height:24px;background:var(--paper);border:1px solid var(--line);border-radius:100px;display:flex;align-items:center;padding:0 14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)}
 .site{background:var(--cream);color:var(--ink)}
 

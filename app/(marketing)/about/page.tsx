@@ -52,6 +52,10 @@ export default function AboutPage() {
         <h2 className="big" style={{ color: "#fff", marginTop: "12px", maxWidth: "16em", marginLeft: "auto", marginRight: "auto" }}>On the record.</h2>
         <p className="lede" style={{ color: "var(--muted-l)", maxWidth: "34em", margin: "16px auto 0" }}>Speaking at the Lifestyle Health Summit 2026. Writing on precision longevity for clinicians and patients.</p>
       </div></div>
+      <div className="band"><div className="pad-s wrap split">
+        <div><div className="rule" style={{ background: "var(--bronze-l)" }}></div><span className="ov">The dispatch</span><h2 className="big" style={{ color: "#fff", marginTop: "12px" }}>Considered notes, on occasion.</h2><p className="lede" style={{ color: "var(--muted-l)", marginTop: "14px" }}>Evidence-led writing from Dr. Danny. No noise.</p></div>
+        <div className="form" style={{ background: "rgba(255,255,255,.04)", borderColor: "rgba(255,255,255,.16)" }}><div className="field"><label style={{ color: "var(--muted-l)" }}>Email</label><input type="email" placeholder="you@example.com" /></div><a className="btn btn-b" href="#" style={{ width: "100%", justifyContent: "center" }}>Subscribe</a></div>
+      </div></div>
     </>
   );
 }
