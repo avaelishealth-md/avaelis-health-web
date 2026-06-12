@@ -45,6 +45,7 @@ export async function POST(req: Request) {
   const name = String(data.name || "").trim();
   const type = String(data.type || "").trim();
   const message = String(data.message || "").trim();
+  const source = String(data.source || "").trim().slice(0, 40);
 
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
@@ -52,6 +53,8 @@ export async function POST(req: Request) {
 
   const hash = crypto.createHash("md5").update(email).digest("hex");
   const tag = TAG_MAP[type] || "Enquiry";
+  const tags: { name: string; status: "active" }[] = [{ name: tag, status: "active" }];
+  if (source) tags.push({ name: `Source: ${source}`, status: "active" });
 
   try {
     // 1) add or update the subscriber (idempotent — won't error on repeat submits)
@@ -69,9 +72,9 @@ export async function POST(req: Request) {
       );
     }
 
-    // 2) tag by enquiry type so patient / clinician / partner are segmented
+    // 2) tag by type (Patient / Clinician / Partner / Newsletter) + the source page
     await mc(`/lists/${LIST_ID}/members/${hash}/tags`, "POST", {
-      tags: [{ name: tag, status: "active" }],
+      tags,
     });
 
     // 3) keep the enquiry message as a contact note (best-effort)
