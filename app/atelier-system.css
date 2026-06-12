@@ -7,9 +7,10 @@
   --ink:#2A211A;--ink-2:#5A4E40;--muted:#8A7C68;--muted-l:#A99E8C;
   --line:#DBCFB7;--line-2:#C9BA9C;
   --bronze:#9A7536;--bronze-l:#B8924E;--clay:#A9603F;--plum:#5A3A42;--sage:#6B7356;
-  --max:1180px;
+  --max:1240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:17px;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .serif{font-family:'Spectral',Georgia,serif}
 .mono{font-family:'JetBrains Mono','SFMono-Regular',monospace}
 
@@ -92,7 +93,7 @@
 .sfoot .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8C7E68}
 
 /* ---------- page primitives ---------- */
-.wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 34px}
 .pad{padding-top:74px;padding-bottom:74px}
 .pad-s{padding-top:54px;padding-bottom:54px}
 .ov{font-family:'Albert Sans';font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);display:block}

@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="foot-cols">
             <div className="fcol">
               <h5>Practice</h5>
-              <Link href="/#services">Services &amp; pricing</Link>
+              <Link href="/#services">Services</Link>
               <Link href="/#approach">The Science</Link>
               <Link href="/#index">Evidence Index</Link>
               <Link href="/about">Dr. Danny</Link>
