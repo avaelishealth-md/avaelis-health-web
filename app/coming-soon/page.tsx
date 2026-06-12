@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AvaElis Health — Launching soon",
+  title: "AvaElis Health · Launching soon",
   robots: { index: false, follow: false },
 };
 
@@ -86,7 +86,7 @@ export default function ComingSoon() {
             margin: 0,
           }}
         >
-          Boutique longevity medicine with Dr.&nbsp;Danny Cai — more years thriving,
+          Boutique longevity medicine with Dr.&nbsp;Danny Cai. More years thriving,
           less years declining.
         </p>
 

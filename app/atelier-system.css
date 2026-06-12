@@ -104,8 +104,8 @@ h3.med{font-family:'Spectral',serif;font-weight:400;font-size:24px;line-height:1
 .lede{font-size:18px;color:var(--ink-2);font-weight:300;line-height:1.6}
 .muted{color:var(--muted)}
 .btn{font-family:'Albert Sans';font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:14px 26px;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap}
-.btn-f{background:var(--ink);color:var(--cream)}.btn-f:hover{background:#3a2e24}
-.btn-l{border-color:var(--ink);color:var(--ink)}.btn-l:hover{background:var(--ink);color:var(--cream)}
+.btn-f{background:var(--bronze);color:#fff}.btn-f:hover{background:var(--bronze-l)}
+.btn-l{border-color:var(--bronze);color:var(--bronze)}.btn-l:hover{background:var(--bronze);color:#fff}
 .btn-b{background:var(--bronze);color:#fff}.btn-b:hover{background:#85642d}
 .btn-o{border-color:var(--cream);color:var(--cream)}.btn-o:hover{background:var(--cream);color:var(--ink)}
 
@@ -331,8 +331,8 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(242,235,221,.84);bac
 nav.lk{display:flex;gap:30px;font-size:14px;letter-spacing:.02em;color:var(--ink-2);white-space:nowrap;align-items:center}
 nav.lk a{position:relative;transition:color .2s;text-decoration:none;color:inherit}
 nav.lk a:hover{color:var(--bronze)}
-.nbtn{font-size:13px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);padding:12px 22px;border-radius:100px;transition:.25s;text-decoration:none;color:var(--ink)}
-.nbtn:hover{background:var(--ink);color:var(--cream)}
+.nbtn{font-size:13px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--bronze);padding:12px 22px;border-radius:100px;transition:.25s;text-decoration:none;color:var(--bronze)}
+.nbtn:hover{background:var(--bronze);color:#fff}
 .navtoggle{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;width:44px;height:40px;font-size:18px;color:var(--ink);cursor:pointer;align-items:center;justify-content:center;flex:none}
 .navbook{display:none}
 @media(max-width:1024px){

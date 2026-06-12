@@ -32,7 +32,7 @@ export default function AboutPage() {
         <div>
           <div className="rule"></div>
           <span className="ov">In his words</span>
-          <h2 className="big" style={{ marginTop: "14px" }}>“A doctor's most valuable offer today isn't more information — it's <em>trusted interpretation.</em>”</h2>
+          <h2 className="big" style={{ marginTop: "14px" }}>“A doctor's most valuable offer today isn't more information, it's <em>trusted interpretation.</em>”</h2>
           <p className="lede" style={{ marginTop: "20px" }}>For years I watched people chase the next test, supplement, headline. AvaElis does the opposite: measure what matters, read it honestly, build a plan you can live.</p>
         </div>
       </div>
@@ -48,12 +48,12 @@ export default function AboutPage() {
           <div className="row"><span className="yr">2026</span><div><b>Founds AvaElis Health</b><p>A boutique longevity clinic. One doctor, real data, no hype.</p></div></div>
         </div>
       </div>
-      {/* dispatch / newsletter — distinct plum section */}
+      {/* dispatch / newsletter, distinct plum section */}
       <div className="band" style={{ background: "var(--plum)" }}><div className="pad-s wrap split">
         <div><div className="rule" style={{ background: "var(--bronze-l)" }}></div><span className="ov">The dispatch</span><h2 className="big" style={{ color: "#fff", marginTop: "12px" }}>Considered notes, on occasion.</h2><p className="lede" style={{ color: "var(--muted-l)", marginTop: "14px" }}>Evidence-led writing from Dr. Danny. No noise.</p></div>
         <NewsletterForm source="About" />
       </div></div>
-      {/* featured / speaking — black band, sits with the footer */}
+      {/* featured / speaking, black band, sits with the footer */}
       <div className="band"><div className="pad wrap" style={{ textAlign: "center" }}>
         <span className="ov">As featured &amp; speaking</span>
         <h2 className="big" style={{ color: "#fff", marginTop: "12px", maxWidth: "16em", marginLeft: "auto", marginRight: "auto" }}>On the record.</h2>

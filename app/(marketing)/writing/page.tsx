@@ -8,7 +8,7 @@ export default function WritingPage() {
           <div className="breadcrumb"><a href="/#home">Home</a> / Writing</div>
           <span className="ov">Writing &amp; insights</span>
           <h1>Education-led notes, <em>never hype.</em></h1>
-          <p className="lede">Researched writing on longevity and precision wellness — the considered view, not medical advice.</p>
+          <p className="lede">Researched writing on longevity and precision wellness, the considered view, not medical advice.</p>
         </div>
       </div>
       <div className="pad-s wrap">

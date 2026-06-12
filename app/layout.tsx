@@ -4,10 +4,10 @@ import Script from "next/script";
 const GA_ID = "G-WQ49M7VJZE";
 
 export const metadata: Metadata = {
-  title: "AvaElis Health — Longevity Clinic",
+  title: "AvaElis Health · Longevity Clinic",
   description:
     "More years thriving, less years declining. A boutique longevity practice with Dr. Danny Cai.",
-  // Pre-launch draft on a temporary domain — keep search engines out until the real go-live on avaelishealth.com.au, then remove this.
+  // Pre-launch draft on a temporary domain, keep search engines out until the real go-live on avaelishealth.com.au, then remove this.
   robots: { index: false, follow: false },
 };
 

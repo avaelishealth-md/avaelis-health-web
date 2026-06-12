@@ -42,7 +42,7 @@ export default function HomePage() {
             <a className="hero-ann" href="https://www.eventbrite.com.au/e/lifestyle-health-summit-2026-for-gps-and-health-professionals-tickets-1989061056163" target="_blank" rel="noopener">
               <span className="ann-key">Speaking</span>
               <span className="ann-event">Lifestyle Health Summit 2026</span>
-              <span className="ann-cta">View event <span className="ann-arr">→</span></span>
+              <span className="ann-cta">View event</span>
             </a>
           </div>
         </section>
@@ -59,12 +59,12 @@ export default function HomePage() {
 
         <section id="services">
           <div className="wrap">
-            <div className="sec-h reveal"><h2>What we do, <em>and how we work.</em></h2><p>Care here is personal — what&apos;s right for you is a conversation, not a price list.</p></div>
+            <div className="sec-h reveal"><h2>What we do, <em>and how we work.</em></h2><p>Care here is personal. What&apos;s right for you is a conversation, not a price list.</p></div>
             <div className="svc-carousel">
               <div className="svc-track" id="svcTrack">
                 <article className="qcard"><figure className="qimg"><img src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Consultation" loading="lazy" /></figure><div className="qbody"><h3>Longevity consultation</h3><p>A full, unhurried clinical consult with Dr. Danny, history, goals and an evidence-led plan.</p><a href="/#enquire" className="btn btn-l" style={{ marginTop: "12px", alignSelf: "flex-start" }}>Enquire</a></div></article>
-                <article className="qcard"><figure className="qimg"><img src="https://images.pexels.com/photos/17183648/pexels-photo-17183648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Body composition" loading="lazy" /></figure><div className="qbody"><h3>Full-body DEXA</h3><p>DEXA quantifies visceral fat, lean mass and bone density in ~10 minutes — where change gets real.</p><a href="/#enquire" className="btn btn-l" style={{ marginTop: "12px", alignSelf: "flex-start" }}>Enquire</a></div></article>
-                <article className="qcard"><figure className="qimg"><img src="https://images.pexels.com/photos/20523354/pexels-photo-20523354.jpeg?auto=compress&cs=tinysrgb&w=700" alt="VO2 max test" loading="lazy" /></figure><div className="qbody"><h3>VO₂ max assessment</h3><p>The strongest predictor of all-cause mortality — stronger than smoking or blood pressure.</p><a href="/#enquire" className="btn btn-l" style={{ marginTop: "12px", alignSelf: "flex-start" }}>Enquire</a></div></article>
+                <article className="qcard"><figure className="qimg"><img src="https://images.pexels.com/photos/17183648/pexels-photo-17183648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Body composition" loading="lazy" /></figure><div className="qbody"><h3>Full-body DEXA</h3><p>DEXA quantifies visceral fat, lean mass and bone density in ~10 minutes, where change gets real.</p><a href="/#enquire" className="btn btn-l" style={{ marginTop: "12px", alignSelf: "flex-start" }}>Enquire</a></div></article>
+                <article className="qcard"><figure className="qimg"><img src="https://images.pexels.com/photos/20523354/pexels-photo-20523354.jpeg?auto=compress&cs=tinysrgb&w=700" alt="VO2 max test" loading="lazy" /></figure><div className="qbody"><h3>VO₂ max assessment</h3><p>The strongest predictor of all-cause mortality, stronger than smoking or blood pressure.</p><a href="/#enquire" className="btn btn-l" style={{ marginTop: "12px", alignSelf: "flex-start" }}>Enquire</a></div></article>
                 <article className="qcard"><figure className="qimg"><img src="https://images.pexels.com/photos/4226912/pexels-photo-4226912.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Biomarker panel" loading="lazy" /></figure><div className="qbody"><h3>Comprehensive biomarker panel</h3><p>A deep read across metabolic, cardiovascular, hormonal and inflammatory markers, interpreted with you.</p><a href="/#enquire" className="btn btn-l" style={{ marginTop: "12px", alignSelf: "flex-start" }}>Enquire</a></div></article>
                 <article className="qcard prog"><figure className="qimg"><img src="/assets/danny-clinic.jpg" alt="Dr. Danny Cai with a colleague at the clinic" loading="lazy" /></figure><div className="qbody"><h3>Precision Longevity Program</h3><p>Ongoing optimisation, re-testing and personalised care across the year, emerging therapies discussed only in consultation.</p><a href="/#enquire" className="btn btn-f" style={{ marginTop: "16px" }}>Enquire</a></div></article>
               </div>
@@ -79,7 +79,7 @@ export default function HomePage() {
             <div className="sec-h reveal"><h2>Three people we're built for.</h2></div>
             <div className="triad">
               <div className="tc reveal"><div className="nm">i. Patients</div><h3>The proactive optimiser</h3><p>Health-literate optimisers who invest in high-touch, data-backed care.</p></div>
-              <div className="tc reveal d1"><div className="nm">ii. Clinicians</div><h3>Doctors &amp; students</h3><p>Doctors who want to practise evidence-led longevity — plus those awaiting certification.</p></div>
+              <div className="tc reveal d1"><div className="nm">ii. Clinicians</div><h3>Doctors &amp; students</h3><p>Doctors who want to practise evidence-led longevity, plus those awaiting certification.</p></div>
               <div className="tc reveal d2"><div className="nm">iii. Partners</div><h3>Collaborators</h3><p>Investors and operators building serious, clinical longevity.</p></div>
             </div>
           </div>
@@ -103,16 +103,16 @@ export default function HomePage() {
 
         <section className="journey" id="approach">
           <div className="wrap">
-            <div className="sec-h reveal"><h2>How it works.</h2><p>Consultation-first: you book the consult, and testing runs in the background — not the other way around. One continuous, evidence-led path.</p></div>
+            <div className="sec-h reveal"><h2>How it works.</h2><p>Consultation-first: you book the consult, and testing runs in the background, not the other way around. One continuous, evidence-led path.</p></div>
             <div className="track reveal">
               <div className="jline"></div>
               <div className="jrepeat" aria-hidden="true"></div>
-              <span className="jrepeat-lab" aria-hidden="true">Review &amp; refine — on repeat</span>
-              <div className="jn reveal"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry — your plan starts here.</p></div>
-              <div className="jn reveal"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny — we start here, no waiting on results.</p></div>
+              <span className="jrepeat-lab" aria-hidden="true">Review &amp; refine, on repeat</span>
+              <div className="jn reveal"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry. Your plan starts here.</p></div>
+              <div className="jn reveal"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny. We start here, no waiting on results.</p></div>
               <div className="jn reveal"><div className="dot">3</div><h4>Measure</h4><p>Diagnostics run in the background to build your honest baseline.</p></div>
               <div className="jn reveal"><div className="dot">4</div><h4>Plan</h4><p>A personalised plan, built with a team around you.</p></div>
-              <div className="jn reveal"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine — never single consults.</p></div>
+              <div className="jn reveal"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine. Never single consults.</p></div>
             </div>
             <div className="flow-cycle reveal d2"><span className="cyc-lab">↻&nbsp;&nbsp;Ongoing, we measure again, and refine</span></div>
           </div>
@@ -158,12 +158,12 @@ export default function HomePage() {
 
         <section id="targets">
           <div className="wrap">
-            <div className="sec-h reveal"><h2>What longevity medicine targets.</h2><p>Five predictable destinations — almost all with modifiable risk factors.</p></div>
+            <div className="sec-h reveal"><h2>What longevity medicine targets.</h2><p>Five predictable destinations, almost all with modifiable risk factors.</p></div>
             <div className="dest-grid">
               <div className="dest reveal"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "120" }} d="M6 27h7l3-7 5 14 4-19 4 12 2-5h6"/><path className="pulse" d="M40 13.5a4.4 4.4 0 0 0-7-1.2" style={{ opacity: ".6" }}/></svg></span><h3>Cardiovascular</h3><p>Blood pressure, lipids, and the events we prevent.</p></div>
               <div className="dest reveal d1"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "150" }} d="M24 9c-5 0-8 3-8 7-3 1-4 4-2.5 6.5C12 25 13 29 17 30c0 4 3 6 7 6"/><path className="draw" style={{ ["--len" as string]: "150" }} d="M24 9c5 0 8 3 8 7 3 1 4 4 2.5 6.5C36 25 35 29 31 30c0 4-3 6-7 6"/><line className="draw" style={{ ["--len" as string]: "30" }} x1="24" y1="12" x2="24" y2="36"/><circle className="pulse" cx="19" cy="20" r="1.6" style={{ fill: "currentColor", stroke: "none" }}/><circle className="pulse" cx="29" cy="24" r="1.6" style={{ fill: "currentColor", stroke: "none" }}/></svg></span><h3>Neurocognitive</h3><p>Cognition, and long-term protection of the brain.</p></div>
               <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "110" }} d="M37 17a15 15 0 1 0 2 12"/><polyline className="draw" style={{ ["--len" as string]: "30" }} points="33,9 38,17 30,20"/><circle className="pulse" cx="24" cy="24" r="5"/></svg></span><h3>Metabolic</h3><p>Insulin, glucose and liver health.</p></div>
-              <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "90" }} d="M16 16c-3-1-6 1-5 4 .6 2 3 2 4 1l8 8c-1 1-1 3.4 1 4 3 1 5-2 4-5"/><path className="draw" style={{ ["--len" as string]: "90" }} d="M32 32c3 1 6-1 5-4-.6-2-3-2-4-1l-8-8c1-1 1-3.4-1-4-3-1-5 2-4 5"/><circle className="pulse" cx="24" cy="24" r="2" style={{ fill: "currentColor", stroke: "none" }}/></svg></span><h3>Musculoskeletal</h3><p>Strength and muscle — the guard against frailty.</p></div>
+              <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "90" }} d="M16 16c-3-1-6 1-5 4 .6 2 3 2 4 1l8 8c-1 1-1 3.4 1 4 3 1 5-2 4-5"/><path className="draw" style={{ ["--len" as string]: "90" }} d="M32 32c3 1 6-1 5-4-.6-2-3-2-4-1l-8-8c1-1 1-3.4-1-4-3-1-5 2-4 5"/><circle className="pulse" cx="24" cy="24" r="2" style={{ fill: "currentColor", stroke: "none" }}/></svg></span><h3>Musculoskeletal</h3><p>Strength and muscle, the guard against frailty.</p></div>
               <div className="dest reveal d2"><span className="gly" aria-hidden="true"><svg viewBox="0 0 48 48"><path className="draw" style={{ ["--len" as string]: "120" }} d="M24 7l13 5v9c0 8-5.5 14-13 16-7.5-2-13-8-13-16v-9z"/><circle className="pulse" cx="24" cy="22" r="4.5"/><circle className="draw" style={{ ["--len" as string]: "60", opacity: ".45" }} cx="24" cy="22" r="9"/></svg></span><h3>Cancer</h3><p>Risk reduction and earlier detection.</p></div>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function HomePage() {
                 <div className="cr"><b>Gov.</b><span>Australian Government medical advisor</span></div>
                 <div className="cr"><b>DHF26</b><span>Keynote speaker</span></div>
               </div>
-              <a href="/about" className="btn btn-l" style={{ marginTop: "28px" }}>Learn more about Danny →</a>
+              <a href="/about" className="btn btn-l" style={{ marginTop: "28px" }}>Learn more about Danny</a>
             </div>
           </div>
         </section>
@@ -202,9 +202,9 @@ export default function HomePage() {
           <div className="wrap">
             <div className="sec-h reveal"><h2>Begin the conversation.</h2></div>
             <div className="doors">
-              <div className="door reveal"><div className="dn">For patients</div><h3>Become a patient</h3><p>Enquire, consult, measure, then a plan built around your data.</p><a href="/#enquire" className="lk">Book a consultation →</a></div>
-              <div className="door reveal d1"><div className="dn">For clinicians</div><h3>Work with Danny</h3><p>Practise alongside him and register interest in the certification course (pending accreditation).</p><a href="/#enquire" className="lk">Register interest →</a></div>
-              <div className="door reveal d2"><div className="dn">For partners</div><h3>Collaborate</h3><p>A quiet, credible path for investors and operators in clinical longevity.</p><a href="/#enquire" className="lk">Partner with us →</a></div>
+              <div className="door reveal"><div className="dn">For patients</div><h3>Become a patient</h3><p>Enquire, consult, measure, then a plan built around your data.</p><a href="/#enquire" className="lk">Book a consultation</a></div>
+              <div className="door reveal d1"><div className="dn">For clinicians</div><h3>Work with Danny</h3><p>Practise alongside him and register interest in the certification course (pending accreditation).</p><a href="/#enquire" className="lk">Register interest</a></div>
+              <div className="door reveal d2"><div className="dn">For partners</div><h3>Collaborate</h3><p>A quiet, credible path for investors and operators in clinical longevity.</p><a href="/#enquire" className="lk">Partner with us</a></div>
             </div>
           </div>
         </section>
@@ -225,7 +225,7 @@ export default function HomePage() {
           <div className="wrap enq-in">
             <div className="reveal">
               <h2 style={{ marginTop: "14px" }}>Begin a <em>conversation.</em></h2>
-              <p className="lede">Tell us a little about you — we respond personally to arrange an introduction.</p>
+              <p className="lede">Tell us a little about you. We respond personally to arrange an introduction.</p>
               <p className="ov" style={{ marginTop: "26px", color: "var(--muted)" }}>LinkedIn · avaelishealth.com.au</p>
             </div>
             <EnquiryForm />

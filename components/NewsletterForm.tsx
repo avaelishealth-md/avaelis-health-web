@@ -41,7 +41,7 @@ export default function NewsletterForm({ source }: { source: string }) {
         style={{ background: "rgba(255,255,255,.04)", borderColor: "rgba(255,255,255,.16)" }}
       >
         <p className="lede" style={{ color: "var(--muted-l)", fontSize: 16, margin: 0 }}>
-          Thank you — you&apos;re on the list.
+          Thank you, you&apos;re on the list.
         </p>
       </div>
     );
