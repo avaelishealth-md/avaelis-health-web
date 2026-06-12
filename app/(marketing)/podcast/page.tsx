@@ -25,7 +25,7 @@ export default function PodcastPage() {
           <a href="#episode" className="epitem" style={{ textDecoration: "none", color: "inherit" }}><span className="num">01</span><div><b>Normal is a range</b><p>“On paper I was fine.” Why average isn't optimal, and where to begin.</p></div><span className="dur">35 min</span></a>
         </div>
       </div>
-      <div className="band"><div className="pad-s wrap split">
+      <div className="band" style={{ background: "var(--plum)" }}><div className="pad-s wrap split">
         <div><div className="rule" style={{ background: "var(--bronze-l)" }}></div><span className="ov">The dispatch</span><h2 className="big" style={{ color: "#fff", marginTop: "12px" }}>Considered notes, on occasion.</h2><p className="lede" style={{ color: "var(--muted-l)", marginTop: "14px" }}>Evidence-led writing from Dr. Danny. No noise.</p></div>
         <NewsletterForm source="Podcast" />
       </div></div>

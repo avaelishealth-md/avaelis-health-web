@@ -24,7 +24,7 @@ export default function WritingPage() {
           <a className="artcard" href="#article"><div className="imgph"><img src="https://images.pexels.com/photos/4498482/pexels-photo-4498482.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /></div><span className="cat">Metabolic</span><h3>Why your fasting insulin matters more than you think</h3><p>An early-warning marker most check-ups never order.</p><span className="meta">7 min read</span></a>
         </div>
       </div>
-      <div className="band"><div className="pad-s wrap split">
+      <div className="band" style={{ background: "var(--plum)" }}><div className="pad-s wrap split">
         <div><div className="rule" style={{ background: "var(--bronze-l)" }}></div><span className="ov">The dispatch</span><h2 className="big" style={{ color: "#fff", marginTop: "12px" }}>Considered notes, on occasion.</h2><p className="lede" style={{ color: "var(--muted-l)", marginTop: "14px" }}>Evidence-led writing from Dr. Danny. No noise.</p></div>
         <NewsletterForm source="Writing" />
       </div></div>
