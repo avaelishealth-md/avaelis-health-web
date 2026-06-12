@@ -9,8 +9,9 @@ const COMING_SOON = true;
 const LIVE_DOMAIN = "avaelishealth.com.au";
 
 export function middleware(req: NextRequest) {
-  const host = (req.headers.get("host") || "").toLowerCase();
-  const onLiveDomain = host === LIVE_DOMAIN || host.endsWith(`.${LIVE_DOMAIN}`);
+  const rawHost = (req.headers.get("host") || "").toLowerCase();
+  const host = rawHost.split(":")[0].replace(/\.$/, ""); // strip any port + trailing dot
+  const onLiveDomain = host === LIVE_DOMAIN || host === `www.${LIVE_DOMAIN}`;
 
   if (!COMING_SOON || !onLiveDomain) {
     return NextResponse.next();
@@ -19,6 +20,7 @@ export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   if (
     pathname === "/coming-soon" ||
+    pathname.startsWith("/api") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/icon") ||
     pathname === "/favicon.ico"

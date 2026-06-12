@@ -2,6 +2,7 @@
 
 import "./home.css";
 import HomeInteractions from "./HomeInteractions";
+import EnquiryForm from "../components/EnquiryForm";
 
 export default function HomePage() {
   return (
@@ -227,14 +228,7 @@ export default function HomePage() {
               <p className="lede">Tell us a little about you — we respond personally to arrange an introduction.</p>
               <p className="ov" style={{ marginTop: "26px", color: "var(--muted)" }}>LinkedIn · avaelishealth.com.au</p>
             </div>
-            <form className="frm reveal d1" onSubmit={(event) => { event.preventDefault(); (event.currentTarget as HTMLFormElement).innerHTML = '<p style="font-family:Spectral,serif;font-size:24px;text-align:center;padding:50px 0;color:#9A7536">Thank you, we will be in touch personally.</p>'; }}>
-              <label>Full name</label><input type="text" placeholder="Your name" required />
-              <label>Email</label><input type="email" placeholder="you@example.com" required />
-              <label>I'm enquiring as</label><select><option>A prospective patient</option><option>A clinician / course interest</option><option>A partner or collaborator</option></select>
-              <label>What's prompting this?</label><input type="text" placeholder="A line or two helps us prepare" />
-              <button className="btn btn-f" type="submit">Send enquiry</button>
-              <p className="fine">No public price list for treatment, personalised care is discussed in consultation. Your details stay private.</p>
-            </form>
+            <EnquiryForm />
           </div>
         </section>
       </main>
