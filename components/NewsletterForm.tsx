@@ -4,7 +4,7 @@ import { useState } from "react";
 
 type Status = "idle" | "sending" | "done" | "error";
 
-// Minimal newsletter signup used in the "dispatch" band on Writing / Podcast / About.
+// Minimal newsletter signup used in the "dispatch" band on Writing / About.
 // Posts to /api/subscribe with type "Newsletter" plus a `source` so each page is
 // tagged ("Source: <page>") and we can see which page drove the signup.
 export default function NewsletterForm({ source }: { source: string }) {

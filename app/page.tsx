@@ -15,7 +15,6 @@ export default function HomePage() {
             <a href="/#approach">The Science</a>
             <a href="/#index">Evidence</a>
             <a href="/about">Dr. Danny</a>
-            <a href="/podcast">Podcast</a>
             <a href="/writing">Writing</a>
             <a href="/#enquire" className="navbook">Book a consultation</a>
           </nav>
@@ -92,10 +91,10 @@ export default function HomePage() {
                 <p className="man-q">Between <em>“you're fine, see you next year”</em> and <em>“one pill from immortality”</em> sits the honest middle.</p>
                 <p className="man-sub">In an era of infinite information, the most valuable thing a clinician offers isn't more information, it's <strong>trusted interpretation.</strong></p>
               </div>
-              <a className="pod-tile" href="/podcast">
-                <span className="pt-top"><span className="pt-lab">Listen</span><span className="pt-play">▶</span></span>
-                <span className="pt-mid"><span className="pt-k">The AvaElis Conversations</span><span className="pt-t">Ep. 03, VO₂ max, decoded</span></span>
-                <span className="pt-foot">Apple · Spotify · YouTube</span>
+              <a className="pod-tile" href="/writing">
+                <span className="pt-top"><span className="pt-lab">Read</span><span className="pt-play">¶</span></span>
+                <span className="pt-mid"><span className="pt-k">Writing &amp; insights</span><span className="pt-t">Evidence-led notes, never hype.</span></span>
+                <span className="pt-foot">New essays, on occasion</span>
               </a>
             </div>
           </div>
@@ -209,18 +208,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="pod" id="podcast">
-          <div className="wrap">
-            <div className="sec-h reveal"><h2>The AvaElis conversations.</h2><p>Honest, long-form talks on living well for longer. Hosted by Dr. Danny Cai.</p></div>
-            <div className="pod-grid">
-              <article className="ep reveal"><span className="epn">Ep. 03</span><h3>VO₂ max, decoded</h3><p>Why cardiorespiratory fitness is the strongest signal we measure, and how to move the number.</p><span className="play"><span className="pbtn">▶</span> 42 min</span></article>
-              <article className="ep reveal d1"><span className="epn">Ep. 02</span><h3>Science vs hype</h3><p>A working framework for telling proven from promising from pure marketing.</p><span className="play"><span className="pbtn">▶</span> 38 min</span></article>
-              <article className="ep reveal d2"><span className="epn">Ep. 01</span><h3>Normal is a range</h3><p>“On paper I was fine.” Why average isn't the same as optimal, and where to begin.</p><span className="play"><span className="pbtn">▶</span> 35 min</span></article>
-            </div>
-            <div className="pod-sub reveal"><a href="#">Apple Podcasts</a><a href="#">Spotify</a><a href="#">YouTube</a></div>
-          </div>
-        </section>
-
         <section className="enq" id="enquire">
           <div className="wrap enq-in">
             <div className="reveal">
@@ -243,7 +230,7 @@ export default function HomePage() {
             <div className="foot-cols">
               <div className="fcol"><h5>Practice</h5><a href="/#services">Services</a><a href="/#approach">The Science</a><a href="/#index">Evidence Index</a><a href="/about">Dr. Danny</a></div>
               <div className="fcol"><h5>Enquire</h5><a href="/#enquire">Patients</a><a href="/#enquire">Clinicians</a><a href="/#enquire">Partners</a></div>
-              <div className="fcol"><h5>Follow</h5><a href="https://au.linkedin.com/in/dr-danny-cai-4a7ab093" target="_blank" rel="noopener">LinkedIn</a><a href="/writing">Writing</a><a href="/podcast">Podcast</a></div>
+              <div className="fcol"><h5>Follow</h5><a href="https://au.linkedin.com/in/dr-danny-cai-4a7ab093" target="_blank" rel="noopener">LinkedIn</a><a href="/writing">Writing</a></div>
             </div>
           </div>
           <p className="disclaim">AvaElis Health provides general longevity and preventive care and is not a substitute for emergency or acute treatment. Public content is general education, not individual medical advice. No prescription medicines are advertised; personalised treatment follows clinical consultation.</p>

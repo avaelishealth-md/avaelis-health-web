@@ -12,7 +12,7 @@ export default function AboutPage() {
           <span className="ov">The doctor behind the practice</span>
           <h1>A physician, <em>first and always.</em></h1>
           <div style={{ display: "flex", gap: "13px", marginTop: "28px", flexWrap: "wrap" }}>
-            <a className="btn btn-b" href="#book">Book a consultation</a>
+            <a className="btn btn-b" href="/#enquire">Book a consultation</a>
             <a className="btn btn-o" href="/writing">Read his writing</a>
           </div>
         </div>
@@ -28,24 +28,18 @@ export default function AboutPage() {
       </div>
       {/* philosophy / narrative */}
       <div className="pad wrap split rev" style={{ borderTop: "1px solid var(--line)" }}>
-        <div className="imgph" style={{ aspectRatio: "1" }}><img src="/assets/danny-clinic.jpg" alt="Dr. Danny at the clinic" /><span className="tag">At the clinic</span></div>
+        <div className="imgph" style={{ aspectRatio: "1" }}><img src="/assets/danny-clinic.jpg" alt="Dr. Danny Cai" /><span className="tag">Dr. Danny Cai</span></div>
         <div>
           <div className="rule"></div>
           <span className="ov">In his words</span>
-          <h2 className="big" style={{ marginTop: "14px" }}>“A doctor's most valuable offer today isn't more information, it's <em>trusted interpretation.</em>”</h2>
-          <p className="lede" style={{ marginTop: "20px" }}>For years I watched people chase the next test, supplement, headline. AvaElis does the opposite: measure what matters, read it honestly, build a plan you can live.</p>
-        </div>
-      </div>
-      {/* timeline */}
-      <div className="pad wrap" style={{ borderTop: "1px solid var(--line)" }}>
-        <div className="rule"></div><span className="ov">Career</span>
-        <h2 className="big" style={{ margin: "14px 0 30px" }}>A measured path.</h2>
-        <div className="tl">
-          <div className="row"><span className="yr">1999</span><div><b>MBBS, clinical training</b><p>Qualifies; begins hospital rotations.</p></div></div>
-          <div className="row"><span className="yr">2004</span><div><b>General practice</b><p>FRACGP fellowship; long-term patient base.</p></div></div>
-          <div className="row"><span className="yr">2015</span><div><b>Australian Government medical advisor</b><p>Health policy &amp; clinical standards, national level.</p></div></div>
-          <div className="row"><span className="yr">2023</span><div><b>Longevity focus</b><p>Precision diagnostics &amp; healthspan.</p></div></div>
-          <div className="row"><span className="yr">2026</span><div><b>Founds AvaElis Health</b><p>A boutique longevity clinic. One doctor, real data, no hype.</p></div></div>
+          <h2 className="big" style={{ marginTop: "14px" }}>“In a space increasingly shaped by trends, my role is to provide <em>clarity and discernment.</em>”</h2>
+          <div className="article" style={{ marginTop: "20px", maxWidth: "none" }}>
+            <p className="lead">I&apos;m Dr Danny Cai, a General Practitioner with over 25 years of clinical experience, focused on longevity, preventative health, and human optimisation.</p>
+            <p>AvaElis carries my daughter&apos;s name, combined with the Latin for life, a reflection of how I view this work: not simply extending lifespan, but preserving vitality, clarity, and capability over time.</p>
+            <p>My background spans general practice, advanced therapeutics, cosmetic medicine, government advisory, and healthcare innovation. Today, my work is centred on individuals who are often already well, but seeking to optimise how they feel, function, and age. This requires a more precise, proactive approach; one that integrates emerging science with clinical judgement and individual context.</p>
+            <p>I focus on what is evidence based, what is promising, and how to apply both in a way that is measured, personalised, and effective.</p>
+            <p>Alongside clinical practice, I contribute to medical education and advise on the future of healthcare. My aim is simple: to help you maintain performance, extend healthspan, and age with intention.</p>
+          </div>
         </div>
       </div>
       {/* dispatch / newsletter, distinct plum section */}

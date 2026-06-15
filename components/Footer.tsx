@@ -48,7 +48,6 @@ export default function Footer() {
               <h5>Follow</h5>
               <a href="https://au.linkedin.com/in/dr-danny-cai-4a7ab093" target="_blank" rel="noopener">LinkedIn</a>
               <Link href="/writing">Writing</Link>
-              <Link href="/podcast">Podcast</Link>
             </div>
           </div>
         </div>

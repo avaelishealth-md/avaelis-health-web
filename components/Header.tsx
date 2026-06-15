@@ -21,7 +21,6 @@ export default function Header() {
           <Link href="/#approach" onClick={close}>The Science</Link>
           <Link href="/#index" onClick={close}>Evidence</Link>
           <Link href="/about" onClick={close}>Dr. Danny</Link>
-          <Link href="/podcast" onClick={close}>Podcast</Link>
           <Link href="/writing" onClick={close}>Writing</Link>
           <Link href="/#enquire" className="navbook" onClick={close}>
             Book a consultation
