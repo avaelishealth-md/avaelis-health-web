@@ -20,18 +20,21 @@ export default function PostEditor({ post }: { post?: Post }) {
   const [seoTitle, setSeoTitle] = useState(post?.seo_title ?? "");
   const [seoDesc, setSeoDesc] = useState(post?.seo_description ?? "");
   const [busy, setBusy] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [msg, setMsg] = useState("");
   const [err, setErr] = useState("");
 
-  async function uploadImage(file: File): Promise<string | null> {
-    if (file.size > 5 * 1024 * 1024) {
-      setErr("Image must be under 5 MB.");
+  async function uploadFile(file: File): Promise<string | null> {
+    if (file.size > 8 * 1024 * 1024) {
+      setErr("Image must be under 8 MB.");
       return null;
     }
     const supabase = createClient();
-    const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
+    const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "");
     const key = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
-    const { error } = await supabase.storage.from("post-images").upload(key, file);
+    const { error } = await supabase.storage.from("post-images").upload(key, file, {
+      contentType: file.type || undefined,
+    });
     if (error) {
       setErr(error.message);
       return null;
@@ -39,6 +42,7 @@ export default function PostEditor({ post }: { post?: Post }) {
     return supabase.storage.from("post-images").getPublicUrl(key).data.publicUrl;
   }
 
+  // Opens a file picker, uploads, and returns the public URL (with loading state).
   function pickAndUpload(): Promise<string | null> {
     return new Promise((resolve) => {
       const input = document.createElement("input");
@@ -48,7 +52,12 @@ export default function PostEditor({ post }: { post?: Post }) {
         const f = input.files?.[0];
         if (!f) return resolve(null);
         setErr("");
-        resolve(await uploadImage(f));
+        setUploading(true);
+        try {
+          resolve(await uploadFile(f));
+        } finally {
+          setUploading(false);
+        }
       };
       input.click();
     });
@@ -105,10 +114,7 @@ export default function PostEditor({ post }: { post?: Post }) {
         </div>
         <div className="adm-field">
           <label>Audience</label>
-          <select
-            value={audience}
-            onChange={(e) => setAudience(e.target.value as "public" | "clinician")}
-          >
+          <select value={audience} onChange={(e) => setAudience(e.target.value as "public" | "clinician")}>
             <option value="public">Public (listed on Writing)</option>
             <option value="clinician">Clinician (unlisted, link only)</option>
           </select>
@@ -132,14 +138,15 @@ export default function PostEditor({ post }: { post?: Post }) {
           <button
             type="button"
             className="adm-btn ghost"
+            disabled={uploading}
             onClick={async () => {
               const u = await pickAndUpload();
               if (u) setCover(u);
             }}
           >
-            {cover ? "Replace" : "Upload"}
+            {uploading ? "Uploading…" : cover ? "Replace" : "Upload"}
           </button>
-          {cover && (
+          {cover && !uploading && (
             <button type="button" className="adm-btn ghost" onClick={() => setCover("")}>
               Remove
             </button>
@@ -149,7 +156,7 @@ export default function PostEditor({ post }: { post?: Post }) {
 
       <div className="adm-field">
         <label>Body</label>
-        <Editor value={body} onChange={setBody} onImageUpload={pickAndUpload} />
+        <Editor value={body} onChange={setBody} onPickImage={pickAndUpload} uploading={uploading} />
       </div>
 
       <div className="adm-field">
