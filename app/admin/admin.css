@@ -1,0 +1,70 @@
+/* Minimal, self-contained admin styling — deliberately NOT the marketing chrome. */
+.adm {
+  --a-ink: #1f2937;
+  --a-muted: #6b7280;
+  --a-line: #e5e7eb;
+  --a-bg: #f7f7f6;
+  --a-bronze: #9A7536;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--a-ink);
+  background: var(--a-bg);
+  min-height: 100vh;
+}
+.adm-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 22px; background: #fff; border-bottom: 1px solid var(--a-line);
+}
+.adm-bar .brand { font-weight: 700; letter-spacing: .02em; text-decoration: none; color: var(--a-ink); }
+.adm-bar .who { font-size: 13px; color: var(--a-muted); display: flex; gap: 14px; align-items: center; }
+.adm-bar .who a { color: var(--a-bronze); text-decoration: none; }
+.adm-wrap { max-width: 920px; margin: 0 auto; padding: 28px 22px 80px; }
+.adm-wrap.narrow { max-width: 460px; }
+
+.adm h1 { font-size: 22px; margin: 0 0 4px; }
+.adm h2 { font-size: 16px; margin: 24px 0 10px; }
+.adm .sub { color: var(--a-muted); font-size: 14px; margin: 0 0 22px; }
+
+.adm-field { margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+.adm-field label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--a-muted); }
+.adm-field input, .adm-field textarea, .adm-field select {
+  font: inherit; padding: 10px 12px; border: 1px solid var(--a-line); border-radius: 8px; background: #fff; color: var(--a-ink); width: 100%;
+}
+.adm-field input:focus, .adm-field textarea:focus, .adm-field select:focus { outline: none; border-color: var(--a-bronze); }
+.adm-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.adm-row > * { flex: 1; min-width: 200px; }
+
+.adm-btn { font: inherit; font-weight: 600; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--a-bronze); background: var(--a-bronze); color: #fff; cursor: pointer; text-decoration: none; display: inline-block; }
+.adm-btn:hover { background: #80622d; }
+.adm-btn.ghost { background: #fff; color: var(--a-bronze); }
+.adm-btn.ghost:hover { background: #faf6ef; }
+.adm-btn.danger { background: #fff; color: #b42318; border-color: #f0c2bd; }
+.adm-btn:disabled { opacity: .55; cursor: default; }
+.adm-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 22px; }
+
+.adm-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--a-line); border-radius: 10px; overflow: hidden; }
+.adm-table th, .adm-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--a-line); font-size: 14px; }
+.adm-table th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--a-muted); background: #fafafa; }
+.adm-table tr:last-child td { border-bottom: none; }
+.adm-table a.title { font-weight: 600; color: var(--a-ink); text-decoration: none; }
+.adm-table a.title:hover { color: var(--a-bronze); }
+.adm-tag { font-size: 11px; padding: 3px 9px; border-radius: 100px; border: 1px solid var(--a-line); color: var(--a-muted); }
+.adm-tag.pub { color: #067647; border-color: #abefc6; background: #ecfdf3; }
+.adm-tag.draft { color: #b54708; border-color: #fedf89; background: #fffaeb; }
+.adm-note { font-size: 13px; color: var(--a-muted); margin-top: 8px; }
+.adm-error { color: #b42318; font-size: 13px; margin-top: 8px; }
+.adm-ok { color: #067647; font-size: 14px; }
+
+/* TipTap editor surface */
+.adm-editor { border: 1px solid var(--a-line); border-radius: 8px; background: #fff; }
+.adm-toolbar { display: flex; gap: 4px; flex-wrap: wrap; padding: 8px; border-bottom: 1px solid var(--a-line); }
+.adm-toolbar button { font: inherit; font-size: 13px; padding: 5px 10px; border: 1px solid transparent; border-radius: 6px; background: transparent; cursor: pointer; color: var(--a-ink); }
+.adm-toolbar button:hover { background: #f3f4f6; }
+.adm-toolbar button.on { background: #f0e6d4; border-color: #e0cba0; }
+.adm-editor .ProseMirror { padding: 16px; min-height: 320px; outline: none; line-height: 1.6; }
+.adm-editor .ProseMirror:focus { outline: none; }
+.adm-editor .ProseMirror p { margin: 0 0 12px; }
+.adm-editor .ProseMirror h2 { font-size: 22px; margin: 20px 0 10px; }
+.adm-editor .ProseMirror h3 { font-size: 18px; margin: 18px 0 8px; }
+.adm-editor .ProseMirror blockquote { border-left: 3px solid var(--a-bronze); margin: 14px 0; padding-left: 14px; color: var(--a-muted); }
+.adm-editor .ProseMirror img { max-width: 100%; border-radius: 6px; }
+.adm-editor .ProseMirror ul, .adm-editor .ProseMirror ol { padding-left: 22px; margin: 0 0 12px; }
