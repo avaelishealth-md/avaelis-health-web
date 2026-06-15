@@ -28,7 +28,7 @@ export default function AboutPage() {
       </div>
       {/* philosophy / narrative */}
       <div className="pad wrap split rev" style={{ borderTop: "1px solid var(--line)" }}>
-        <div className="imgph" style={{ aspectRatio: "1" }}><img src="/assets/danny-clinic.jpg" alt="Dr. Danny Cai" /><span className="tag">Dr. Danny Cai</span></div>
+        <div className="imgph" style={{ aspectRatio: "1" }}><img src="/assets/danny-ava.jpg" alt="Dr. Danny Cai walking with his daughter" /><span className="tag">With my daughter</span></div>
         <div>
           <div className="rule"></div>
           <span className="ov">In his words</span>
