@@ -5,7 +5,7 @@ export default function AboutPage() {
     <>
       {/* hero */}
       <div className="phero-fb">
-        <div className="phero-fb-img"><img src="/assets/danny-scrubs-stand.jpg" alt="Dr. Danny Cai" /></div>
+        <div className="phero-fb-img"><img src="/assets/danny-about-hero.jpg" alt="Dr. Danny Cai" /></div>
         <div className="phero-fb-scrim"></div>
         <div className="wrap ctr">
           <div className="breadcrumb"><a href="#home">Home</a> / About</div>

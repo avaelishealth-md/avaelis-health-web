@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { cache } from "react";
 import { getPostBySlug } from "@/lib/posts";
 import { sanitizeHtml } from "@/lib/sanitize";
+import CpdNotice from "@/components/CpdNotice";
 
 // Always render fresh (drafts via ?preview, content changes on publish).
 export const dynamic = "force-dynamic";
@@ -79,6 +80,12 @@ export default async function PostPage({ params, searchParams }: Props) {
           <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.body || "") }} />
         </article>
       </div>
+
+      {post.tags?.some((t) => t.toLowerCase() === "cpd") && (
+        <div className="pad-s wrap">
+          <CpdNotice />
+        </div>
+      )}
 
       <div className="pad-s wrap">
         <div className="disclaimer">
