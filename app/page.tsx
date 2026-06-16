@@ -7,7 +7,7 @@ import EnquiryForm from "../components/EnquiryForm";
 export default function HomePage() {
   return (
     <>
-      <header className="nav">
+      <header className="nav" id="top">
         <div className="wrap nav-in">
           <a className="brand" href="/#top"><span className="em">Æ</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
           <nav className="lk">
@@ -242,9 +242,9 @@ export default function HomePage() {
               <p style={{ fontSize: "14px", fontWeight: "300", marginTop: "14px", maxWidth: "24em", color: "#D5C8B4" }}>More years thriving, less years declining. A boutique longevity practice, Dr. Danny Cai.</p>
             </div>
             <div className="foot-cols">
-              <div className="fcol"><h5>Practice</h5><a href="/#services">Services</a><a href="/#approach">The Science</a><a href="/#index">Evidence Index</a><a href="/about">Dr. Danny</a></div>
-              <div className="fcol"><h5>Enquire</h5><a href="/#enquire">Patients</a><a href="/#enquire">Clinicians</a><a href="/#enquire">Partners</a></div>
-              <div className="fcol"><h5>Follow</h5><a href="https://au.linkedin.com/in/dr-danny-cai-4a7ab093" target="_blank" rel="noopener">LinkedIn</a><a href="/writing">Writing</a></div>
+              <div className="fcol"><p className="fcol-h">Practice</p><a href="/#services">Services</a><a href="/#approach">The Science</a><a href="/#index">Evidence Index</a><a href="/about">Dr. Danny</a></div>
+              <div className="fcol"><p className="fcol-h">Enquire</p><a href="/#enquire">Patients</a><a href="/#enquire">Clinicians</a><a href="/#enquire">Partners</a></div>
+              <div className="fcol"><p className="fcol-h">Follow</p><a href="https://au.linkedin.com/in/dr-danny-cai-4a7ab093" target="_blank" rel="noopener">LinkedIn</a><a href="/writing">Writing</a></div>
             </div>
           </div>
           <p className="disclaim">AvaElis Health provides general longevity and preventive care and is not a substitute for emergency or acute treatment. Public content is general education, not individual medical advice. No prescription medicines are advertised; personalised treatment follows clinical consultation.</p>

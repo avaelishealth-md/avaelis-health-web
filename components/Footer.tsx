@@ -32,20 +32,20 @@ export default function Footer() {
           </div>
           <div className="foot-cols">
             <div className="fcol">
-              <h5>Practice</h5>
+              <p className="fcol-h">Practice</p>
               <Link href="/#services">Services</Link>
               <Link href="/#approach">The Science</Link>
               <Link href="/#index">Evidence Index</Link>
               <Link href="/about">Dr. Danny</Link>
             </div>
             <div className="fcol">
-              <h5>Enquire</h5>
+              <p className="fcol-h">Enquire</p>
               <Link href="/#enquire">Patients</Link>
               <Link href="/#enquire">Clinicians</Link>
               <Link href="/#enquire">Partners</Link>
             </div>
             <div className="fcol">
-              <h5>Follow</h5>
+              <p className="fcol-h">Follow</p>
               <a href="https://au.linkedin.com/in/dr-danny-cai-4a7ab093" target="_blank" rel="noopener">LinkedIn</a>
               <Link href="/writing">Writing</Link>
             </div>
