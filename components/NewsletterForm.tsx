@@ -54,8 +54,8 @@ export default function NewsletterForm({ source }: { source: string }) {
       style={{ background: "rgba(255,255,255,.04)", borderColor: "rgba(255,255,255,.16)" }}
     >
       <div className="field">
-        <label style={{ color: "var(--muted-l)" }}>Email</label>
-        <input name="email" type="email" placeholder="you@example.com" required />
+        <label htmlFor={`news-email-${source}`} style={{ color: "var(--muted-l)" }}>Email</label>
+        <input id={`news-email-${source}`} name="email" type="email" placeholder="you@example.com" required />
       </div>
       <button
         className="btn btn-b"

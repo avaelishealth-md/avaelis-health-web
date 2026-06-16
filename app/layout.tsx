@@ -3,10 +3,30 @@ import Script from "next/script";
 
 const GA_ID = "G-WQ49M7VJZE";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://avaelishealth.com.au";
+const TITLE = "AvaElis Health · Longevity Clinic";
+const DESCRIPTION =
+  "More years thriving, less years declining. A boutique longevity practice with Dr. Danny Cai.";
+
 export const metadata: Metadata = {
-  title: "AvaElis Health · Longevity Clinic",
-  description:
-    "More years thriving, less years declining. A boutique longevity practice with Dr. Danny Cai.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/",
+    siteName: "AvaElis Health",
+    locale: "en_AU",
+    type: "website",
+    images: [{ url: "/assets/danny-about-hero.jpg", alt: "Dr. Danny Cai" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/assets/danny-about-hero.jpg"],
+  },
   // Pre-launch draft on a temporary domain, keep search engines out until the real go-live on avaelishealth.com.au, then remove this.
   robots: { index: false, follow: false },
 };

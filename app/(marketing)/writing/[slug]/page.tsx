@@ -54,7 +54,7 @@ export default async function PostPage({ params, searchParams }: Props) {
       <div className="phero">
         <div className="wrap">
           <div className="breadcrumb">
-            <a href="/#home">Home</a> / <a href="/writing">Writing</a> / {post.title}
+            <a href="/">Home</a> / <a href="/writing">Writing</a> / {post.title}
           </div>
           {post.tags?.[0] && <span className="ov">{post.tags[0]}</span>}
           <h1>{post.title}</h1>

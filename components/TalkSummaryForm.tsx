@@ -66,16 +66,16 @@ export default function TalkSummaryForm() {
   return (
     <form className="form" onSubmit={onSubmit}>
       <div className="field">
-        <label>Full name</label>
-        <input name="name" type="text" placeholder="Your name" required />
+        <label htmlFor="ts-name">Full name</label>
+        <input id="ts-name" name="name" type="text" placeholder="Your name" required />
       </div>
       <div className="field">
-        <label>Email</label>
-        <input name="email" type="email" placeholder="you@clinic.com" required />
+        <label htmlFor="ts-email">Email</label>
+        <input id="ts-email" name="email" type="email" placeholder="you@clinic.com" required />
       </div>
       <div className="field">
-        <label>I&apos;m a</label>
-        <select name="role" defaultValue={ROLES[0]}>
+        <label htmlFor="ts-role">I&apos;m a</label>
+        <select id="ts-role" name="role" defaultValue={ROLES[0]}>
           {ROLES.map((r) => (
             <option key={r}>{r}</option>
           ))}

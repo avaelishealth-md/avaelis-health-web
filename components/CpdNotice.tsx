@@ -8,7 +8,7 @@ export default function CpdNotice() {
       <img
         className="cpd-badge"
         src="/assets/racgp-cpd-badge.png"
-        alt="RACGP CPD Approved Activity — Educational Activities, 1 hour"
+        alt="RACGP CPD Approved Activity: Educational Activities, 1 hour"
       />
       <div className="cpd-body">
         <span className="cpd-k">RACGP-accredited education</span>
@@ -23,7 +23,7 @@ export default function CpdNotice() {
           <img
             className="cpd-logo"
             src="/assets/medihuanna.png"
-            alt="Medihuanna — RACGP CPD-approved education provider"
+            alt="Medihuanna, RACGP CPD-approved education provider"
           />
         </p>
       </div>

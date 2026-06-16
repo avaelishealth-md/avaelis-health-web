@@ -51,7 +51,7 @@ export default function AdminLogin() {
 
       {status === "sent" ? (
         <p className="adm-ok">
-          Check your inbox — a sign-in link is on its way to <strong>{email}</strong>.
+          Check your inbox. A sign-in link is on its way to <strong>{email}</strong>.
         </p>
       ) : (
         <form onSubmit={onSubmit}>

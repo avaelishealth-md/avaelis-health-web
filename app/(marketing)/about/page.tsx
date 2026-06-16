@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import NewsletterForm from "@/components/NewsletterForm";
+
+export const metadata: Metadata = {
+  title: "About Dr. Danny Cai · AvaElis Health",
+  description:
+    "Dr. Danny Cai, a GP with over 25 years of clinical experience, focused on longevity, preventative health, and human optimisation.",
+};
 
 export default function AboutPage() {
   return (
@@ -8,7 +15,7 @@ export default function AboutPage() {
         <div className="phero-fb-img"><img src="/assets/danny-about-hero.jpg" alt="Dr. Danny Cai" /></div>
         <div className="phero-fb-scrim"></div>
         <div className="wrap ctr">
-          <div className="breadcrumb"><a href="#home">Home</a> / About</div>
+          <div className="breadcrumb"><a href="/">Home</a> / About</div>
           <span className="ov">The doctor behind the practice</span>
           <h1>A physician, <em>first and always.</em></h1>
           <div style={{ display: "flex", gap: "13px", marginTop: "28px", flexWrap: "wrap" }}>

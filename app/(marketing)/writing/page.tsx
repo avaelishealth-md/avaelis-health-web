@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import NewsletterForm from "@/components/NewsletterForm";
 import { listPublishedPublic } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  title: "Writing & Insights · AvaElis Health",
+  description:
+    "Researched writing on longevity and precision wellness from Dr. Danny Cai. The considered view, not medical advice.",
+};
 
 // Always render fresh from Supabase (content changes when Danny publishes).
 export const dynamic = "force-dynamic";
@@ -12,7 +19,7 @@ export default async function WritingPage() {
     <>
       <div className="phero">
         <div className="wrap">
-          <div className="breadcrumb"><a href="/#home">Home</a> / Writing</div>
+          <div className="breadcrumb"><a href="/">Home</a> / Writing</div>
           <span className="ov">Writing &amp; insights</span>
           <h1>Education-led notes, <em>never hype.</em></h1>
           <p className="lede">Researched writing on longevity and precision wellness, the considered view, not medical advice.</p>

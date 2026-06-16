@@ -48,18 +48,18 @@ export default function EnquiryForm() {
 
   return (
     <form className="frm reveal d1" onSubmit={onSubmit}>
-      <label>Full name</label>
-      <input name="name" type="text" placeholder="Your name" required />
-      <label>Email</label>
-      <input name="email" type="email" placeholder="you@example.com" required />
-      <label>I&apos;m enquiring as</label>
-      <select name="type" defaultValue="A prospective patient">
+      <label htmlFor="enq-name">Full name</label>
+      <input id="enq-name" name="name" type="text" placeholder="Your name" required />
+      <label htmlFor="enq-email">Email</label>
+      <input id="enq-email" name="email" type="email" placeholder="you@example.com" required />
+      <label htmlFor="enq-type">I&apos;m enquiring as</label>
+      <select id="enq-type" name="type" defaultValue="A prospective patient">
         <option>A prospective patient</option>
         <option>A clinician / course interest</option>
         <option>A partner or collaborator</option>
       </select>
-      <label>What&apos;s prompting this?</label>
-      <input name="message" type="text" placeholder="A line or two helps us prepare" />
+      <label htmlFor="enq-message">What&apos;s prompting this?</label>
+      <input id="enq-message" name="message" type="text" placeholder="A line or two helps us prepare" />
       <button className="btn btn-f" type="submit" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Send enquiry"}
       </button>
