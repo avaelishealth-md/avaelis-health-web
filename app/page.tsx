@@ -205,6 +205,7 @@ export default function HomePage() {
                 <span className="ov">Recognised education</span>
                 <h2>Trusted to <em>teach the profession.</em></h2>
                 <p className="lede">Dr. Danny Cai develops RACGP-accredited education for fellow clinicians, delivered with Medihuanna, a RACGP CPD-approved provider.</p>
+                <p className="recog-meta">RACGP CPD Activity ID 1631161 · Educational Activities, 1 hour</p>
                 <a href="/#enquire" className="btn btn-l">For clinicians</a>
               </div>
             </div>

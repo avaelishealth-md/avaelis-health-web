@@ -31,7 +31,8 @@
   .recog-body h2{font-size:clamp(28px,3.2vw,38px);font-weight:300;margin-top:14px}
   .recog-body h2 em{font-style:italic;color:var(--clay)}
   .recog-body .lede{color:var(--ink-2);font-size:17px;font-weight:300;line-height:1.6;margin-top:16px;max-width:42em}
-  .recog-body .btn{margin-top:26px}
+  .recog-body .recog-meta{color:var(--muted);font-size:13px;letter-spacing:.02em;margin-top:16px}
+  .recog-body .btn{margin-top:22px}
   @media(max-width:760px){.recog-in{gap:28px}.recog-badge{width:100%;max-width:300px}}
 
   /* nav */
