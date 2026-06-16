@@ -49,8 +49,8 @@ export function talkSummaryEmail(opts: { name?: string; url: string }): string {
       <div style="width:44px;height:44px;border-radius:50%;background:#9A7536;color:#F2EBDD;font-size:22px;text-align:center;line-height:44px;font-family:Georgia,serif">&AElig;</div>
       <h1 style="font-family:Georgia,serif;font-weight:500;font-size:23px;margin:20px 0 8px">Your clinician summary</h1>
       <p style="font-size:15px;line-height:1.65;color:#5A4E40;margin:0 0 14px">${hi}</p>
-      <p style="font-size:15px;line-height:1.65;color:#5A4E40;margin:0 0 14px">Thank you for your interest in Dr Danny Cai's talk on peptide therapeutics. Here is the clinician summary, covering the evidence, classifications and regulatory considerations.</p>
-      <p style="margin:24px 0"><a href="${url}" style="background:#9A7536;color:#ffffff;text-decoration:none;padding:13px 24px;border-radius:100px;font-size:14px;display:inline-block">Read the clinician summary</a></p>
+      <p style="font-size:15px;line-height:1.65;color:#5A4E40;margin:0 0 14px">Thank you for your interest in Dr Danny Cai's talk on peptide therapeutics, covering the evidence, classifications and regulatory considerations. You can revisit the clinician summary anytime.</p>
+      <p style="margin:24px 0"><a href="${url}" style="background:#9A7536;color:#ffffff;text-decoration:none;padding:13px 24px;border-radius:100px;font-size:14px;display:inline-block">Open the clinician summary</a></p>
       <p style="font-size:15px;line-height:1.65;color:#5A4E40;margin:0 0 14px">If you would like to discuss working together or refer a patient, just reply to this email.</p>
       <p style="font-size:14px;line-height:1.6;color:#5A4E40;margin-top:26px">Dr Danny Cai<br><span style="color:#8A7C68">AvaElis Health &middot; Longevity Clinic</span></p>
     </div>

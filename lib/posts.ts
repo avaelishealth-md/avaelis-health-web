@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import type { Post } from "@/lib/types";
 
 function configured() {
@@ -35,6 +36,22 @@ export async function getPostBySlug(slug: string, preview = false): Promise<Post
   const { data, error } = await query.maybeSingle();
   if (error) {
     console.error("getPostBySlug:", error.message);
+    return null;
+  }
+  return (data as Post) ?? null;
+}
+
+// The clinician talk-summary post, read via the SERVICE ROLE so it can be an unlisted
+// DRAFT — it is delivered only after email capture on /talk-summary, never listed publicly.
+// Keep the post as a draft so /writing/<slug> stays a 404 and the gate is the only way in.
+// Slug configurable via TALK_SUMMARY_SLUG. SERVER-ONLY (lib/posts is never client-imported).
+export async function getTalkSummaryPost(): Promise<Post | null> {
+  if (!configured() || !process.env.SUPABASE_SERVICE_ROLE_KEY) return null;
+  const slug = process.env.TALK_SUMMARY_SLUG || "clinical-applications";
+  const supabase = createAdminClient();
+  const { data, error } = await supabase.from("posts").select("*").eq("slug", slug).maybeSingle();
+  if (error) {
+    console.error("getTalkSummaryPost:", error.message);
     return null;
   }
   return (data as Post) ?? null;

@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 type Status = "idle" | "sending" | "done" | "error";
+type RevealedPost = { title: string; html: string; readMinutes: number };
 
 const ROLES = [
   "Doctor / GP",
@@ -13,11 +14,13 @@ const ROLES = [
   "Other clinician",
 ];
 
-export default function TalkSummaryForm() {
+// Email gate for the clinician talk summary. On submit we capture the lead, then the
+// server reveals the (unlisted) summary inline. The summary HTML never ships until signup.
+export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
-  const [link, setLink] = useState("");
   const [emailed, setEmailed] = useState(false);
+  const [post, setPost] = useState<RevealedPost | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -35,11 +38,16 @@ export default function TalkSummaryForm() {
           role: data.get("role"),
         }),
       });
-      const j = (await res.json().catch(() => ({}))) as { error?: string; url?: string; emailed?: boolean };
+      const j = (await res.json().catch(() => ({}))) as {
+        error?: string;
+        emailed?: boolean;
+        post?: RevealedPost | null;
+      };
       if (!res.ok) throw new Error(j.error || "Something went wrong.");
-      if (j.url) setLink(j.url);
       setEmailed(!!j.emailed);
+      setPost(j.post ?? null);
       setStatus("done");
+      if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
       setStatus("error");
@@ -48,26 +56,34 @@ export default function TalkSummaryForm() {
 
   if (status === "done") {
     return (
-      <div className="form">
-        <p className="lede" style={{ fontSize: 17, margin: "0 0 10px" }}>
-          {emailed
-            ? "Thank you. The summary is on its way to your inbox."
-            : "Thank you. You can read the clinician summary below."}
+      <div className="ts-done">
+        <p className="ts-thanks">
+          Thank you{emailed ? ". A copy is also on its way to your inbox" : ""}.
         </p>
-        {link && (
-          <p className="fine" style={{ marginTop: 6 }}>
-            <a href={link} style={{ color: "var(--bronze)", textDecoration: "underline" }}>
-              Read the clinician summary
-            </a>
-            {emailed ? ". If the email does not arrive, please check your spam folder." : "."}
+        {post ? (
+          <article className="article">
+            <h2 style={{ marginTop: 0 }}>{post.title}</h2>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </article>
+        ) : (
+          <p className="lede" style={{ textAlign: "center" }}>
+            We have your details. The clinician summary will be sent to your inbox shortly.
           </p>
         )}
+        <div className="disclaimer" style={{ marginTop: 26 }}>
+          General education for health professionals, not individual medical advice. No prescription
+          medicines are advertised.
+        </div>
       </div>
     );
   }
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <form className="form ts-form" onSubmit={onSubmit}>
+      <h2 className="ts-form-h">Read the clinician summary</h2>
+      <p className="ts-form-sub">
+        {teaser || "Enter your details to open the summary here. We'll also email you a copy."}
+      </p>
       <div className="field">
         <label htmlFor="ts-name">Full name</label>
         <input id="ts-name" name="name" type="text" placeholder="Your name" required />
@@ -90,14 +106,16 @@ export default function TalkSummaryForm() {
         disabled={status === "sending"}
         style={{ width: "100%", justifyContent: "center" }}
       >
-        {status === "sending" ? "Sending…" : "Send me the summary"}
+        {status === "sending" ? "Opening…" : "Open the summary"}
       </button>
       {status === "error" && (
         <p className="fine" style={{ color: "#A9603F", marginTop: 8 }}>
           {error}
         </p>
       )}
-      <p className="fine">Your details stay private and are used only to send the summary and follow up.</p>
+      <p className="fine">
+        Your details stay private and are used only to send the summary and follow up.
+      </p>
     </form>
   );
 }

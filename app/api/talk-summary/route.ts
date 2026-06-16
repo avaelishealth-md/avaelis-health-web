@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
 import { addContact } from "@/lib/mailchimp";
 import { sendEmail, talkSummaryEmail } from "@/lib/email";
+import { getTalkSummaryPost } from "@/lib/posts";
+import { sanitizeHtml } from "@/lib/sanitize";
 
 export const runtime = "nodejs";
 
-// The clinician summary the email links to (publish this post first). Override via env.
-const SUMMARY_URL =
-  process.env.TALK_SUMMARY_URL || "https://avaelishealth.com.au/writing/clinical-applications";
+// Where the confirmation email points back to. The summary itself is revealed inline on
+// /talk-summary after signup, so this stays a page that always exists (no 404). Override via env.
+const SUMMARY_URL = process.env.TALK_SUMMARY_URL || "https://avaelishealth.com.au/talk-summary";
 
 export async function POST(req: Request) {
   let data: Record<string, unknown>;
@@ -43,13 +45,23 @@ export async function POST(req: Request) {
     );
   }
 
-  // Deliver the summary by email (no-op if Resend isn't configured yet).
+  // Email a copy too (no-op if Resend isn't configured yet).
   const sent = await sendEmail({
     to: email,
     subject: "Your summary from Dr Danny Cai's talk",
     html: talkSummaryEmail({ name, url: SUMMARY_URL }),
   });
 
-  // Tell the client whether the email actually went out, so the success copy is honest.
-  return NextResponse.json({ ok: true, url: SUMMARY_URL, emailed: !!sent.id });
+  // Reveal the gated summary inline now that the lead is captured. Read via the service
+  // role so it can be an unlisted draft; body is sanitised before it leaves the server.
+  const summary = await getTalkSummaryPost();
+  const post = summary
+    ? {
+        title: summary.title,
+        html: sanitizeHtml(summary.body || ""),
+        readMinutes: summary.read_minutes ?? 1,
+      }
+    : null;
+
+  return NextResponse.json({ ok: true, emailed: !!sent.id, post });
 }

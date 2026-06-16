@@ -536,3 +536,32 @@
   .skip-link{position:fixed;left:-9999px;top:0;z-index:300;background:#9A7536;color:#fff;padding:10px 16px;font-size:14px;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}
   .skip-link:focus{left:0}
   :focus-visible{outline:2px solid #9A7536;outline-offset:2px}
+
+  /* Mobile: centre content for a balanced, sign-up-focused phone layout */
+  @media(max-width:760px){
+    .sec-h,.sec-h.ctr{text-align:center}
+    .hero-fb-in,.hero-fb-in .reveal{text-align:center}
+    .hero-fb-in .acts{justify-content:center}
+    .hero-creds{text-align:center}
+    .band-hero-in,.band-hero-in .reveal{text-align:center}
+    .meet-in>.reveal,.meet-in blockquote,.meet-in .sig,.meet-in .role{text-align:center}
+    .meet-in .creds{justify-content:center}
+    .meet-in .reveal .btn{display:inline-block}
+    .recog-in{flex-direction:column}
+    .recog-body{text-align:center}
+    .recog-body .btn{align-self:center}
+    .triad .tc{text-align:center}
+    .dest{text-align:center}
+    .dest .gly{margin-left:auto;margin-right:auto}
+    .door{text-align:center}
+    .door .lk{display:inline-block}
+    .journey .jn,.journey .jn:nth-child(odd),.journey .jn:nth-child(even){padding:0 0 30px 0;text-align:center}
+    .journey .jn .dot,.journey .jn:nth-child(odd) .dot,.journey .jn:nth-child(even) .dot{position:static;margin:0 auto 10px}
+    .journey .jline,.journey .jrepeat,.journey .jrepeat-lab{display:none}
+    .flow-cycle{text-align:center}
+    .enq-in>.reveal,.enq-in .ov{text-align:center}
+    .filters-h,.filt{text-align:center}
+    .man-q,.man-sub{text-align:center}
+    footer .foot-top,footer .fcol,footer .foot-cols,footer .disclaim{text-align:center}
+    footer .foot-cols{justify-content:center}
+  }

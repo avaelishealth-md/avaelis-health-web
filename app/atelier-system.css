@@ -431,3 +431,27 @@ a,button,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .skip-link{position:fixed;left:-9999px;top:0;z-index:300;background:#9A7536;color:#fff;padding:10px 16px;font-size:14px;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}
 .skip-link:focus{left:0}
 :focus-visible{outline:2px solid #9A7536;outline-offset:2px}
+
+/* talk-summary: centred, sign-up-focused, email-gated clinician summary */
+.ts-hero{text-align:center}
+.ts-wrap{text-align:center}
+.ts-form{max-width:460px;margin:0 auto;text-align:left}
+.ts-form-h{font-family:'Spectral';font-weight:400;font-size:22px;margin:0 0 6px;text-align:center}
+.ts-form-sub{font-size:14.5px;color:var(--ink-2);font-weight:300;line-height:1.55;margin:0 0 18px;text-align:center}
+.ts-done{max-width:760px;margin:0 auto;text-align:left}
+.ts-done .article{margin-top:8px}
+.ts-thanks{font-family:'Spectral';font-size:20px;color:var(--bronze);text-align:center;margin:0 0 24px}
+
+/* Mobile: centre content for a balanced phone layout (keep long-form + forms left) */
+@media(max-width:760px){
+  .phero{text-align:center}
+  .ts-hero{padding-top:30px;padding-bottom:20px}
+  .phero .breadcrumb{justify-content:center}
+  .sec-h{text-align:center}
+  .split{text-align:center}
+  .split .rule{margin-left:auto;margin-right:auto}
+  .split .creds,.split .cred{justify-content:center}
+  .dispatch,.band{text-align:center}
+  .article{text-align:left}
+  .ts-form,.ts-done .article{text-align:left}
+}
