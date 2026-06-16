@@ -144,7 +144,7 @@ export default function PostEditor({ post }: { post?: Post }) {
               if (u) setCover(u);
             }}
           >
-            {uploading ? "Uploading…" : cover ? "Replace" : "Upload"}
+            {uploading ? (<><span className="rt-spinner" aria-hidden="true" /> Uploading…</>) : cover ? "Replace" : "Upload"}
           </button>
           {cover && !uploading && (
             <button type="button" className="adm-btn ghost" onClick={() => setCover("")}>
@@ -190,6 +190,12 @@ export default function PostEditor({ post }: { post?: Post }) {
         {msg && <span className="adm-ok">{msg}</span>}
         {err && <span className="adm-error">{err}</span>}
       </div>
+
+      {uploading && (
+        <div className="rt-upload-toast" role="status" aria-live="polite">
+          <span className="rt-spinner" aria-hidden="true" /> Uploading image…
+        </div>
+      )}
     </div>
   );
 }

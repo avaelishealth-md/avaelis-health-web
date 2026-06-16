@@ -136,7 +136,7 @@ export default function Editor({
         <div className="rt-grp">
           <Tb on={e.isActive("link")} title="Link" onClick={setLink}>Link</Tb>
           <Tb title="Insert image" disabled={uploading} onClick={insertImage}>
-            {uploading ? "Uploading…" : "Image"}
+            {uploading ? (<><span className="rt-spinner" aria-hidden="true" /> Uploading…</>) : "Image"}
           </Tb>
           <Tb title="Embed YouTube video" onClick={insertVideo}>Video</Tb>
         </div>

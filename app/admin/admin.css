@@ -64,6 +64,11 @@
 .rt-btn.on { background: #f0e6d4; border-color: #e0cba0; color: #80622d; }
 .rt-btn:disabled { opacity: .4; cursor: default; }
 .rt-foot { display: flex; gap: 6px; padding: 8px 14px; border-top: 1px solid var(--a-line); font-size: 12px; color: var(--a-muted); background: #fafafa; border-radius: 0 0 7px 7px; }
+
+/* image-upload loading feedback */
+@keyframes rt-spin { to { transform: rotate(360deg); } }
+.rt-spinner { display: inline-block; width: 13px; height: 13px; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: rt-spin .7s linear infinite; vertical-align: -2px; margin-right: 5px; }
+.rt-upload-toast { position: fixed; bottom: 22px; right: 22px; z-index: 1000; display: flex; align-items: center; background: var(--a-ink); color: #fff; padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 500; box-shadow: 0 10px 30px -8px rgba(0,0,0,.45); }
 .rt-uploading { color: var(--a-bronze); font-weight: 600; }
 
 .rt-editor .ProseMirror { max-width: 760px; margin: 0 auto; padding: 24px 18px; min-height: 360px; outline: none; line-height: 1.7; font-size: 16px; color: var(--a-ink); }
