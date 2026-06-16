@@ -11,14 +11,10 @@ const nextConfig = {
     return [
       // Podcast was retired in favour of the blog; keep old links alive.
       { source: "/podcast", destination: "/writing", permanent: true },
-      // Canonical host: send www to the apex (matches the site URL used everywhere).
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.avaelishealth.com.au" }],
-        destination: "https://avaelishealth.com.au/:path*",
-        permanent: true,
-      },
     ];
+    // NOTE: do NOT add a www<->apex redirect here. Vercel already redirects between
+    // the apex and www at the domain level; a code redirect fights it and causes an
+    // infinite ERR_TOO_MANY_REDIRECTS loop. Set the canonical host in Vercel → Domains.
   },
 };
 
