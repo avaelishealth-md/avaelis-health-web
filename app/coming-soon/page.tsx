@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AvaElis Health · Launching soon",
+  // absolute so the layout's "%s · AvaElis Health" template doesn't double the brand.
+  title: { absolute: "AvaElis Health · Launching soon" },
   robots: { index: false, follow: false },
 };
 
