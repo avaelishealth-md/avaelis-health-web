@@ -27,20 +27,29 @@ export async function POST(req: Request) {
   const tags = ["Clinician", "Source: Talk QR"];
   if (role) tags.push(`Role: ${role}`);
 
-  // Capture the lead (best-effort; the talk capture is the priority).
-  await addContact({
+  // Capturing the lead is the priority at the talk, so fail loud if it doesn't land
+  // (don't tell the clinician "on its way" when nothing was saved).
+  const contact = await addContact({
     email,
     name,
     tags,
     note: role ? `Talk QR signup (${role})` : "Talk QR signup",
   });
+  if (!contact.ok) {
+    console.error("talk-summary: lead capture failed", email, contact.error);
+    return NextResponse.json(
+      { error: "We couldn't register you just now. Please try again in a moment." },
+      { status: 502 },
+    );
+  }
 
-  // Deliver the summary by email (no-op until Resend is configured).
-  await sendEmail({
+  // Deliver the summary by email (no-op if Resend isn't configured yet).
+  const sent = await sendEmail({
     to: email,
     subject: "Your summary from Dr Danny Cai's talk",
     html: talkSummaryEmail({ name, url: SUMMARY_URL }),
   });
 
-  return NextResponse.json({ ok: true, url: SUMMARY_URL });
+  // Tell the client whether the email actually went out, so the success copy is honest.
+  return NextResponse.json({ ok: true, url: SUMMARY_URL, emailed: !!sent.id });
 }

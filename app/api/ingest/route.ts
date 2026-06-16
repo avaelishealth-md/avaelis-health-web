@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import crypto from "crypto";
 import { marked } from "marked";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sanitizeHtml } from "@/lib/sanitize";
@@ -17,7 +18,9 @@ export async function POST(req: Request) {
   if (!secret) {
     return NextResponse.json({ error: "Ingest is not configured." }, { status: 503 });
   }
-  if (req.headers.get("x-ingest-secret") !== secret) {
+  const provided = Buffer.from(req.headers.get("x-ingest-secret") || "");
+  const expected = Buffer.from(secret);
+  if (provided.length !== expected.length || !crypto.timingSafeEqual(provided, expected)) {
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
   }
 

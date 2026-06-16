@@ -10,8 +10,9 @@ export default function MarketingLayout({
 }) {
   return (
     <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <Header />
-      {children}
+      <main id="main">{children}</main>
       <Footer />
       <SiteScripts />
     </>

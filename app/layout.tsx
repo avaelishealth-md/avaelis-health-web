@@ -8,9 +8,13 @@ const TITLE = "AvaElis Health · Longevity Clinic";
 const DESCRIPTION =
   "More years thriving, less years declining. A boutique longevity practice with Dr. Danny Cai.";
 
+// Search-indexable only when explicitly enabled. Set NEXT_PUBLIC_INDEXABLE=true in Vercel
+// at go-live; until then every page is noindex (safe for the temporary domain).
+const INDEXABLE = process.env.NEXT_PUBLIC_INDEXABLE === "true";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: TITLE,
+  title: { default: TITLE, template: "%s · AvaElis Health" },
   description: DESCRIPTION,
   openGraph: {
     title: TITLE,
@@ -27,8 +31,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: ["/assets/danny-about-hero.jpg"],
   },
-  // Pre-launch draft on a temporary domain, keep search engines out until the real go-live on avaelishealth.com.au, then remove this.
-  robots: { index: false, follow: false },
+  robots: INDEXABLE ? undefined : { index: false, follow: false },
 };
 
 export default function RootLayout({

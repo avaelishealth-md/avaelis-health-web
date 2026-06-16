@@ -67,25 +67,25 @@ export async function POST(req: Request) {
       const e = (await put.json().catch(() => ({}))) as { title?: string };
       console.error("Mailchimp member error", put.status, e?.title);
       return NextResponse.json(
-        { error: "We couldn't submit that just now — please email us instead." },
+        { error: "We couldn't submit that just now. Please email us instead." },
         { status: 502 },
       );
     }
 
     // 2) tag by type (Patient / Clinician / Partner / Newsletter) + the source page
-    await mc(`/lists/${LIST_ID}/members/${hash}/tags`, "POST", {
-      tags,
-    });
+    const tagRes = await mc(`/lists/${LIST_ID}/members/${hash}/tags`, "POST", { tags });
+    if (!tagRes.ok) console.error("Mailchimp tag error", tagRes.status, tags.map((t) => t.name));
 
     // 3) keep the enquiry message as a contact note (best-effort)
     if (message) {
-      await mc(`/lists/${LIST_ID}/members/${hash}/notes`, "POST", {
+      const noteRes = await mc(`/lists/${LIST_ID}/members/${hash}/notes`, "POST", {
         note: `Enquiry (${tag}): ${message}`,
       });
+      if (!noteRes.ok) console.error("Mailchimp note error", noteRes.status, email);
     }
 
     return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ error: "Network error — please try again." }, { status: 502 });
+    return NextResponse.json({ error: "Network error. Please try again." }, { status: 502 });
   }
 }

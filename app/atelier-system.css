@@ -427,3 +427,7 @@ a,button,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .btn-f:active,.btn-l:active,.btn-o:active,.tbtn:active,.subscribe a:active,.form button:active,.nbtn:active,.navbook:active{transform:scale(.96)}
   nav.lk a:active,.brand:active,.pageindex a:active{opacity:.55}
 }
+/* a11y: skip link + keyboard focus ring */
+.skip-link{position:fixed;left:-9999px;top:0;z-index:300;background:#9A7536;color:#fff;padding:10px 16px;font-size:14px;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
+:focus-visible{outline:2px solid #9A7536;outline-offset:2px}

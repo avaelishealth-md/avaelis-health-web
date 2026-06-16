@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import NewsletterForm from "@/components/NewsletterForm";
 
 export const metadata: Metadata = {
-  title: "About Dr. Danny Cai · AvaElis Health",
+  title: "About Dr. Danny Cai",
   description:
-    "Dr. Danny Cai, a GP with over 25 years of clinical experience, focused on longevity, preventative health, and human optimisation.",
+    "Dr. Danny Cai, a GP with over 25 years of clinical experience, focused on longevity, preventive health, and human optimisation.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Dr. Danny Cai",
+    description:
+      "A GP with over 25 years of clinical experience, focused on longevity and preventive health.",
+    url: "/about",
+    type: "profile",
+  },
 };
 
 export default function AboutPage() {
@@ -41,7 +49,7 @@ export default function AboutPage() {
           <span className="ov">In his words</span>
           <h2 className="big" style={{ marginTop: "14px" }}>“In a space increasingly shaped by trends, my role is to provide <em>clarity and discernment.</em>”</h2>
           <div className="article" style={{ marginTop: "20px", maxWidth: "none" }}>
-            <p className="lead">I&apos;m Dr Danny Cai, a General Practitioner with over 25 years of clinical experience, focused on longevity, preventative health, and human optimisation.</p>
+            <p className="lead">I&apos;m Dr. Danny Cai, a General Practitioner with over 25 years of clinical experience, focused on longevity, preventive health, and human optimisation.</p>
             <p>AvaElis carries my daughter&apos;s name, combined with the Latin for life, a reflection of how I view this work: not simply extending lifespan, but preserving vitality, clarity, and capability over time.</p>
             <p>My background spans general practice, advanced therapeutics, cosmetic medicine, government advisory, and healthcare innovation. Today, my work is centred on individuals who are often already well, but seeking to optimise how they feel, function, and age. This requires a more precise, proactive approach; one that integrates emerging science with clinical judgement and individual context.</p>
             <p>I focus on what is evidence based, what is promising, and how to apply both in a way that is measured, personalised, and effective.</p>

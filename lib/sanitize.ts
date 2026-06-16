@@ -8,7 +8,7 @@ export function sanitizeHtml(dirty: string): string {
   return sanitizeHtmlLib(dirty || "", {
     allowedTags: [
       "p", "br", "strong", "em", "u", "s",
-      "h1", "h2", "h3", "h4",
+      "h2", "h3", "h4",
       "ul", "ol", "li",
       "blockquote", "a", "img", "figure", "figcaption",
       "code", "pre", "hr",

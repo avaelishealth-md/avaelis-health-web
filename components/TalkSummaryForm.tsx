@@ -17,6 +17,7 @@ export default function TalkSummaryForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   const [link, setLink] = useState("");
+  const [emailed, setEmailed] = useState(false);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -34,9 +35,10 @@ export default function TalkSummaryForm() {
           role: data.get("role"),
         }),
       });
-      const j = (await res.json().catch(() => ({}))) as { error?: string; url?: string };
+      const j = (await res.json().catch(() => ({}))) as { error?: string; url?: string; emailed?: boolean };
       if (!res.ok) throw new Error(j.error || "Something went wrong.");
       if (j.url) setLink(j.url);
+      setEmailed(!!j.emailed);
       setStatus("done");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
@@ -48,15 +50,16 @@ export default function TalkSummaryForm() {
     return (
       <div className="form">
         <p className="lede" style={{ fontSize: 17, margin: "0 0 10px" }}>
-          Thank you, the summary is on its way to your inbox.
+          {emailed
+            ? "Thank you. The summary is on its way to your inbox."
+            : "Thank you. You can read the clinician summary below."}
         </p>
         {link && (
           <p className="fine" style={{ marginTop: 6 }}>
-            You can also{" "}
             <a href={link} style={{ color: "var(--bronze)", textDecoration: "underline" }}>
-              read it here now
+              Read the clinician summary
             </a>
-            . If the email does not arrive, please check your spam folder.
+            {emailed ? ". If the email does not arrive, please check your spam folder." : "."}
           </p>
         )}
       </div>

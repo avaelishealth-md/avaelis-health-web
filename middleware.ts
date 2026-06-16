@@ -1,9 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
+import { isAllowed } from "@/lib/auth/allowlist";
 
-// Pre-launch holding page. Flip COMING_SOON to false and push to take the full site live.
+// Pre-launch holding page. Set COMING_SOON=false in Vercel env to take the full site live.
 // Only the live custom domain is gated — *.vercel.app and localhost always show the full site.
-const COMING_SOON = true;
+const COMING_SOON = process.env.COMING_SOON !== "false";
 const LIVE_DOMAIN = "avaelishealth.com.au";
 
 // Paths reachable even while the coming-soon gate is on (admin/auth/lead-form + infra).
@@ -38,6 +39,13 @@ export async function middleware(req: NextRequest) {
       const url = req.nextUrl.clone();
       url.pathname = "/admin/login";
       url.searchParams.set("next", pathname);
+      return withCookies(response, NextResponse.redirect(url));
+    }
+    // Logged in but not on the allow-list: bounce to login so drafts stay private.
+    if (!isAllowed(user.email)) {
+      const url = req.nextUrl.clone();
+      url.pathname = "/admin/login";
+      url.searchParams.set("error", "not-allowed");
       return withCookies(response, NextResponse.redirect(url));
     }
   }

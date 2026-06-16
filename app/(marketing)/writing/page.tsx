@@ -3,9 +3,15 @@ import NewsletterForm from "@/components/NewsletterForm";
 import { listPublishedPublic } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Writing & Insights · AvaElis Health",
+  title: "Writing & Insights",
   description:
     "Researched writing on longevity and precision wellness from Dr. Danny Cai. The considered view, not medical advice.",
+  alternates: { canonical: "/writing" },
+  openGraph: {
+    title: "Writing & Insights",
+    description: "Researched writing on longevity and precision wellness from Dr. Danny Cai.",
+    url: "/writing",
+  },
 };
 
 // Always render fresh from Supabase (content changes when Danny publishes).
@@ -21,7 +27,7 @@ export default async function WritingPage() {
         <div className="wrap">
           <div className="breadcrumb"><a href="/">Home</a> / Writing</div>
           <span className="ov">Writing &amp; insights</span>
-          <h1>Education-led notes, <em>never hype.</em></h1>
+          <h1>Evidence-led notes, <em>never hype.</em></h1>
           <p className="lede">Researched writing on longevity and precision wellness, the considered view, not medical advice.</p>
         </div>
       </div>
@@ -29,7 +35,7 @@ export default async function WritingPage() {
       {featured && (
         <div className="pad-s wrap">
           <a className="feat-art" href={`/writing/${featured.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-            <div className="imgph">{featured.cover_image ? <img src={featured.cover_image} alt={featured.title} /> : null}</div>
+            <div className="imgph">{featured.cover_image ? <img src={featured.cover_image} alt="" /> : null}</div>
             <div className="ab">
               <span className="cat">Featured{featured.tags?.[0] ? ` · ${featured.tags[0]}` : ""}</span>
               <h2 className="big" style={{ fontSize: "clamp(24px, 6vw, 32px)", margin: "12px 0" }}>{featured.title}</h2>
@@ -47,7 +53,7 @@ export default async function WritingPage() {
           <div className="g3">
             {rest.map((p) => (
               <a key={p.id} className="artcard" href={`/writing/${p.slug}`}>
-                <div className="imgph">{p.cover_image ? <img src={p.cover_image} alt={p.title} /> : null}</div>
+                <div className="imgph">{p.cover_image ? <img src={p.cover_image} alt="" /> : null}</div>
                 <span className="cat">{p.tags?.[0] ?? "Note"}</span>
                 <h3>{p.title}</h3>
                 {p.excerpt && <p>{p.excerpt}</p>}

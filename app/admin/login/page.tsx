@@ -34,6 +34,8 @@ export default function AdminLogin() {
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
+          // Only existing allow-listed users may sign in; unknown emails can't bootstrap an account.
+          shouldCreateUser: false,
           emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
         },
       });

@@ -26,10 +26,20 @@ type Props = {
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const post = await fetchPost(params.slug, searchParams.preview === "1");
-  if (!post) return { title: "Writing · AvaElis Health" };
+  if (!post) return { title: "Writing" };
+  const title = post.seo_title || post.title;
+  const description = post.seo_description || post.excerpt || undefined;
   return {
-    title: `${post.seo_title || post.title} · AvaElis Health`,
-    description: post.seo_description || post.excerpt || undefined,
+    title,
+    description,
+    alternates: { canonical: `/writing/${post.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `/writing/${post.slug}`,
+      type: "article",
+      images: post.cover_image ? [{ url: post.cover_image }] : undefined,
+    },
   };
 }
 
@@ -44,6 +54,12 @@ export default async function PostPage({ params, searchParams }: Props) {
     headline: post.title,
     description: post.seo_description || post.excerpt || undefined,
     author: { "@type": "Person", name: post.author },
+    publisher: {
+      "@type": "Organization",
+      name: "AvaElis Health",
+      logo: { "@type": "ImageObject", url: "https://avaelishealth.com.au/icon.svg" },
+    },
+    mainEntityOfPage: `https://avaelishealth.com.au/writing/${post.slug}`,
     datePublished: post.published_at || post.created_at,
     dateModified: post.updated_at,
     image: post.cover_image || undefined,
@@ -69,7 +85,7 @@ export default async function PostPage({ params, searchParams }: Props) {
       {post.cover_image && (
         <div className="pad-s wrap">
           <div className="imgph" style={{ aspectRatio: "16/9", borderRadius: "18px", overflow: "hidden" }}>
-            <img src={post.cover_image} alt={post.title} />
+            <img src={post.cover_image} alt="" />
           </div>
         </div>
       )}

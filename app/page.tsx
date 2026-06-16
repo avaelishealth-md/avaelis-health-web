@@ -7,6 +7,7 @@ import EnquiryForm from "../components/EnquiryForm";
 export default function HomePage() {
   return (
     <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <header className="nav" id="top">
         <div className="wrap nav-in">
           <a className="brand" href="/#top"><span className="em">Æ</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
@@ -23,7 +24,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      <main>
+      <main id="main">
         <section className="hero-fb">
           <div className="hero-fb-img"><img src="/assets/danny-navy.jpg" alt="Dr. Danny Cai" /></div>
           <div className="hero-fb-scrim"></div>
@@ -107,11 +108,11 @@ export default function HomePage() {
               <div className="jline"></div>
               <div className="jrepeat" aria-hidden="true"></div>
               <span className="jrepeat-lab" aria-hidden="true">Review &amp; refine, on repeat</span>
-              <div className="jn reveal"><div className="dot">1</div><h4>Enquire</h4><p>A short, qualifying enquiry. Your plan starts here.</p></div>
-              <div className="jn reveal"><div className="dot">2</div><h4>Consult</h4><p>An unhurried consult with Dr. Danny. We start here, no waiting on results.</p></div>
-              <div className="jn reveal"><div className="dot">3</div><h4>Measure</h4><p>Diagnostics run in the background to build your honest baseline.</p></div>
-              <div className="jn reveal"><div className="dot">4</div><h4>Plan</h4><p>A personalised plan, built with a team around you.</p></div>
-              <div className="jn reveal"><div className="dot">5</div><h4>Optimise</h4><p>Re-test, review, refine. Never single consults.</p></div>
+              <div className="jn reveal"><div className="dot">1</div><h3>Enquire</h3><p>A short, qualifying enquiry. Your plan starts here.</p></div>
+              <div className="jn reveal"><div className="dot">2</div><h3>Consult</h3><p>An unhurried consult with Dr. Danny. We start here, no waiting on results.</p></div>
+              <div className="jn reveal"><div className="dot">3</div><h3>Measure</h3><p>Diagnostics run in the background to build your honest baseline.</p></div>
+              <div className="jn reveal"><div className="dot">4</div><h3>Plan</h3><p>A personalised plan, built with a team around you.</p></div>
+              <div className="jn reveal"><div className="dot">5</div><h3>Optimise</h3><p>Re-test, review, refine. Never single consults.</p></div>
             </div>
             <div className="flow-cycle reveal d2"><span className="cyc-lab">↻&nbsp;&nbsp;Ongoing, we measure again, and refine</span></div>
           </div>
@@ -123,21 +124,21 @@ export default function HomePage() {
             <div className="gauges">
               <div className="gcol g-strong reveal">
                 <div className="gwrap">
-                  <div className="gauge"><svg width="96" height="96" viewBox="0 0 96 96"><circle cx="48" cy="48" r="42" fill="none" stroke="#463829" strokeWidth="6"/><circle className="arc" cx="48" cy="48" r="42" fill="none" stroke="#C7A86A" strokeWidth="6" strokeLinecap="round" strokeDasharray="263.9" strokeDashoffset="263.9" data-pct="92"/></svg><span className="pc">92</span></div>
+                  <div className="gauge"><svg width="96" height="96" viewBox="0 0 96 96"><circle cx="48" cy="48" r="42" fill="none" stroke="#463829" strokeWidth="6"/><circle className="arc" cx="48" cy="48" r="42" fill="none" stroke="#C7A86A" strokeWidth="6" strokeLinecap="round" strokeDasharray="263.9" strokeDashoffset="263.9" data-pct="92"/></svg><span className="pc">Strong</span></div>
                   <div><h3>Proven</h3><div className="gd">Do these first</div></div>
                 </div>
                 <ul><li>Resistance training</li><li>Cardiorespiratory fitness</li><li>Sleep</li><li>Diet quality</li><li>Creatine</li></ul>
               </div>
               <div className="gcol g-emerging reveal d1">
                 <div className="gwrap">
-                  <div className="gauge"><svg width="96" height="96" viewBox="0 0 96 96"><circle cx="48" cy="48" r="42" fill="none" stroke="#463829" strokeWidth="6"/><circle className="arc" cx="48" cy="48" r="42" fill="none" stroke="#B8924E" strokeWidth="6" strokeLinecap="round" strokeDasharray="263.9" strokeDashoffset="263.9" data-pct="58"/></svg><span className="pc">58</span></div>
+                  <div className="gauge"><svg width="96" height="96" viewBox="0 0 96 96"><circle cx="48" cy="48" r="42" fill="none" stroke="#463829" strokeWidth="6"/><circle className="arc" cx="48" cy="48" r="42" fill="none" stroke="#B8924E" strokeWidth="6" strokeLinecap="round" strokeDasharray="263.9" strokeDashoffset="263.9" data-pct="58"/></svg><span className="pc">Moderate</span></div>
                   <div><h3>Useful tools</h3><div className="gd">Context matters</div></div>
                 </div>
                 <ul><li>Wearables</li><li>CGM</li><li>BMI (use DEXA)</li></ul>
               </div>
               <div className="gcol g-unproven reveal d2">
                 <div className="gwrap">
-                  <div className="gauge"><svg width="96" height="96" viewBox="0 0 96 96"><circle cx="48" cy="48" r="42" fill="none" stroke="#463829" strokeWidth="6"/><circle className="arc" cx="48" cy="48" r="42" fill="none" stroke="#8A7C68" strokeWidth="6" strokeLinecap="round" strokeDasharray="263.9" strokeDashoffset="263.9" data-pct="46"/></svg><span className="pc">46</span></div>
+                  <div className="gauge"><svg width="96" height="96" viewBox="0 0 96 96"><circle cx="48" cy="48" r="42" fill="none" stroke="#463829" strokeWidth="6"/><circle className="arc" cx="48" cy="48" r="42" fill="none" stroke="#8A7C68" strokeWidth="6" strokeLinecap="round" strokeDasharray="263.9" strokeDashoffset="263.9" data-pct="46"/></svg><span className="pc">Early</span></div>
                   <div><h3>Promising</h3><div className="gd">Emerging · supervised</div></div>
                 </div>
                 <ul><li>Emerging therapies</li><li>Full-body MRI</li><li>Epigenetic age tests</li></ul>
@@ -252,6 +253,30 @@ export default function HomePage() {
           <div className="foot-bot"><span>© 2026 AvaElis Health. All rights reserved.</span><span>Privacy · Terms · Medical disclaimer</span></div>
         </div>
       </footer>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalClinic",
+            name: "AvaElis Health",
+            url: "https://avaelishealth.com.au",
+            description:
+              "A boutique longevity practice led by Dr. Danny Cai. Rigorous, evidence-led preventive and longevity medicine.",
+            logo: "https://avaelishealth.com.au/icon.svg",
+            image: "https://avaelishealth.com.au/assets/danny-about-hero.jpg",
+            medicalSpecialty: "PreventiveMedicine",
+            founder: {
+              "@type": "Physician",
+              name: "Dr. Danny Cai",
+              jobTitle: "General Practitioner",
+              sameAs: "https://au.linkedin.com/in/dr-danny-cai-4a7ab093",
+            },
+            sameAs: ["https://au.linkedin.com/in/dr-danny-cai-4a7ab093"],
+          }),
+        }}
+      />
 
       <HomeInteractions />
     </>

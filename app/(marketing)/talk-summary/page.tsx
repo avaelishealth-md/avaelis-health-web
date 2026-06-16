@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import TalkSummaryForm from "@/components/TalkSummaryForm";
 
 export const metadata: Metadata = {
-  title: "Clinician talk summary · AvaElis Health",
+  title: "Clinician talk summary",
   description: "Get the clinician summary of Dr. Danny Cai's talk on peptide therapeutics.",
+  // Intentionally unindexed even after launch — this is the QR landing page, not public content.
   robots: { index: false, follow: false },
 };
 
