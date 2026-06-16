@@ -100,21 +100,19 @@ export default function PostEditor({ post, prevId, nextId }: { post?: Post; prev
 
   return (
     <div className="adm-wrap">
-      {(prevId || nextId) && (
-        <div className="adm-nav">
-          {prevId ? (
-            <a className="adm-btn ghost" href={`/admin/posts/${prevId}`}>Previous post</a>
-          ) : (
-            <span />
-          )}
-          <a className="adm-btn ghost" href="/admin">All posts</a>
-          {nextId ? (
-            <a className="adm-btn ghost" href={`/admin/posts/${nextId}`}>Next post</a>
-          ) : (
-            <span />
-          )}
-        </div>
-      )}
+      <div className="adm-nav">
+        <a className="adm-btn ghost" href="/admin">All posts</a>
+        {(prevId || nextId) && (
+          <div className="adm-nav-pager">
+            {prevId && (
+              <a className="adm-btn ghost" href={`/admin/posts/${prevId}`}>Previous</a>
+            )}
+            {nextId && (
+              <a className="adm-btn ghost" href={`/admin/posts/${nextId}`}>Next</a>
+            )}
+          </div>
+        )}
+      </div>
       <h1>{id ? "Edit post" : "New post"}</h1>
 
       <div className="adm-field">
