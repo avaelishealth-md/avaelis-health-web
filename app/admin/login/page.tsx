@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { safeAdminNext } from "@/lib/auth/safe-next";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -29,7 +30,7 @@ export default function AdminLogin() {
     try {
       const supabase = createClient();
       const params = new URLSearchParams(window.location.search);
-      const next = params.get("next") || "/admin";
+      const next = safeAdminNext(params.get("next"));
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {

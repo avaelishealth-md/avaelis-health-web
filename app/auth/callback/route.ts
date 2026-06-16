@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { isAllowed } from "@/lib/auth/allowlist";
+import { safeAdminNext } from "@/lib/auth/safe-next";
 
 // Exchanges the magic-link code for a session, then enforces the admin allow-list.
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const code = url.searchParams.get("code");
-  const next = url.searchParams.get("next") || "/admin";
+  const next = safeAdminNext(url.searchParams.get("next"));
 
   const loginWith = (err: string) =>
     NextResponse.redirect(new URL(`/admin/login?error=${err}`, url.origin));
