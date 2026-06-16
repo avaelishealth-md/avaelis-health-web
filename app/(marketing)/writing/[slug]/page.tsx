@@ -4,6 +4,7 @@ import { cache } from "react";
 import { getPostBySlug } from "@/lib/posts";
 import { sanitizeHtml } from "@/lib/sanitize";
 import CpdNotice from "@/components/CpdNotice";
+import References from "@/components/References";
 
 // Always render fresh (drafts via ?preview, content changes on publish).
 export const dynamic = "force-dynamic";
@@ -63,6 +64,9 @@ export default async function PostPage({ params, searchParams }: Props) {
     datePublished: post.published_at || post.created_at,
     dateModified: post.updated_at,
     image: post.cover_image || undefined,
+    citation: post.refs?.length
+      ? post.refs.map((r) => ({ "@type": "CreativeWork", name: r.title, url: r.url }))
+      : undefined,
   };
 
   return (
@@ -95,6 +99,7 @@ export default async function PostPage({ params, searchParams }: Props) {
           {post.excerpt && <p className="lead">{post.excerpt}</p>}
           <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.body || "") }} />
         </article>
+        <References refs={post.refs} />
       </div>
 
       {post.tags?.some((t) => t.toLowerCase() === "cpd") && (

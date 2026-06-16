@@ -442,6 +442,21 @@ a,button,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .ts-done .article{margin-top:8px}
 .ts-thanks{font-family:'Spectral';font-size:20px;color:var(--bronze);text-align:center;margin:0 0 24px}
 
+/* References — clinician-grade citation list (verified, carried from the content engine) */
+.refs{max-width:760px;margin:36px auto 0;padding-top:26px;border-top:1px solid var(--line);text-align:left}
+.refs-h{font-family:'Spectral';font-weight:400;font-size:20px;margin:0 0 16px;color:var(--ink)}
+.refs-list{list-style:none;margin:0;padding:0}
+.refs-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.refs-item:last-child{border-bottom:none}
+.refs-num{flex:none;width:26px;height:26px;border-radius:50%;background:#EAE0CD;color:var(--bronze);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.refs-body{flex:1;min-width:0}
+.refs-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#5A3A42;background:rgba(90,58,66,.07);border:1px solid rgba(90,58,66,.18);border-radius:100px;padding:2px 9px;margin-bottom:7px}
+.refs-cite{display:block;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.refs-meta{display:flex;gap:16px;align-items:center;margin-top:7px;flex-wrap:wrap}
+.refs-link{font-size:13px;color:var(--bronze);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.refs-link:hover{color:#80622d}
+.refs-cited{font-size:12px;color:var(--muted)}
+
 /* Mobile: centre content for a balanced phone layout (keep long-form + forms left) */
 @media(max-width:760px){
   .phero{text-align:center}

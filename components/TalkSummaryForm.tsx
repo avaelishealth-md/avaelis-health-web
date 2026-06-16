@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import References from "@/components/References";
+import type { PostRef } from "@/lib/types";
 
 type Status = "idle" | "sending" | "done" | "error";
-type RevealedPost = { title: string; html: string; readMinutes: number };
+type RevealedPost = { title: string; html: string; readMinutes: number; refs?: PostRef[] | null };
 
 const ROLES = [
   "Doctor / GP",
@@ -61,10 +63,13 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
           Thank you{emailed ? ". A copy is also on its way to your inbox" : ""}.
         </p>
         {post ? (
-          <article className="article">
-            <h2 style={{ marginTop: 0 }}>{post.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </article>
+          <>
+            <article className="article">
+              <h2 style={{ marginTop: 0 }}>{post.title}</h2>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </article>
+            <References refs={post.refs} />
+          </>
         ) : (
           <p className="lede" style={{ textAlign: "center" }}>
             We have your details. The clinician summary will be sent to your inbox shortly.

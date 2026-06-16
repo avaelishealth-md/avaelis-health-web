@@ -60,6 +60,7 @@ export async function POST(req: Request) {
         title: summary.title,
         html: sanitizeHtml(summary.body || ""),
         readMinutes: summary.read_minutes ?? 1,
+        refs: summary.refs ?? null,
       }
     : null;
 
