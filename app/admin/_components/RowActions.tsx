@@ -39,6 +39,11 @@ export default function RowActions({
 
   return (
     <div style={{ display: "flex", gap: 8, justifyContent: "flex-end" }}>
+      {status === "published" && (
+        <a className="adm-btn ghost" href={`/writing/${slug}`} target="_blank" rel="noopener">
+          View
+        </a>
+      )}
       <a className="adm-btn ghost" href={`/writing/${slug}?preview=1`} target="_blank" rel="noopener">
         Preview
       </a>

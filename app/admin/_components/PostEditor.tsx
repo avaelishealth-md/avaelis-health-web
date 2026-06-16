@@ -7,7 +7,7 @@ import { savePost } from "../posts/actions";
 import Editor from "./Editor";
 import type { Post } from "@/lib/types";
 
-export default function PostEditor({ post }: { post?: Post }) {
+export default function PostEditor({ post, prevId, nextId }: { post?: Post; prevId?: string; nextId?: string }) {
   const router = useRouter();
   const [id, setId] = useState(post?.id);
   const [title, setTitle] = useState(post?.title ?? "");
@@ -100,6 +100,21 @@ export default function PostEditor({ post }: { post?: Post }) {
 
   return (
     <div className="adm-wrap">
+      {(prevId || nextId) && (
+        <div className="adm-nav">
+          {prevId ? (
+            <a className="adm-btn ghost" href={`/admin/posts/${prevId}`}>Previous post</a>
+          ) : (
+            <span />
+          )}
+          <a className="adm-btn ghost" href="/admin">All posts</a>
+          {nextId ? (
+            <a className="adm-btn ghost" href={`/admin/posts/${nextId}`}>Next post</a>
+          ) : (
+            <span />
+          )}
+        </div>
+      )}
       <h1>{id ? "Edit post" : "New post"}</h1>
 
       <div className="adm-field">
