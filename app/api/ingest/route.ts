@@ -10,7 +10,8 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://avaelishealth.com.au";
 
 // Ingest a generated blog from the content engine as a DRAFT post.
 // Auth: shared secret in the `x-ingest-secret` header (must match INGEST_SECRET).
-// Body: { title, slug?, excerpt?, body_markdown? | body_html?, tags?, audience? }
+// Body: { title, slug?, excerpt?, body_markdown? | body_html?, tags?, audience?,
+//         seo_title?, seo_description? }
 export async function POST(req: Request) {
   const secret = process.env.INGEST_SECRET;
   if (!secret) {
@@ -42,6 +43,8 @@ export async function POST(req: Request) {
     ? (data.tags as unknown[]).map(String).map((s) => s.trim()).filter(Boolean)
     : [];
   const audience = data.audience === "clinician" ? "clinician" : "public";
+  const seoTitle = String(data.seo_title || "").trim() || null;
+  const seoDescription = String(data.seo_description || "").trim() || null;
 
   const supabase = createAdminClient();
 
@@ -64,6 +67,8 @@ export async function POST(req: Request) {
       audience,
       status: "draft",
       tags,
+      seo_title: seoTitle,
+      seo_description: seoDescription,
       read_minutes: readMinutes(body),
       author: "Dr. Danny Cai",
     })
