@@ -138,3 +138,13 @@
 /* publish reads as the commit action (plum), save-draft stays secondary */
 .adm-btn.publish { background: var(--a-plum); border-color: var(--a-plum); }
 .adm-btn.publish:hover { background: #2c1f31; }
+
+/* in-studio guide page */
+.adm-guide .guide-body { max-width: 760px; }
+.adm-guide .guide-body h2 { font-size: 17px; margin: 28px 0 10px; color: var(--a-plum); }
+.adm-guide .guide-body h2:first-child { margin-top: 0; }
+.adm-guide .guide-body p { font-size: 15px; line-height: 1.65; margin: 0 0 12px; color: #3a3340; }
+.adm-guide .guide-body ol, .adm-guide .guide-body ul { font-size: 15px; line-height: 1.65; padding-left: 22px; margin: 0 0 16px; color: #3a3340; }
+.adm-guide .guide-body li { margin: 6px 0; }
+.adm-guide .guide-body code { background: #f1ece2; padding: 2px 6px; border-radius: 5px; font-size: 13px; }
+.adm-guide .guide-note { background: #faf6ef; border-left: 3px solid var(--a-bronze); padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 0 0 14px; }
