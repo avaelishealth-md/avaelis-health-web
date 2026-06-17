@@ -6,6 +6,7 @@ import LinkExt from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import Placeholder from "@tiptap/extension-placeholder";
 import Youtube from "@tiptap/extension-youtube";
+import { TableKit } from "@tiptap/extension-table";
 import { RichImage } from "./RichImage";
 import { useEffect } from "react";
 
@@ -65,6 +66,7 @@ export default function Editor({
       }),
       Youtube.configure({ controls: true, nocookie: true, modestBranding: true }),
       RichImage,
+      TableKit.configure({ table: { resizable: true } }),
     ],
     content: value || "",
     onUpdate: ({ editor }) => onChange(editor.getHTML()),
@@ -139,6 +141,15 @@ export default function Editor({
             {uploading ? (<><span className="rt-spinner" aria-hidden="true" /> Uploading…</>) : "Image"}
           </Tb>
           <Tb title="Embed YouTube video" onClick={insertVideo}>Video</Tb>
+        </div>
+
+        <div className="rt-grp">
+          <Tb title="Insert table" onClick={() => e.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}>Table</Tb>
+          <Tb title="Add column" disabled={!e.isActive("table")} onClick={() => e.chain().focus().addColumnAfter().run()}>+Col</Tb>
+          <Tb title="Delete column" disabled={!e.isActive("table")} onClick={() => e.chain().focus().deleteColumn().run()}>-Col</Tb>
+          <Tb title="Add row" disabled={!e.isActive("table")} onClick={() => e.chain().focus().addRowAfter().run()}>+Row</Tb>
+          <Tb title="Delete row" disabled={!e.isActive("table")} onClick={() => e.chain().focus().deleteRow().run()}>-Row</Tb>
+          <Tb title="Delete table" disabled={!e.isActive("table")} onClick={() => e.chain().focus().deleteTable().run()}>Del table</Tb>
         </div>
 
         <div className="rt-grp">

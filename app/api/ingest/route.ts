@@ -76,43 +76,61 @@ export async function POST(req: Request) {
 
   const supabase = createAdminClient();
 
-  // Unique slug.
-  const base = slugify(String(data.slug || title)) || "post";
-  let slug = base;
-  for (let i = 2; i < 60; i++) {
-    const { data: clash } = await supabase.from("posts").select("id").eq("slug", slug).maybeSingle();
-    if (!clash) break;
-    slug = `${base}-${i}`;
-  }
+  // Idempotent ingest: match on slug. If a post with this slug already exists, UPDATE
+  // it in place so the engine can RE-SEND the same article without creating a duplicate
+  // (and without regenerating). An existing post's status + publish date are preserved,
+  // so re-sending content into an already-published post does not unpublish it.
+  const slug = slugify(String(data.slug || title)) || "post";
+  const content = {
+    title,
+    excerpt,
+    body,
+    audience,
+    tags,
+    seo_title: seoTitle,
+    seo_description: seoDescription,
+    refs,
+    read_minutes: readMinutes(body),
+  };
 
-  const { data: row, error } = await supabase
+  const { data: existing } = await supabase
     .from("posts")
-    .insert({
-      title,
-      slug,
-      excerpt,
-      body,
-      audience,
-      status: "draft",
-      tags,
-      seo_title: seoTitle,
-      seo_description: seoDescription,
-      refs,
-      read_minutes: readMinutes(body),
-      author: "Dr. Danny Cai",
-    })
-    .select("id, slug")
-    .single();
+    .select("id")
+    .eq("slug", slug)
+    .maybeSingle();
 
-  if (error) {
-    console.error("ingest insert error", error.message);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  let row: { id: string; slug: string } | null = null;
+
+  if (existing) {
+    const { data: updated, error } = await supabase
+      .from("posts")
+      .update(content) // status, published_at and author left untouched on re-send
+      .eq("id", existing.id)
+      .select("id, slug")
+      .single();
+    if (error) {
+      console.error("ingest update error", error.message);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+    row = updated;
+  } else {
+    const { data: inserted, error } = await supabase
+      .from("posts")
+      .insert({ ...content, slug, status: "draft", author: "Dr. Danny Cai" })
+      .select("id, slug")
+      .single();
+    if (error) {
+      console.error("ingest insert error", error.message);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+    row = inserted;
   }
 
   return NextResponse.json({
     ok: true,
     id: row.id,
     slug: row.slug,
+    updated: !!existing,
     url: `${SITE}/writing/${row.slug}?preview=1`,
   });
 }
