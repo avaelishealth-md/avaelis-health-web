@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 // (ABN, State/Territory governing law, contact email + postal address).
 const MD = `Last updated: 16 June 2026
 
-These Terms of Use apply to the AvaElis Health website at avaelishealth.com.au (the website). The website is operated by AvaElis Health (ABN [clinic ABN]) (we, us, our). Please read these terms carefully. By accessing or using the website, you agree to be bound by them.
+These Terms of Use apply to the AvaElis Health website at avaelishealth.com.au (the website). The website is operated by AvaElis Health (we, us, our). Please read these terms carefully. By accessing or using the website, you agree to be bound by them.
 
 ## Acceptance of these terms
 
@@ -73,11 +73,11 @@ We may update or amend these Terms of Use from time to time to reflect changes i
 
 ## Governing law
 
-These Terms of Use are governed by the laws of [State or Territory], Australia. You agree to submit to the non-exclusive jurisdiction of the courts of [State or Territory] and the courts of appeal from them in relation to any matter arising from or connected with these terms or your use of the website.
+These Terms of Use are governed by the laws of Australia. You agree to submit to the non-exclusive jurisdiction of the Australian courts and the courts of appeal from them in relation to any matter arising from or connected with these terms or your use of the website.
 
 ## Contact us
 
-If you have any questions about these Terms of Use, please contact us at [privacy contact email] or by post at [clinic postal address].`;
+If you have any questions about these Terms of Use, please contact us at info@avaelishealth.com.au.`;
 
 export default async function TermsPage() {
   const html = sanitizeHtml(await marked.parse(MD));

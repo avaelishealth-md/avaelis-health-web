@@ -23,12 +23,6 @@ AvaElis Health is an Australian boutique longevity and preventive medicine clini
 
 For privacy questions, you can contact us using the details in the "How to contact us" section below.
 
-- Operating name: AvaElis Health
-- Legal entity name: [legal entity name, if different from operating name]
-- ABN: [clinic ABN]
-- Postal address: [clinic postal address]
-- Location: [State or Territory], Australia
-
 ## What personal information we collect
 
 We only collect personal information that is reasonably necessary for our activities. The information we collect through the website depends on how you choose to interact with us.
@@ -122,8 +116,7 @@ We may update this policy from time to time to reflect changes in our practices 
 
 If you have any questions about this policy or about how we handle your personal information, you can contact us at:
 
-- Email: [privacy contact email]
-- Postal address: [clinic postal address]
+- Email: info@avaelishealth.com.au
 
 We will do our best to answer your questions and resolve any concerns.`;
 

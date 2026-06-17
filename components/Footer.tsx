@@ -59,7 +59,7 @@ export default function Footer() {
           consultation.
         </p>
         <div className="foot-bot">
-          <span>© 2026 AvaElis Health. All rights reserved.</span>
+          <span>© 2026 AvaElis Health · <a href="mailto:info@avaelishealth.com.au">info@avaelishealth.com.au</a></span>
           <span>
             <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · Medical disclaimer
           </span>
