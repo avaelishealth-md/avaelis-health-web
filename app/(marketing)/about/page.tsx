@@ -20,7 +20,7 @@ export default function AboutPage() {
     <>
       {/* hero */}
       <div className="phero-fb">
-        <div className="phero-fb-img"><img src="/assets/danny-about-hero.jpg" alt="Dr. Danny Cai" /></div>
+        <div className="phero-fb-img"><img src="/assets/danny-about-banner.jpg" alt="Dr. Danny Cai and his daughter" /></div>
         <div className="phero-fb-scrim"></div>
         <div className="wrap ctr">
           <div className="breadcrumb"><a href="/">Home</a> / About</div>
@@ -43,7 +43,7 @@ export default function AboutPage() {
       </div>
       {/* philosophy / narrative */}
       <div className="pad wrap split rev" style={{ borderTop: "1px solid var(--line)" }}>
-        <div className="imgph" style={{ aspectRatio: "1" }}><img src="/assets/danny-ava.jpg" alt="Dr. Danny Cai walking with his daughter" /><span className="tag">With my daughter</span></div>
+        <div className="imgph" style={{ aspectRatio: "4 / 5" }}><img src="/assets/danny-beach-swing.jpg" alt="Dr. Danny Cai playing with his daughter on the beach" /><span className="tag">With my daughter</span></div>
         <div>
           <div className="rule"></div>
           <span className="ov">In his words</span>

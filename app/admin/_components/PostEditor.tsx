@@ -115,6 +115,7 @@ export default function PostEditor({ post, prevId, nextId }: { post?: Post; prev
       </div>
       <h1>{id ? "Edit post" : "New post"}</h1>
 
+      <div className="adm-card">
       <div className="adm-field">
         <label>Title</label>
         <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Post title" />
@@ -187,12 +188,14 @@ export default function PostEditor({ post, prevId, nextId }: { post?: Post; prev
         <textarea value={seoDesc} onChange={(e) => setSeoDesc(e.target.value)} rows={2} />
       </div>
 
+      </div>
+
       <div className="adm-actions">
-        <button className="adm-btn" type="button" disabled={busy} onClick={() => save(false)}>
-          {busy ? "Saving…" : "Save draft"}
-        </button>
-        <button className="adm-btn" type="button" disabled={busy} onClick={() => save(true)}>
+        <button className="adm-btn publish" type="button" disabled={busy} onClick={() => save(true)}>
           Publish
+        </button>
+        <button className="adm-btn ghost" type="button" disabled={busy} onClick={() => save(false)}>
+          {busy ? "Saving…" : "Save draft"}
         </button>
         {id && slug && (
           <a className="adm-btn ghost" href={`/writing/${slug}?preview=1`} target="_blank" rel="noopener">

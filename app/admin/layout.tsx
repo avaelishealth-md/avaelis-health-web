@@ -20,15 +20,25 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
   return (
     <div className="adm">
-      <div className="adm-bar">
-        <Link className="brand" href="/admin">AvaElis · Studio</Link>
+      <header className="adm-bar">
+        <Link className="brand" href="/admin">
+          <span className="adm-coin" aria-hidden="true">Æ</span>
+          <span className="brand-tx">AvaElis <span className="brand-sub">Studio</span></span>
+        </Link>
         {email && (
-          <span className="who">
-            <span>{email}</span>
-            <a href="/auth/signout">Sign out</a>
-          </span>
+          <>
+            <nav className="adm-links">
+              <Link href="/admin">Posts</Link>
+              <Link href="/admin/posts/new">New post</Link>
+              <a href="/" target="_blank" rel="noopener">View site ↗</a>
+            </nav>
+            <span className="who">
+              <span className="who-email">{email}</span>
+              <a className="who-out" href="/auth/signout">Sign out</a>
+            </span>
+          </>
         )}
-      </div>
+      </header>
       {children}
     </div>
   );
