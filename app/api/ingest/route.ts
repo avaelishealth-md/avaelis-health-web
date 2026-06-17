@@ -69,17 +69,22 @@ export async function POST(req: Request) {
   const tags = Array.isArray(data.tags)
     ? (data.tags as unknown[]).map(String).map((s) => s.trim()).filter(Boolean)
     : [];
-  const audience = data.audience === "clinician" ? "clinician" : "public";
+  // The engine labels clinician-only pieces "professional"; the blog calls them "clinician"
+  // (unlisted). Accept either so professional content isn't silently published as public.
+  const audience =
+    data.audience === "clinician" || data.audience === "professional" ? "clinician" : "public";
   const seoTitle = String(data.seo_title || "").trim() || null;
   const seoDescription = String(data.seo_description || "").trim() || null;
   const refs = cleanRefs(data.references);
 
   const supabase = createAdminClient();
 
-  // Idempotent ingest: match on slug. If a post with this slug already exists, UPDATE
-  // it in place so the engine can RE-SEND the same article without creating a duplicate
-  // (and without regenerating). An existing post's status + publish date are preserved,
-  // so re-sending content into an already-published post does not unpublish it.
+  // Idempotent ingest so the engine can RE-SEND an article in place (no duplicate, no
+  // regeneration). Identify the existing post by a stable `external_id` when the engine
+  // sends one (survives later title/slug edits), otherwise fall back to matching on slug.
+  // On update, slug + status + published_at + author are preserved (re-sending into a
+  // published post does not unpublish it, and its public URL stays stable).
+  const externalId = String(data.external_id || "").trim() || null;
   const slug = slugify(String(data.slug || title)) || "post";
   const content = {
     title,
@@ -93,18 +98,23 @@ export async function POST(req: Request) {
     read_minutes: readMinutes(body),
   };
 
-  const { data: existing } = await supabase
-    .from("posts")
-    .select("id")
-    .eq("slug", slug)
-    .maybeSingle();
+  // The external_id column is only touched when the engine sends one, so this route keeps
+  // working (via slug) even before migration 0005 has been applied.
+  let existing: { id: string } | null = null;
+  if (externalId) {
+    const { data } = await supabase.from("posts").select("id").eq("external_id", externalId).maybeSingle();
+    existing = data;
+  } else {
+    const { data } = await supabase.from("posts").select("id").eq("slug", slug).maybeSingle();
+    existing = data;
+  }
 
   let row: { id: string; slug: string } | null = null;
 
   if (existing) {
     const { data: updated, error } = await supabase
       .from("posts")
-      .update(content) // status, published_at and author left untouched on re-send
+      .update(content)
       .eq("id", existing.id)
       .select("id, slug")
       .single();
@@ -114,9 +124,23 @@ export async function POST(req: Request) {
     }
     row = updated;
   } else {
+    // New post: ensure the slug is unique, then insert as a draft.
+    let uniqueSlug = slug;
+    for (let i = 2; i < 60; i++) {
+      const { data: clash } = await supabase.from("posts").select("id").eq("slug", uniqueSlug).maybeSingle();
+      if (!clash) break;
+      uniqueSlug = `${slug}-${i}`;
+    }
+    const insertData: Record<string, unknown> = {
+      ...content,
+      slug: uniqueSlug,
+      status: "draft",
+      author: "Dr. Danny Cai",
+    };
+    if (externalId) insertData.external_id = externalId;
     const { data: inserted, error } = await supabase
       .from("posts")
-      .insert({ ...content, slug, status: "draft", author: "Dr. Danny Cai" })
+      .insert(insertData)
       .select("id, slug")
       .single();
     if (error) {
