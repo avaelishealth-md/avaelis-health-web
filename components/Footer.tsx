@@ -60,7 +60,9 @@ export default function Footer() {
         </p>
         <div className="foot-bot">
           <span>© 2026 AvaElis Health. All rights reserved.</span>
-          <span>Privacy · Terms · Medical disclaimer</span>
+          <span>
+            <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · Medical disclaimer
+          </span>
         </div>
       </div>
     </footer>
