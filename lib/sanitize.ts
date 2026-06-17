@@ -13,6 +13,7 @@ export function sanitizeHtml(dirty: string): string {
       "blockquote", "a", "img", "figure", "figcaption",
       "code", "pre", "hr",
       "div", "iframe",
+      "table", "thead", "tbody", "tfoot", "tr", "th", "td", "caption", "colgroup", "col",
     ],
     allowedAttributes: {
       a: ["href", "title", "target", "rel"],
@@ -25,6 +26,11 @@ export function sanitizeHtml(dirty: string): string {
       h2: ["style"],
       h3: ["style"],
       h4: ["style"],
+      table: ["class", "style"],
+      th: ["align", "colspan", "rowspan", "scope", "style"],
+      td: ["align", "colspan", "rowspan", "style"],
+      col: ["span", "style"],
+      colgroup: ["span", "style"],
       "*": ["class"],
     },
     allowedStyles: {
