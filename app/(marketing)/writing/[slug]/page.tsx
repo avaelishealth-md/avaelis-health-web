@@ -39,7 +39,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       description,
       url: `/writing/${post.slug}`,
       type: "article",
-      images: post.cover_image ? [{ url: post.cover_image }] : undefined,
+      // og:image is provided by ./opengraph-image.tsx (auto-generated branded card).
     },
   };
 }
