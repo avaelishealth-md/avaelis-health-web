@@ -5,67 +5,89 @@ export default function GuidePage() {
     <div className="adm-wrap adm-guide">
       <div className="adm-page-head">
         <div>
-          <h1>Your blogging guide</h1>
-          <p className="sub">Everything you need to write and publish on your AvaElis site. No tech knowledge required.</p>
+          <h1>Blogging guide</h1>
+          <p className="sub">How to write, format and publish a post. No tech knowledge needed.</p>
         </div>
         <a className="adm-btn ghost" href="/" target="_blank" rel="noopener">View site ↗</a>
       </div>
 
-      <p className="adm-help">
-        <b>The 10-second version:</b> use the <b>Content Engine</b> to draft an article from your notes, it arrives here as a draft, you add a cover image and press <b>Publish</b>. Nothing goes live until you do.
-      </p>
+      <div className="guide-switch">
+        <a className="on" href="/admin/guide">Blogging</a>
+        <a href="/admin/guide/engine">Content Engine</a>
+      </div>
 
       <div className="adm-card guide-body">
-        <h2>1. How to log in</h2>
-        <ol>
-          <li>Go to <code>avaelishealth.com.au/admin</code></li>
-          <li>Enter your email: <b>drdannycai@gmail.com</b></li>
-          <li>Press <b>Send magic link</b>.</li>
-          <li>Open the email and click the login link. You are in. There is no password, you get a fresh link each time, so bookmark the page.</li>
-        </ol>
+        <h2>How a post reaches your site</h2>
+        <p>Most posts start in the <b>Content Engine</b>, which writes the article and drops it here as a <b>draft</b>. You review it, then publish. You can also write one from scratch. Either way, <b>nothing goes live until you press Publish.</b></p>
+        <div className="flow">
+          <div className="flow-step">Your notes<small>or a talk / document</small></div>
+          <div className="flow-arrow">→</div>
+          <div className="flow-step is-engine">Content Engine<small>writes &amp; references it</small></div>
+          <div className="flow-arrow">→</div>
+          <div className="flow-step">Draft in Studio<small>arrives automatically</small></div>
+          <div className="flow-arrow">→</div>
+          <div className="flow-step is-pub">You publish<small>live on your site</small></div>
+        </div>
+        <p className="guide-note">New to the engine? See the <a href="/admin/guide/engine">Content Engine guide</a>. To write by hand instead, press <b>New post</b> and start typing.</p>
 
-        <h2>2. The Studio at a glance</h2>
-        <p>Across the top: <b>Posts</b> (all your articles), <b>New post</b>, <b>View site ↗</b> (opens your live website), and <b>Sign out</b>. Each post shows a thumbnail, its status (Draft or Published) and its audience.</p>
-        <p className="guide-note"><b>Public vs Clinician.</b> <b>Public</b> posts appear on your Writing page for everyone. <b>Clinician</b> posts stay hidden and only open through a direct link you share, which is handy for technical summaries aimed at other doctors.</p>
+        <h2>The editor toolbar</h2>
+        <p>Select some text first, then click a button. Hover any button to see what it does.</p>
 
-        <h2>3. The easy way: the Content Engine</h2>
-        <p>The Content Engine is your AI drafting assistant. Give it rough material, your notes, a talk transcript, or a document, and it writes a polished, referenced article in your voice, checks it against advertising rules, and sends it here as a draft.</p>
-        <ol>
-          <li>Open the engine (ask Jason for your link the first time).</li>
-          <li><b>New submission:</b> paste your notes or upload a document, choose <b>AvaElis Health</b>, pick the audience, and submit.</li>
-          <li><b>Compliance check:</b> it flags anything that breaks Australian advertising rules (the words &ldquo;miracle&rdquo; or &ldquo;cure&rdquo;, naming a prescription medicine, patient testimonials). Soften each one as prompted.</li>
-          <li><b>References:</b> it finds real medical studies. Tick about four strong ones.</li>
-          <li><b>Generate:</b> choose <b>Blog</b> and <b>Standard (about 1,500 words)</b>.</li>
-          <li><b>Review:</b> read it, tweak anything, clear any final flags.</li>
-          <li><b>Approve and deliver:</b> it arrives in your Studio as a draft.</li>
-        </ol>
+        <h3>Headings &amp; text</h3>
+        <div className="feat-grid">
+          <div className="feat-row"><span className="feat-key">H1 H2 H3</span><span className="d">Section headings (H2 for sections, H3 for sub-points)</span></div>
+          <div className="feat-row"><span className="feat-key">P</span><span className="d">Normal paragraph text</span></div>
+          <div className="feat-row"><span className="feat-key">B  I  U</span><span className="d">Bold, italic, underline</span></div>
+          <div className="feat-row"><span className="feat-key">S  &lt;&gt;</span><span className="d">Strikethrough, inline code</span></div>
+        </div>
 
-        <h2>4. The hands-on way: write it yourself</h2>
-        <p>Click <b>New post</b>, add a <b>Title</b>, and write the <b>Body</b>. The toolbar gives you headings, bold, lists, links, images and tables, like a word processor. Then add an <b>Excerpt</b> (the one-line summary shown on your Writing page), a <b>Cover image</b>, the <b>Audience</b>, and optional <b>Tags</b> and <b>SEO</b>. Use <b>Save draft</b> as you go.</p>
+        <h3>Layout</h3>
+        <div className="feat-grid">
+          <div className="feat-row"><span className="feat-key">⯇ ≡ ⯈</span><span className="d">Align left, centre, right</span></div>
+          <div className="feat-row"><span className="feat-key">• List</span><span className="d">Bulleted list</span></div>
+          <div className="feat-row"><span className="feat-key">1. List</span><span className="d">Numbered list</span></div>
+          <div className="feat-row"><span className="feat-key">Quote</span><span className="d">Pull-quote / highlighted line</span></div>
+          <div className="feat-row"><span className="feat-key">HR</span><span className="d">Divider line between sections</span></div>
+          <div className="feat-row"><span className="feat-key">Code</span><span className="d">Code block (rarely needed)</span></div>
+        </div>
 
-        <h2>5. Publishing, the last step for any post</h2>
-        <ol>
-          <li>Open the post and check the cover image, excerpt and audience.</li>
-          <li>Press <b>Preview</b> to see exactly how it will look.</li>
-          <li>Press <b>Publish</b>. It is live on your Writing page within moments.</li>
-        </ol>
-        <p className="guide-note">To change a live post, open it, edit, and Publish again. To take one down, press <b>Unpublish</b> and it returns to draft, nothing is lost.</p>
+        <h3>Insert</h3>
+        <div className="feat-grid">
+          <div className="feat-row"><span className="feat-key">Link</span><span className="d">Turn selected text into a link</span></div>
+          <div className="feat-row"><span className="feat-key">Image</span><span className="d">Upload a photo from your computer</span></div>
+          <div className="feat-row"><span className="feat-key">Video</span><span className="d">Embed a YouTube video (paste its link)</span></div>
+        </div>
 
-        <h2>6. Five habits for great posts</h2>
+        <h3>Tables</h3>
+        <div className="feat-grid">
+          <div className="feat-row"><span className="feat-key">Table</span><span className="d">Insert a table (starts 3×3 with a header row)</span></div>
+          <div className="feat-row"><span className="feat-key">+Col -Col</span><span className="d">Add or remove a column</span></div>
+          <div className="feat-row"><span className="feat-key">+Row -Row</span><span className="d">Add or remove a row</span></div>
+          <div className="feat-row"><span className="feat-key">Del table</span><span className="d">Remove the whole table</span></div>
+        </div>
+        <p className="guide-note"><b>Tip:</b> click inside a table first, then the +Col / +Row buttons switch on. Drag a column edge to resize it.</p>
+
+        <h3>Safety net</h3>
+        <div className="feat-grid">
+          <div className="feat-row"><span className="feat-key">↶  ↷</span><span className="d">Undo / redo</span></div>
+          <div className="feat-row"><span className="feat-key">words</span><span className="d">Live word count &amp; read time, bottom of the editor</span></div>
+        </div>
+
+        <h2>The fields around the article</h2>
         <ul>
-          <li><b>Always Preview before you Publish.</b></li>
-          <li><b>No em dashes.</b> They read as &ldquo;AI wrote this&rdquo;. Use a comma or a full stop instead. The engine sometimes adds them, so a quick read-through catches them.</li>
-          <li><b>Glance at the references</b> before publishing. They are real studies, but a 30-second check that each one is right is worth it.</li>
-          <li><b>Never name a prescription medicine or promise a &ldquo;cure&rdquo;.</b> The compliance check guards this, but keep it in mind for anything you type yourself.</li>
-          <li><b>Use landscape cover photos.</b> They crop best on the Writing page.</li>
+          <li><b>Title</b> &amp; <b>Excerpt</b> — the headline and the one-line summary shown on your Writing page.</li>
+          <li><b>Cover image</b> — Upload a landscape photo (it crops best).</li>
+          <li><b>Audience</b> — <b>Public</b> shows on your Writing page; <b>Clinician</b> stays unlisted (direct link only).</li>
+          <li><b>Tags</b> &amp; <b>SEO</b> — optional; help people find the article on Google.</li>
         </ul>
 
-        <h2>7. If something goes wrong</h2>
-        <ul>
-          <li>No login email: check your spam folder, then request another link.</li>
-          <li>A post is not showing on the Writing page: check its audience is <b>Public</b> and its status is <b>Published</b>.</li>
-          <li>Anything else: message Jason.</li>
-        </ul>
+        <h2>Publishing</h2>
+        <ol>
+          <li><b>Save draft</b> as you go (nothing is public yet).</li>
+          <li><b>Preview</b> to see exactly how it will look.</li>
+          <li><b>Publish</b> when you are happy. It is live in moments.</li>
+        </ol>
+        <p className="guide-note">To change a live post: open it, edit, Publish again. To take one down: <b>Unpublish</b> (it returns to draft). And <b>no em dashes</b> ( — ); a comma or full stop reads more human.</p>
       </div>
     </div>
   );
