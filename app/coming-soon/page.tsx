@@ -87,7 +87,7 @@ export default function ComingSoon() {
             margin: 0,
           }}
         >
-          Boutique longevity medicine with Dr.&nbsp;Danny Cai. More years thriving,
+          Precision longevity medicine with Dr.&nbsp;Danny Cai. More years thriving,
           less years declining.
         </p>
 

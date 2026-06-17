@@ -31,7 +31,7 @@ export default function HomePage() {
           <div className="wrap hero-fb-in">
             <div className="reveal">
               <h1>More years <em>thriving</em>, less years declining.</h1>
-              <p className="lede">A boutique longevity practice, led personally by a credentialled doctor. Rigorous, evidence-led, the considered alternative to hype.</p>
+              <p className="lede">A precision longevity practice, led personally by a credentialled doctor. Rigorous, evidence-led, the considered alternative to hype.</p>
               <div className="acts">
                 <a href="/#enquire" className="btn btn-f">Book a consultation</a>
               </div>
@@ -241,7 +241,7 @@ export default function HomePage() {
           <div className="foot-top">
             <div>
               <a className="brand" href="/#top"><span className="em" style={{ background: "var(--bronze-l)", color: "var(--ink)" }}>Æ</span><span>AvaElis Health<span className="sub">Longevity Clinic</span></span></a>
-              <p style={{ fontSize: "14px", fontWeight: "300", marginTop: "14px", maxWidth: "24em", color: "#D5C8B4" }}>More years thriving, less years declining. A boutique longevity practice, Dr. Danny Cai.</p>
+              <p style={{ fontSize: "14px", fontWeight: "300", marginTop: "14px", maxWidth: "24em", color: "#D5C8B4" }}>More years thriving, less years declining. A precision longevity practice, Dr. Danny Cai.</p>
             </div>
             <div className="foot-cols">
               <div className="fcol"><p className="fcol-h">Practice</p><a href="/#services">Services</a><a href="/#approach">The Science</a><a href="/#index">Evidence Index</a><a href="/about">Dr. Danny</a></div>
@@ -263,7 +263,7 @@ export default function HomePage() {
             name: "AvaElis Health",
             url: "https://avaelishealth.com.au",
             description:
-              "A boutique longevity practice led by Dr. Danny Cai. Rigorous, evidence-led preventive and longevity medicine.",
+              "A precision longevity practice led by Dr. Danny Cai. Rigorous, evidence-led preventive and longevity medicine.",
             logo: "https://avaelishealth.com.au/icon.svg",
             image: "https://avaelishealth.com.au/assets/danny-about-hero.jpg",
             medicalSpecialty: "PreventiveMedicine",

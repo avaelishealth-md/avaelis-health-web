@@ -19,7 +19,7 @@ We handle personal information in accordance with the Privacy Act 1988 (Cth) and
 
 ## Who we are
 
-AvaElis Health is an Australian boutique longevity and preventive medicine clinic led by Dr Danny Cai (GP, FRACGP). Our website is an information and enquiry resource. Visitors can read articles and submit an enquiry, and we then respond personally to arrange a consultation where appropriate. We do not sell products or take payment through this website.
+AvaElis Health is an Australian precision longevity and preventive medicine clinic led by Dr Danny Cai (GP, FRACGP). Our website is an information and enquiry resource. Visitors can read articles and submit an enquiry, and we then respond personally to arrange a consultation where appropriate. We do not sell products or take payment through this website.
 
 For privacy questions, you can contact us using the details in the "How to contact us" section below.
 

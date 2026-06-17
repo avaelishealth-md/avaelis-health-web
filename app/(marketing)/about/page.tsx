@@ -35,7 +35,7 @@ export default function AboutPage() {
       {/* credentials */}
       <div className="pad-s wrap">
         <div className="creds">
-          <div className="cred"><b>25 yrs</b><span>In clinical general practice</span></div>
+          <div className="cred"><b>25 yrs</b><span>In clinical practice</span></div>
           <div className="cred"><b>Gov.</b><span>Australian Government medical advisor</span></div>
           <div className="cred"><b>FRACGP</b><span>RACGP Fellow</span></div>
           <div className="cred"><b>MBBS</b><span>Medicine &amp; Surgery</span></div>
