@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     images: ["/assets/danny-about-hero.jpg"],
   },
   robots: INDEXABLE ? undefined : { index: false, follow: false },
+  verification: { google: "Kf87oMD3TvkYNJE4_bvqDQweK8o8LocVTtJso4DVJ3A" },
 };
 
 export default function RootLayout({
