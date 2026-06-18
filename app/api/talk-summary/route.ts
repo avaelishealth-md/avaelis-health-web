@@ -62,7 +62,12 @@ export async function POST(req: Request) {
   const sent = await sendEmail({
     to: email,
     subject: "Your copy of Dr. Danny Cai's talk summary",
-    html: talkSummaryEmail({ name, title: post?.title, summaryHtml: post?.html }),
+    html: talkSummaryEmail({
+      name,
+      title: post?.title,
+      summaryHtml: post?.html,
+      fullUrl: "https://www.avaelishealth.com.au/talk-summary",
+    }),
   });
 
   return NextResponse.json({ ok: true, emailed: !!sent.id, post });
