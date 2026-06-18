@@ -416,6 +416,8 @@ footer .brand{color:#fff}footer .brand .sub{color:#9A8C76}
   .artcard p{display:none}
   .feat-art .ab{padding:24px 22px 28px}
   .form .field label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  /* ...but keep the talk-summary (QR landing) form labels visible on mobile */
+  .ts-form .field label{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}
   .form .field input{padding:15px}
   .g3{gap:30px}
 }

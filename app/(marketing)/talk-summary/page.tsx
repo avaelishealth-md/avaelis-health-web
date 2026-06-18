@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { getTalkSummaryPost } from "@/lib/posts";
 import TalkSummaryForm from "@/components/TalkSummaryForm";
 
-// Fetch fresh so the gated summary appears as soon as Danny saves it.
-export const dynamic = "force-dynamic";
+// Cached (ISR) so a burst of QR scans doesn't read the database on every page load. The teaser
+// refreshes within this window; the gated reveal is always fresh (server-side, on submit).
+export const revalidate = 600;
 
 export const metadata: Metadata = {
   title: "Clinician talk summary",

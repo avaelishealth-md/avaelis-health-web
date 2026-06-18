@@ -11,6 +11,11 @@ export const dynamic = "force-dynamic";
 
 const fetchPost = cache((slug: string, preview: boolean) => getPostBySlug(slug, preview));
 
+// The talk-summary post is delivered ONLY through the /talk-summary email gate. It must never be
+// readable at its public /writing/<slug> URL, whatever its draft/published status (which can change).
+// Authed admin preview (?preview=1) still works for checking it.
+const GATED_SLUG = process.env.TALK_SUMMARY_SLUG || "clinical-applications";
+
 function fmtDate(iso: string | null): string {
   if (!iso) return "";
   return new Date(iso).toLocaleDateString("en-AU", {
@@ -26,7 +31,9 @@ type Props = {
 };
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const post = await fetchPost(params.slug, searchParams.preview === "1");
+  const preview = searchParams.preview === "1";
+  if (params.slug === GATED_SLUG && !preview) return { title: "Writing", robots: { index: false, follow: false } };
+  const post = await fetchPost(params.slug, preview);
   if (!post) return { title: "Writing" };
   const title = post.seo_title || post.title;
   const description = post.seo_description || post.excerpt || undefined;
@@ -46,6 +53,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function PostPage({ params, searchParams }: Props) {
   const preview = searchParams.preview === "1";
+  if (params.slug === GATED_SLUG && !preview) notFound();
   const post = await fetchPost(params.slug, preview);
   if (!post) notFound();
 
