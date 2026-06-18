@@ -8,9 +8,9 @@ const TITLE = "AvaElis Health · Longevity Clinic";
 const DESCRIPTION =
   "More years thriving, less years declining. A precision longevity practice with Dr. Danny Cai.";
 
-// Search-indexable only when explicitly enabled. Set NEXT_PUBLIC_INDEXABLE=true in Vercel
-// at go-live; until then every page is noindex (safe for the temporary domain).
-const INDEXABLE = process.env.NEXT_PUBLIC_INDEXABLE === "true";
+// Index the real production deployment only; preview builds and local dev stay noindex
+// (avoids duplicate content on *.vercel.app). VERCEL_ENV is set automatically by Vercel.
+const INDEXABLE = process.env.VERCEL_ENV === "production";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

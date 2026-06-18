@@ -2,9 +2,9 @@ import { NextResponse, type NextRequest } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
 import { isAllowed } from "@/lib/auth/allowlist";
 
-// Pre-launch holding page. Set COMING_SOON=false in Vercel env to take the full site live.
+// Live by default. Set COMING_SOON=true in Vercel env to re-enable the pre-launch holding page.
 // Only the live custom domain is gated — *.vercel.app and localhost always show the full site.
-const COMING_SOON = process.env.COMING_SOON !== "false";
+const COMING_SOON = process.env.COMING_SOON === "true";
 const LIVE_DOMAIN = "avaelishealth.com.au";
 
 // Paths reachable even while the coming-soon gate is on (admin/auth/lead-form + infra).
