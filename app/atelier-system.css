@@ -330,6 +330,7 @@ h1 em,h2 em,h3 em,h4 em,h5 em,blockquote em,.man-q em,.canvas-head h1 em,h2.big 
   .wrap{padding:0 22px}
   .pad{padding-top:50px;padding-bottom:50px}
   .pad-s{padding-top:38px;padding-bottom:38px}
+  .ts-top{padding-top:20px;padding-bottom:40px}
   .phero{padding:44px 0 38px}
   .phero h1{font-size:34px}
   .phero-fb{min-height:440px}
@@ -436,6 +437,8 @@ a,button,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .ts-hero{text-align:center}
 .ts-wrap{text-align:center}
 .ts-form{max-width:460px;margin:0 auto;text-align:left}
+.ts-top{padding-top:46px;padding-bottom:56px}
+.ts-form .ts-form-ov{text-align:center;margin-bottom:10px}
 .ts-form-h{font-family:'Spectral';font-weight:400;font-size:22px;margin:0 0 6px;text-align:center}
 .ts-form-sub{font-size:14.5px;color:var(--ink-2);font-weight:300;line-height:1.55;margin:0 0 18px;text-align:center}
 .ts-done{max-width:760px;margin:0 auto;text-align:left}

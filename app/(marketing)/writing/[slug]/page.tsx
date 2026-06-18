@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { cache } from "react";
 import { getPostBySlug } from "@/lib/posts";
-import { sanitizeHtml } from "@/lib/sanitize";
+import { sanitizeHtml, stripDuplicateLede } from "@/lib/sanitize";
 import CpdNotice from "@/components/CpdNotice";
 import References from "@/components/References";
 
@@ -97,7 +97,7 @@ export default async function PostPage({ params, searchParams }: Props) {
       <div className="pad-s wrap">
         <article className="article">
           {post.excerpt && <p className="lead">{post.excerpt}</p>}
-          <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.body || "") }} />
+          <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(stripDuplicateLede(post.body || "", post.title)) }} />
         </article>
         <References refs={post.refs} />
       </div>

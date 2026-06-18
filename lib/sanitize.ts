@@ -54,3 +54,22 @@ export function sanitizeHtml(dirty: string): string {
     },
   });
 }
+
+// Some content-engine bodies open by repeating the title, an audience notice, and a
+// keynote attribution — all of which the page header already shows. If the lede
+// (everything before the first heading) duplicates the title or is that boilerplate,
+// drop it so the body starts at the first real section. Bodies whose opening is genuine
+// intro prose are left untouched, so this is a no-op for normal posts.
+export function stripDuplicateLede(html: string, title?: string | null): string {
+  if (!html) return html;
+  const firstHeading = html.search(/<h[1-4][\s>]/i);
+  if (firstHeading <= 0) return html;
+  const norm = (s: string) =>
+    s.replace(/<[^>]+>/g, " ").replace(/[^a-z0-9\s]/gi, " ").replace(/\s+/g, " ").trim().toLowerCase();
+  const ledeText = norm(html.slice(0, firstHeading));
+  const t = title ? norm(title) : "";
+  const redundant =
+    (t.length > 0 && ledeText.includes(t)) ||
+    ledeText.includes("intended for health professionals");
+  return redundant ? html.slice(firstHeading) : html;
+}

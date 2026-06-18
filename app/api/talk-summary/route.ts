@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { addContact } from "@/lib/mailchimp";
 import { sendEmail, talkSummaryEmail } from "@/lib/email";
 import { getTalkSummaryPost } from "@/lib/posts";
-import { sanitizeHtml } from "@/lib/sanitize";
+import { sanitizeHtml, stripDuplicateLede } from "@/lib/sanitize";
 
 export const runtime = "nodejs";
 
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
   const post = summary
     ? {
         title: summary.title,
-        html: sanitizeHtml(summary.body || ""),
+        html: sanitizeHtml(stripDuplicateLede(summary.body || "", summary.title)),
         readMinutes: summary.read_minutes ?? 1,
         refs: summary.refs ?? null,
       }

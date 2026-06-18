@@ -15,25 +15,10 @@ export const metadata: Metadata = {
 export default async function TalkSummaryPage() {
   const post = await getTalkSummaryPost();
 
+  // No page hero — the form leads so it sits above the fold (the QR audience is on mobile).
   return (
-    <>
-      <div className="phero ts-hero">
-        <div className="wrap">
-          <span className="ov">For clinicians · Lifestyle Health Summit 2026</span>
-          <h1>
-            Dr. Danny&apos;s talk, <em>the full clinical summary.</em>
-          </h1>
-          <p className="lede">
-            Longevity medicine without the hype: the diagnostics worth doing, where peptides actually
-            sit, and the evidence behind it, with every reference. Enter your details to read it now,
-            and we&apos;ll email you a copy.
-          </p>
-        </div>
-      </div>
-
-      <div className="pad-s wrap ts-wrap">
-        <TalkSummaryForm teaser={post?.excerpt ?? null} />
-      </div>
-    </>
+    <div className="wrap ts-top">
+      <TalkSummaryForm teaser={post?.excerpt ?? null} />
+    </div>
   );
 }

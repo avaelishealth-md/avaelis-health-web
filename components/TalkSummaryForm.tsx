@@ -98,10 +98,10 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
 
   return (
     <form className="form ts-form" onSubmit={onSubmit}>
-      <h2 className="ts-form-h">Unlock the full clinician summary</h2>
+      <span className="ov ts-form-ov">For clinicians · Lifestyle Health Summit 2026</span>
+      <h2 className="ts-form-h">Get Dr. Danny&apos;s full talk summary</h2>
       <p className="ts-form-sub">
-        The complete evidence summary from Dr. Danny&apos;s talk, with every reference, opens here the
-        moment you enter your details. We&apos;ll email you a copy and your 1-hour RACGP CPD option.
+        The complete evidence summary, with every reference, opens the moment you enter your details.
       </p>
       <div className="field">
         <label htmlFor="ts-name">Full name</label>
