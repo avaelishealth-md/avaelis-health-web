@@ -34,3 +34,6 @@ Thumbs.db
 
 # local-only working artifacts (not for deploy)
 public/logos.html
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
