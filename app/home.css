@@ -559,7 +559,7 @@
     .door .lk{display:inline-block}
     .journey .jn,.journey .jn:nth-child(odd),.journey .jn:nth-child(even){padding:0 0 30px 0;text-align:center}
     .journey .jn .dot,.journey .jn:nth-child(odd) .dot,.journey .jn:nth-child(even) .dot{position:static;margin:0 auto 10px}
-    .journey .jline,.journey .jrepeat,.journey .jrepeat-lab{display:none}
+    .journey .track::before,.journey .jline,.journey .jrepeat,.journey .jrepeat-lab{display:none!important}
     .flow-cycle{text-align:center}
     .enq-in>.reveal,.enq-in .ov{text-align:center}
     .filters-h,.filt{text-align:center}
