@@ -26,7 +26,7 @@ export default function Footer() {
                 color: "#D5C8B4",
               }}
             >
-              More years thriving, less years declining. A boutique longevity
+              More years thriving, less years declining. A precision longevity
               practice, Dr. Danny Cai.
             </p>
           </div>
