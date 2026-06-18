@@ -250,7 +250,7 @@ export default function HomePage() {
             </div>
           </div>
           <p className="disclaim">AvaElis Health provides general longevity and preventive care and is not a substitute for emergency or acute treatment. Public content is general education, not individual medical advice. No prescription medicines are advertised; personalised treatment follows clinical consultation.</p>
-          <div className="foot-bot"><span>© 2026 AvaElis Health · <a href="mailto:info@avaelishealth.com.au">info@avaelishealth.com.au</a></span><span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · Medical disclaimer</span></div>
+          <div className="foot-bot"><span>© 2026 AvaElis Health · <a href="mailto:info@avaelishealth.com.au">info@avaelishealth.com.au</a></span><span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span></div>
         </div>
       </footer>
 

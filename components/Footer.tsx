@@ -61,7 +61,7 @@ export default function Footer() {
         <div className="foot-bot">
           <span>© 2026 AvaElis Health · <a href="mailto:info@avaelishealth.com.au">info@avaelishealth.com.au</a></span>
           <span>
-            <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · Medical disclaimer
+            <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link>
           </span>
         </div>
       </div>
