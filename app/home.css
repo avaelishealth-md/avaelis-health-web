@@ -309,6 +309,8 @@
   .fcol a:hover{color:#fff}
   .disclaim{font-size:12.5px;color:#9A8C76;font-style:italic;font-weight:300;max-width:62em;margin-top:18px;line-height:1.7}
   .foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:22px;font-size:11.5px;letter-spacing:.04em;color:#857761}
+  .foot-bot a{color:#A89A82;text-decoration:none;transition:color .2s}
+  .foot-bot a:hover{color:#fff}
 
   @media(max-width:980px){
     .hero-in,.svc-grid,.meet-in,.enq-in,.gauges,.triad{grid-template-columns:1fr;gap:40px}
