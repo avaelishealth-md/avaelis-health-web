@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Clinician talk summary",
-  description: "Get the clinician summary of Dr. Danny Cai's talk on peptide therapeutics.",
+  description: "The full clinician summary of Dr. Danny Cai's Lifestyle Health Summit talk on longevity medicine, with references.",
   // Intentionally unindexed even after launch — this is the QR landing page, not public content.
   robots: { index: false, follow: false },
 };
@@ -19,13 +19,14 @@ export default async function TalkSummaryPage() {
     <>
       <div className="phero ts-hero">
         <div className="wrap">
-          <span className="ov">For clinicians</span>
+          <span className="ov">For clinicians · Lifestyle Health Summit 2026</span>
           <h1>
-            Dr. Danny&apos;s talk, <em>summarised for clinicians.</em>
+            Dr. Danny&apos;s talk, <em>the full clinical summary.</em>
           </h1>
           <p className="lede">
-            The evidence, classifications and regulatory considerations from the talk. Enter your
-            details to read it here, and we&apos;ll email you a copy too.
+            Longevity medicine without the hype: the diagnostics worth doing, where peptides actually
+            sit, and the evidence behind it, with every reference. Enter your details to read it now,
+            and we&apos;ll email you a copy.
           </p>
         </div>
       </div>

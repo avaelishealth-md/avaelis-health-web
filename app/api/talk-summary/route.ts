@@ -20,10 +20,14 @@ export async function POST(req: Request) {
 
   const name = String(data.name || "").trim().slice(0, 80);
   const email = String(data.email || "").trim().toLowerCase();
+  const phone = String(data.phone || "").trim().slice(0, 40);
   const role = String(data.role || "").trim().slice(0, 60);
 
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+  }
+  if (phone.replace(/\D/g, "").length < 8) {
+    return NextResponse.json({ error: "Please enter a valid mobile number." }, { status: 400 });
   }
 
   const tags = ["Clinician", "Source: Talk QR"];
@@ -34,8 +38,9 @@ export async function POST(req: Request) {
   const contact = await addContact({
     email,
     name,
+    phone,
     tags,
-    note: role ? `Talk QR signup (${role})` : "Talk QR signup",
+    note: `Talk QR signup${role ? ` (${role})` : ""}${phone ? ` · ${phone}` : ""}`,
   });
   if (!contact.ok) {
     console.error("talk-summary: lead capture failed", email, contact.error);

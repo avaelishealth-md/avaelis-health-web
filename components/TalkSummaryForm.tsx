@@ -37,6 +37,7 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
         body: JSON.stringify({
           name: data.get("name"),
           email: data.get("email"),
+          phone: data.get("phone"),
           role: data.get("role"),
         }),
       });
@@ -69,6 +70,18 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </article>
             <References refs={post.refs} />
+            <div style={{ background: "var(--plum)", borderRadius: 14, padding: "26px 22px", marginTop: 30, textAlign: "center" }}>
+              <span className="ov" style={{ color: "var(--bronze-l)" }}>Earn 1 RACGP CPD hour</span>
+              <h3 style={{ color: "#fff", fontSize: "22px", margin: "10px 0 10px" }}>
+                Go further: the accredited longevity CPD course
+              </h3>
+              <p style={{ color: "var(--muted-l)", maxWidth: "36em", margin: "0 auto 18px" }}>
+                Dr. Danny Cai&apos;s RACGP-accredited education for clinicians (CPD Activity 1631161,
+                Educational Activities, 1 hour), delivered with Medihuanna. Evidence-led longevity you
+                can use in practice.
+              </p>
+              <a className="btn btn-f" href="/#education">Explore the CPD course</a>
+            </div>
           </>
         ) : (
           <p className="lede" style={{ textAlign: "center" }}>
@@ -85,9 +98,10 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
 
   return (
     <form className="form ts-form" onSubmit={onSubmit}>
-      <h2 className="ts-form-h">Read the clinician summary</h2>
+      <h2 className="ts-form-h">Unlock the full clinician summary</h2>
       <p className="ts-form-sub">
-        {teaser || "Enter your details to open the summary here. We'll also email you a copy."}
+        The complete evidence summary from Dr. Danny&apos;s talk, with every reference, opens here the
+        moment you enter your details. We&apos;ll email you a copy and your 1-hour RACGP CPD option.
       </p>
       <div className="field">
         <label htmlFor="ts-name">Full name</label>
@@ -96,6 +110,10 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
       <div className="field">
         <label htmlFor="ts-email">Email</label>
         <input id="ts-email" name="email" type="email" placeholder="you@clinic.com" required />
+      </div>
+      <div className="field">
+        <label htmlFor="ts-phone">Mobile</label>
+        <input id="ts-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="04xx xxx xxx" required />
       </div>
       <div className="field">
         <label htmlFor="ts-role">I&apos;m a</label>

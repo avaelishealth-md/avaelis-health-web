@@ -23,6 +23,7 @@ function mc(path: string, method: string, body?: unknown) {
 export async function addContact(opts: {
   email: string;
   name?: string;
+  phone?: string;
   tags?: string[];
   note?: string;
 }): Promise<{ ok: boolean; error?: string }> {
@@ -33,7 +34,10 @@ export async function addContact(opts: {
     const put = await mc(`/lists/${LIST_ID}/members/${hash}`, "PUT", {
       email_address: email,
       status_if_new: "subscribed",
-      merge_fields: opts.name ? { FNAME: opts.name } : undefined,
+      merge_fields: {
+        ...(opts.name ? { FNAME: opts.name } : {}),
+        ...(opts.phone ? { PHONE: opts.phone } : {}),
+      },
     });
     if (!put.ok && put.status !== 200) {
       const e = (await put.json().catch(() => ({}))) as { title?: string };
