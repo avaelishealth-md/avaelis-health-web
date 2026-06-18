@@ -6,10 +6,6 @@ import { sanitizeHtml, stripDuplicateLede } from "@/lib/sanitize";
 
 export const runtime = "nodejs";
 
-// Where the confirmation email points back to. The summary itself is revealed inline on
-// /talk-summary after signup, so this stays a page that always exists (no 404). Override via env.
-const SUMMARY_URL = process.env.TALK_SUMMARY_URL || "https://www.avaelishealth.com.au/talk-summary";
-
 export async function POST(req: Request) {
   let data: Record<string, unknown>;
   try {
@@ -50,15 +46,7 @@ export async function POST(req: Request) {
     );
   }
 
-  // Email a copy too (no-op if Resend isn't configured yet).
-  const sent = await sendEmail({
-    to: email,
-    subject: "Your summary from Dr Danny Cai's talk",
-    html: talkSummaryEmail({ name, url: SUMMARY_URL }),
-  });
-
-  // Reveal the gated summary inline now that the lead is captured. Read via the service
-  // role so it can be an unlisted draft; body is sanitised before it leaves the server.
+  // Read the gated summary (service role, so it can be an unlisted draft); sanitised before use.
   const summary = await getTalkSummaryPost();
   const post = summary
     ? {
@@ -68,6 +56,14 @@ export async function POST(req: Request) {
         refs: summary.refs ?? null,
       }
     : null;
+
+  // Email the clinician their own copy of the summary plus the CPD hook (no-op until Resend is
+  // configured). Only talk-summary signups reach this route, so no other page receives it.
+  const sent = await sendEmail({
+    to: email,
+    subject: "Your copy of Dr. Danny Cai's talk summary",
+    html: talkSummaryEmail({ name, title: post?.title, summaryHtml: post?.html }),
+  });
 
   return NextResponse.json({ ok: true, emailed: !!sent.id, post });
 }
