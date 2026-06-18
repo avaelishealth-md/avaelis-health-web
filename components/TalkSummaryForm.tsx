@@ -70,6 +70,20 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </article>
             <References refs={post.refs} />
+            <div style={{ background: "var(--plum)", borderRadius: 14, padding: "26px 22px", marginTop: 30, textAlign: "center" }}>
+              <span className="ov" style={{ color: "var(--bronze-l)" }}>Earn 1 RACGP CPD hour</span>
+              <h3 style={{ color: "#fff", fontSize: "22px", margin: "10px 0 10px" }}>
+                Go further: the accredited longevity CPD course
+              </h3>
+              <p style={{ color: "var(--muted-l)", maxWidth: "36em", margin: "0 auto 18px" }}>
+                Dr. Danny Cai&apos;s RACGP-accredited education for clinicians (CPD Activity 1631161,
+                Educational Activities, 1 hour), delivered with Medihuanna. Evidence-led longevity you
+                can use in practice.
+              </p>
+              <a className="btn btn-f" href="/#education" target="_blank" rel="noopener noreferrer">
+                Explore the CPD course
+              </a>
+            </div>
           </>
         ) : (
           <p className="lede" style={{ textAlign: "center" }}>
