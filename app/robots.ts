@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://avaelishealth.com.au";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://www.avaelishealth.com.au";
 
 export default function robots(): MetadataRoute.Robots {
   // Keep preview builds and local dev out of search; only production is crawlable.

@@ -8,7 +8,7 @@ export const runtime = "nodejs";
 
 // Where the confirmation email points back to. The summary itself is revealed inline on
 // /talk-summary after signup, so this stays a page that always exists (no 404). Override via env.
-const SUMMARY_URL = process.env.TALK_SUMMARY_URL || "https://avaelishealth.com.au/talk-summary";
+const SUMMARY_URL = process.env.TALK_SUMMARY_URL || "https://www.avaelishealth.com.au/talk-summary";
 
 export async function POST(req: Request) {
   let data: Record<string, unknown>;

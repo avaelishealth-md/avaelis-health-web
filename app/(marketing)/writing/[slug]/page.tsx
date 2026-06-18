@@ -58,9 +58,9 @@ export default async function PostPage({ params, searchParams }: Props) {
     publisher: {
       "@type": "Organization",
       name: "AvaElis Health",
-      logo: { "@type": "ImageObject", url: "https://avaelishealth.com.au/icon.svg" },
+      logo: { "@type": "ImageObject", url: "https://www.avaelishealth.com.au/icon.svg" },
     },
-    mainEntityOfPage: `https://avaelishealth.com.au/writing/${post.slug}`,
+    mainEntityOfPage: `https://www.avaelishealth.com.au/writing/${post.slug}`,
     datePublished: post.published_at || post.created_at,
     dateModified: post.updated_at,
     image: post.cover_image || undefined,
