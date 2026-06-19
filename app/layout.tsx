@@ -45,9 +45,19 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
+        <link rel="preload" as="image" href="/assets/danny-navy.jpg" fetchPriority="high" />
+        {/* Load fonts without blocking first paint; they swap in when ready (display=swap). */}
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+          />
+        </noscript>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var u='https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap';var l=document.createElement('link');l.rel='stylesheet';l.href=u;l.media='print';l.onload=function(){l.media='all';};document.head.appendChild(l);})();",
+          }}
         />
       </head>
       <body>

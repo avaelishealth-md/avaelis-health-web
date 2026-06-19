@@ -26,7 +26,7 @@ export default function HomePage() {
 
       <main id="main">
         <section className="hero-fb">
-          <div className="hero-fb-img"><img src="/assets/danny-navy.jpg" alt="Dr. Danny Cai" /></div>
+          <div className="hero-fb-img"><img src="/assets/danny-navy.jpg" alt="Dr. Danny Cai" fetchPriority="high" decoding="async" /></div>
           <div className="hero-fb-scrim"></div>
           <div className="wrap hero-fb-in">
             <div className="reveal">
@@ -170,7 +170,7 @@ export default function HomePage() {
         </section>
 
         <section className="band-hero">
-          <div className="band-hero-img"><img src="/assets/danny-gym.jpg" alt="Dr. Danny training" /></div>
+          <div className="band-hero-img"><img src="/assets/danny-gym.jpg" alt="Dr. Danny training" loading="lazy" decoding="async" /></div>
           <div className="band-hero-scrim"></div>
           <div className="wrap band-hero-in">
             <div className="reveal">
@@ -182,7 +182,7 @@ export default function HomePage() {
 
         <section className="meet" id="danny">
           <div className="wrap meet-in">
-            <figure className="wipe reveal"><img src="/assets/danny-scrubs-stand.jpg" alt="Dr. Danny Cai" /></figure>
+            <figure className="wipe reveal"><img src="/assets/danny-scrubs-stand.jpg" alt="Dr. Danny Cai" loading="lazy" decoding="async" /></figure>
             <div className="reveal d1">
               <blockquote style={{ marginTop: "18px" }}>“On paper, I was fine. <em>In real life, I wasn't.</em> BMI 22, blood pressure normal, bloods unremarkable, and tired, foggy, running on autopilot. Normal is a range, not a target.”</blockquote>
               <div className="sig">Dr. Danny Cai</div>
@@ -201,7 +201,7 @@ export default function HomePage() {
         <section className="recog" id="education">
           <div className="wrap">
             <div className="recog-in reveal">
-              <img className="recog-badge" src="/assets/racgp-cpd-badge.png" alt="RACGP CPD Approved Activity, Educational Activities, 1 hour" />
+              <img className="recog-badge" src="/assets/racgp-cpd-badge.png" alt="RACGP CPD Approved Activity, Educational Activities, 1 hour" loading="lazy" decoding="async" />
               <div className="recog-body">
                 <span className="ov">Recognised education</span>
                 <h2>Trusted to <em>teach the profession.</em></h2>
