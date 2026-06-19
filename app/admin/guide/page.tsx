@@ -35,7 +35,7 @@ export default function GuidePage() {
 
         <h3>Headings &amp; text</h3>
         <div className="feat-grid">
-          <div className="feat-row"><span className="feat-key">H1 H2 H3</span><span className="d">Section headings (H2 for sections, H3 for sub-points)</span></div>
+          <div className="feat-row"><span className="feat-key">H1 H2 H3</span><span className="d">Section headings (H2 for sections, H3 for sub points)</span></div>
           <div className="feat-row"><span className="feat-key">P</span><span className="d">Normal paragraph text</span></div>
           <div className="feat-row"><span className="feat-key">B  I  U</span><span className="d">Bold, italic, underline</span></div>
           <div className="feat-row"><span className="feat-key">S  &lt;&gt;</span><span className="d">Strikethrough, inline code</span></div>
@@ -46,7 +46,7 @@ export default function GuidePage() {
           <div className="feat-row"><span className="feat-key">⯇ ≡ ⯈</span><span className="d">Align left, centre, right</span></div>
           <div className="feat-row"><span className="feat-key">• List</span><span className="d">Bulleted list</span></div>
           <div className="feat-row"><span className="feat-key">1. List</span><span className="d">Numbered list</span></div>
-          <div className="feat-row"><span className="feat-key">Quote</span><span className="d">Pull-quote / highlighted line</span></div>
+          <div className="feat-row"><span className="feat-key">Quote</span><span className="d">Pull quote / highlighted line</span></div>
           <div className="feat-row"><span className="feat-key">HR</span><span className="d">Divider line between sections</span></div>
           <div className="feat-row"><span className="feat-key">Code</span><span className="d">Code block (rarely needed)</span></div>
         </div>
@@ -75,10 +75,10 @@ export default function GuidePage() {
 
         <h2>The fields around the article</h2>
         <ul>
-          <li><b>Title</b> &amp; <b>Excerpt</b> — the headline and the one-line summary shown on your Writing page.</li>
-          <li><b>Cover image</b> — Upload a landscape photo (it crops best).</li>
-          <li><b>Audience</b> — <b>Public</b> shows on your Writing page; <b>Clinician</b> stays unlisted (direct link only).</li>
-          <li><b>Tags</b> &amp; <b>SEO</b> — optional; help people find the article on Google.</li>
+          <li><b>Title</b> &amp; <b>Excerpt</b>: the headline and the one line summary shown on your Writing page.</li>
+          <li><b>Cover image</b>: upload a landscape photo (it crops best).</li>
+          <li><b>Audience</b>: <b>Public</b> shows on your Writing page; <b>Clinician</b> stays unlisted (direct link only).</li>
+          <li><b>Tags</b> &amp; <b>SEO</b>: optional; help people find the article on Google.</li>
         </ul>
 
         <h2>Publishing</h2>
@@ -87,7 +87,7 @@ export default function GuidePage() {
           <li><b>Preview</b> to see exactly how it will look.</li>
           <li><b>Publish</b> when you are happy. It is live in moments.</li>
         </ol>
-        <p className="guide-note">To change a live post: open it, edit, Publish again. To take one down: <b>Unpublish</b> (it returns to draft). And <b>no em dashes</b> ( — ); a comma or full stop reads more human.</p>
+        <p className="guide-note">To change a live post: open it, edit, Publish again. To take one down: <b>Unpublish</b> (it returns to draft). And <b>no em dashes</b>; a comma or full stop reads more human.</p>
       </div>
     </div>
   );

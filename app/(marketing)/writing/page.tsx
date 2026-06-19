@@ -27,7 +27,7 @@ export default async function WritingPage() {
         <div className="wrap">
           <div className="breadcrumb"><a href="/">Home</a> / Writing</div>
           <span className="ov">Writing &amp; insights</span>
-          <h1>Evidence-led notes, <em>never hype.</em></h1>
+          <h1>Evidence led notes, <em>never hype.</em></h1>
           <p className="lede">Researched writing on longevity and precision wellness, the considered view, not medical advice.</p>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default async function WritingPage() {
       )}
 
       <div className="band" style={{ background: "var(--plum)" }}><div className="pad-s wrap split">
-        <div><div className="rule" style={{ background: "var(--bronze-l)" }}></div><span className="ov">The dispatch</span><h2 className="big" style={{ color: "#fff", marginTop: "12px" }}>Considered notes, on occasion.</h2><p className="lede" style={{ color: "var(--muted-l)", marginTop: "14px" }}>Evidence-led writing from Dr. Danny. No noise.</p></div>
+        <div><div className="rule" style={{ background: "var(--bronze-l)" }}></div><span className="ov">The dispatch</span><h2 className="big" style={{ color: "#fff", marginTop: "12px" }}>Considered notes, on occasion.</h2><p className="lede" style={{ color: "var(--muted-l)", marginTop: "14px" }}>Evidence led writing from Dr. Danny. No noise.</p></div>
         <NewsletterForm source="Writing" />
       </div></div>
     </>

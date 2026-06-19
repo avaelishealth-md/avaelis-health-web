@@ -8,7 +8,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 
 const ERRORS: Record<string, string> = {
   "not-allowed": "That email isn't on the access list. Ask Jason to add you.",
-  auth: "That sign-in link was invalid or expired. Please request a new one.",
+  auth: "That sign in link was invalid or expired. Please request a new one.",
   "missing-code": "Sign-in link was incomplete. Please request a new one.",
 };
 
@@ -50,11 +50,11 @@ export default function AdminLogin() {
   return (
     <div className="adm-wrap narrow">
       <h1>Studio sign in</h1>
-      <p className="sub">Enter your email and we&apos;ll send you a one-time sign-in link.</p>
+      <p className="sub">Enter your email and we&apos;ll send you a one time sign in link.</p>
 
       {status === "sent" ? (
         <p className="adm-ok">
-          Check your inbox. A sign-in link is on its way to <strong>{email}</strong>.
+          Check your inbox. A sign in link is on its way to <strong>{email}</strong>.
         </p>
       ) : (
         <form onSubmit={onSubmit}>
@@ -70,7 +70,7 @@ export default function AdminLogin() {
             />
           </div>
           <button className="adm-btn" type="submit" disabled={status === "sending"}>
-            {status === "sending" ? "Sending…" : "Send sign-in link"}
+            {status === "sending" ? "Sending…" : "Send sign in link"}
           </button>
           {status === "error" && <p className="adm-error">{msg}</p>}
           {urlError && status === "idle" && (

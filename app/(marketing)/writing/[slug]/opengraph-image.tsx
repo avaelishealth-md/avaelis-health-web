@@ -92,7 +92,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
   const fontFamily = fonts.length ? "Spectral" : "serif";
 
   const title = post?.title || "AvaElis Health";
-  const eyebrow = post?.tags?.[0] || "Evidence-led notes";
+  const eyebrow = post?.tags?.[0] || "Evidence led notes";
   const meta = post?.read_minutes ? `Dr. Danny Cai · ${post.read_minutes} min read` : "Dr. Danny Cai";
   const titleSize = title.length > 78 ? 46 : title.length > 52 ? 54 : 62;
 

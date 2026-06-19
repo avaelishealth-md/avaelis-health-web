@@ -174,7 +174,7 @@ export default function PostEditor({ post, prevId, nextId }: { post?: Post; prev
       </div>
 
       <div className="adm-field">
-        <label>Tags (comma-separated)</label>
+        <label>Tags (comma separated)</label>
         <input value={tags} onChange={(e) => setTags(e.target.value)} placeholder="Diagnostics, Metabolic" />
       </div>
 

@@ -66,8 +66,8 @@ export default function TalkSummaryForm() {
             Go further: the accredited longevity CPD course
           </h3>
           <p style={{ color: "var(--muted-l)", maxWidth: "36em", margin: "0 auto 18px" }}>
-            Dr. Danny Cai&apos;s RACGP-accredited education for clinicians (CPD Activity 1631161,
-            Educational Activities, 1 hour), delivered with Medihuanna. Evidence-led longevity you
+            Dr. Danny Cai&apos;s RACGP accredited education for clinicians (CPD Activity 1631161,
+            Educational Activities, 1 hour), delivered with Medihuanna. Evidence led longevity you
             can use in practice.
           </p>
           <a className="btn btn-f" href="/#education" target="_blank" rel="noopener noreferrer">

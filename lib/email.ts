@@ -66,7 +66,7 @@ export function talkSummaryEmail(opts: { name?: string; title?: string; summaryH
       <div style="background:#5A3A42;border-radius:12px;padding:22px;margin:24px 0;text-align:center">
         <p style="font-size:11px;font-weight:bold;letter-spacing:.16em;text-transform:uppercase;color:#C8A35E;margin:0 0 8px">Earn 1 RACGP CPD hour</p>
         <p style="font-family:Georgia,serif;font-size:18px;color:#ffffff;margin:0 0 10px">Go further: the accredited longevity CPD course</p>
-        <p style="font-size:13.5px;line-height:1.6;color:#E7DECF;margin:0 0 16px">Dr. Danny Cai's RACGP-accredited education for clinicians (CPD Activity 1631161, Educational Activities, 1 hour), delivered with Medihuanna. Evidence-led longevity you can use in practice.</p>
+        <p style="font-size:13.5px;line-height:1.6;color:#E7DECF;margin:0 0 16px">Dr. Danny Cai's RACGP accredited education for clinicians (CPD Activity 1631161, Educational Activities, 1 hour), delivered with Medihuanna. Evidence led longevity you can use in practice.</p>
         <img src="${badge}" alt="RACGP CPD Approved Activity, Educational Activities, 1 hour" width="130" style="display:inline-block;background:#ffffff;border-radius:8px;padding:8px">
       </div>
       <div class="sum" style="border-top:1px solid #DBCFB7;margin-top:8px;padding-top:22px;font-size:15px;line-height:1.65;color:#3A3128">
@@ -98,7 +98,7 @@ export function talkSummaryAckEmail(opts: { name?: string }): string {
       <div style="background:#5A3A42;border-radius:12px;padding:22px;margin:24px 0;text-align:center">
         <p style="font-size:11px;font-weight:bold;letter-spacing:.16em;text-transform:uppercase;color:#C8A35E;margin:0 0 8px">Earn 1 RACGP CPD hour</p>
         <p style="font-family:Georgia,serif;font-size:18px;color:#ffffff;margin:0 0 10px">Go further: the accredited longevity CPD course</p>
-        <p style="font-size:13.5px;line-height:1.6;color:#E7DECF;margin:0 0 16px">Dr. Danny Cai's RACGP-accredited education for clinicians (CPD Activity 1631161, Educational Activities, 1 hour), delivered with Medihuanna. Evidence-led longevity you can use in practice.</p>
+        <p style="font-size:13.5px;line-height:1.6;color:#E7DECF;margin:0 0 16px">Dr. Danny Cai's RACGP accredited education for clinicians (CPD Activity 1631161, Educational Activities, 1 hour), delivered with Medihuanna. Evidence led longevity you can use in practice.</p>
         <img src="${badge}" alt="RACGP CPD Approved Activity, Educational Activities, 1 hour" width="130" style="display:inline-block;background:#ffffff;border-radius:8px;padding:8px">
       </div>
       <p style="font-size:15px;line-height:1.65;color:#5A4E40;margin:24px 0 0">If you would like to discuss working together or refer a patient, simply reply to this email.</p>

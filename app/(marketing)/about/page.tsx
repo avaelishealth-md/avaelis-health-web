@@ -59,7 +59,7 @@ export default function AboutPage() {
       </div>
       {/* dispatch / newsletter, distinct plum section */}
       <div className="band" style={{ background: "var(--plum)" }}><div className="pad-s wrap split">
-        <div><div className="rule" style={{ background: "var(--bronze-l)" }}></div><span className="ov">The dispatch</span><h2 className="big" style={{ color: "#fff", marginTop: "12px" }}>Considered notes, on occasion.</h2><p className="lede" style={{ color: "var(--muted-l)", marginTop: "14px" }}>Evidence-led writing from Dr. Danny. No noise.</p></div>
+        <div><div className="rule" style={{ background: "var(--bronze-l)" }}></div><span className="ov">The dispatch</span><h2 className="big" style={{ color: "#fff", marginTop: "12px" }}>Considered notes, on occasion.</h2><p className="lede" style={{ color: "var(--muted-l)", marginTop: "14px" }}>Evidence led writing from Dr. Danny. No noise.</p></div>
         <NewsletterForm source="About" />
       </div></div>
       {/* featured / speaking, black band, sits with the footer */}

@@ -33,7 +33,7 @@ export default function EngineGuidePage() {
         <div className="cost-box">
           <div className="cb">
             <div className="lbl">Model</div>
-            <div className="val">Claude Sonnet 4.6<small>Anthropic&apos;s model writes and safety-checks every article.</small></div>
+            <div className="val">Claude Sonnet 4.6<small>Anthropic&apos;s model writes and safety checks every article.</small></div>
           </div>
           <div className="cb">
             <div className="lbl">Cost</div>
@@ -48,7 +48,7 @@ export default function EngineGuidePage() {
         <h2>Step by step</h2>
         <ol className="pipe">
           <li><b>New submission.</b> Paste your notes or upload a document. Choose <b>AvaElis Health</b> and the audience (General public or Health professionals), then submit.</li>
-          <li><b>Compliance check.</b> It scans for anything that breaks the rules (the words &ldquo;miracle&rdquo; or &ldquo;cure&rdquo;, prescription-drug names, testimonials) and shows you each one to soften. This runs again automatically before delivery.</li>
+          <li><b>Compliance check.</b> It scans for anything that breaks the rules (the words &ldquo;miracle&rdquo; or &ldquo;cure&rdquo;, prescription drug names, testimonials) and shows you each one to soften. This runs again automatically before delivery.</li>
           <li><b>References.</b> Add real studies to ground the article (see below).</li>
           <li><b>Generate.</b> Choose <b>Blog</b> and <b>Standard (~1,500 words)</b>. Check the cost estimate, then run it. Takes a minute or two.</li>
           <li><b>Review.</b> Read the draft, edit any wording, clear any final flags.</li>
@@ -59,14 +59,14 @@ export default function EngineGuidePage() {
         <p>Real citations are what make the article credible. After the compliance check, the <b>Credible references</b> panel appears:</p>
         <ol>
           <li>Click <b>Auto-find references</b>, or type your own terms in <b>Find references</b>.</li>
-          <li>Set <b>Sort: Most cited</b> so the strongest, most-trusted studies rise to the top. Optionally filter by <b>Meta-analyses / Systematic reviews / RCTs</b> or by date.</li>
+          <li>Set <b>Sort: Most cited</b> so the strongest, most trusted studies rise to the top. Optionally filter by <b>Meta-analyses / Systematic reviews / RCTs</b> or by date.</li>
           <li>Tick about <b>4 studies that support different points</b> in the article.</li>
           <li>The engine cites exactly those, with working links, and <b>will not invent any</b>. (Still worth a 30-second glance before publishing.)</li>
         </ol>
         <p className="guide-note">The references then appear as a tidy, numbered list at the foot of the article on your site.</p>
 
         <h2>What you get</h2>
-        <p>One submission produces a publish-ready blog draft in your Studio. Open it, add a cover image, set the audience, and Publish, all covered in the <a href="/admin/guide">Blogging guide</a>.</p>
+        <p>One submission produces a publish ready blog draft in your Studio. Open it, add a cover image, set the audience, and Publish, all covered in the <a href="/admin/guide">Blogging guide</a>.</p>
       </div>
     </div>
   );

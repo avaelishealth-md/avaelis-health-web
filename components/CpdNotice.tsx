@@ -11,10 +11,10 @@ export default function CpdNotice() {
         alt="RACGP CPD Approved Activity: Educational Activities, 1 hour"
       />
       <div className="cpd-body">
-        <span className="cpd-k">RACGP-accredited education</span>
+        <span className="cpd-k">RACGP accredited education</span>
         <p className="cpd-text">
           This educational activity was developed by AvaElis Health in collaboration with Medihuanna,
-          a RACGP CPD-approved education provider. It has been approved by the RACGP (Activity ID:
+          a RACGP CPD approved education provider. It has been approved by the RACGP (Activity ID:
           1631161). On completion, participants are eligible to claim 1 hour of RACGP CPD in the
           Educational Activities category, automatically uploaded to their RACGP CPD dashboard.
         </p>
@@ -23,7 +23,7 @@ export default function CpdNotice() {
           <img
             className="cpd-logo"
             src="/assets/medihuanna.png"
-            alt="Medihuanna, RACGP CPD-approved education provider"
+            alt="Medihuanna, RACGP CPD approved education provider"
           />
         </p>
       </div>
