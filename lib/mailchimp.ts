@@ -26,6 +26,7 @@ export async function addContact(opts: {
   phone?: string;
   tags?: string[];
   note?: string;
+  mergeFields?: Record<string, string>;
 }): Promise<{ ok: boolean; error?: string }> {
   if (!mailchimpConfigured()) return { ok: false, error: "not-configured" };
   const email = opts.email.trim().toLowerCase();
@@ -47,6 +48,15 @@ export async function addContact(opts: {
       await mc(`/lists/${LIST_ID}/members/${hash}/tags`, "POST", {
         tags: opts.tags.map((name) => ({ name, status: "active" })),
       });
+    }
+    // Extra merge fields (e.g. AHPRA) are applied separately and non-fatally: if the audience does
+    // not have that field yet, capture still succeeds and the value is preserved in the note below.
+    if (opts.mergeFields && Object.keys(opts.mergeFields).length) {
+      try {
+        await mc(`/lists/${LIST_ID}/members/${hash}`, "PATCH", { merge_fields: opts.mergeFields });
+      } catch {
+        /* non-fatal */
+      }
     }
     if (opts.note) {
       await mc(`/lists/${LIST_ID}/members/${hash}/notes`, "POST", { note: opts.note });

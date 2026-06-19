@@ -1,11 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import References from "@/components/References";
-import type { PostRef } from "@/lib/types";
 
 type Status = "idle" | "sending" | "done" | "error";
-type RevealedPost = { title: string; html: string; readMinutes: number; refs?: PostRef[] | null };
 
 const ROLES = [
   "Doctor / GP",
@@ -16,13 +13,13 @@ const ROLES = [
   "Other clinician",
 ];
 
-// Email gate for the clinician talk summary. On submit we capture the lead, then the
-// server reveals the (unlisted) summary inline. The summary HTML never ships until signup.
-export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) {
+// Clinician gate for the talk summary. On submit we capture the lead plus the AHPRA number and
+// confirm receipt. The summary is NOT shown here: Nikki verifies the registration against the
+// register, then sends it manually. So nothing clinical ever ships from this form.
+export default function TalkSummaryForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   const [emailed, setEmailed] = useState(false);
-  const [post, setPost] = useState<RevealedPost | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -39,16 +36,12 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
           email: data.get("email"),
           phone: data.get("phone"),
           role: data.get("role"),
+          ahpra: data.get("ahpra"),
         }),
       });
-      const j = (await res.json().catch(() => ({}))) as {
-        error?: string;
-        emailed?: boolean;
-        post?: RevealedPost | null;
-      };
+      const j = (await res.json().catch(() => ({}))) as { error?: string; emailed?: boolean };
       if (!res.ok) throw new Error(j.error || "Something went wrong.");
       setEmailed(!!j.emailed);
-      setPost(j.post ?? null);
       setStatus("done");
       if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
@@ -60,36 +53,27 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
   if (status === "done") {
     return (
       <div className="ts-done">
-        <p className="ts-thanks">
-          Thank you{emailed ? ". A copy is also on its way to your inbox" : ""}.
+        <p className="ts-thanks">Thank you. Your request has been received.</p>
+        <p className="lede" style={{ textAlign: "center", maxWidth: "34em", margin: "0 auto" }}>
+          The summary is written for registered health practitioners, so we verify each AHPRA
+          registration before sending. Once your registration is confirmed we will email you the full
+          clinician summary, with every reference.
+          {emailed ? " A confirmation is on its way to your inbox now." : ""}
         </p>
-        {post ? (
-          <>
-            <article className="article">
-              <h2 style={{ marginTop: 0 }}>{post.title}</h2>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            </article>
-            <References refs={post.refs} />
-            <div style={{ background: "var(--plum)", borderRadius: 14, padding: "26px 22px", marginTop: 30, textAlign: "center" }}>
-              <span className="ov" style={{ color: "var(--bronze-l)" }}>Earn 1 RACGP CPD hour</span>
-              <h3 style={{ color: "#fff", fontSize: "22px", margin: "10px 0 10px" }}>
-                Go further: the accredited longevity CPD course
-              </h3>
-              <p style={{ color: "var(--muted-l)", maxWidth: "36em", margin: "0 auto 18px" }}>
-                Dr. Danny Cai&apos;s RACGP-accredited education for clinicians (CPD Activity 1631161,
-                Educational Activities, 1 hour), delivered with Medihuanna. Evidence-led longevity you
-                can use in practice.
-              </p>
-              <a className="btn btn-f" href="/#education" target="_blank" rel="noopener noreferrer">
-                Explore the CPD course
-              </a>
-            </div>
-          </>
-        ) : (
-          <p className="lede" style={{ textAlign: "center" }}>
-            We have your details. The clinician summary will be sent to your inbox shortly.
+        <div style={{ background: "var(--plum)", borderRadius: 14, padding: "26px 22px", marginTop: 30, textAlign: "center" }}>
+          <span className="ov" style={{ color: "var(--bronze-l)" }}>Earn 1 RACGP CPD hour</span>
+          <h3 style={{ color: "#fff", fontSize: "22px", margin: "10px 0 10px" }}>
+            Go further: the accredited longevity CPD course
+          </h3>
+          <p style={{ color: "var(--muted-l)", maxWidth: "36em", margin: "0 auto 18px" }}>
+            Dr. Danny Cai&apos;s RACGP-accredited education for clinicians (CPD Activity 1631161,
+            Educational Activities, 1 hour), delivered with Medihuanna. Evidence-led longevity you
+            can use in practice.
           </p>
-        )}
+          <a className="btn btn-f" href="/#education" target="_blank" rel="noopener noreferrer">
+            Explore the CPD course
+          </a>
+        </div>
         <div className="disclaimer" style={{ marginTop: 26 }}>
           General education for health professionals, not individual medical advice. No prescription
           medicines are advertised.
@@ -103,7 +87,8 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
       <span className="ov ts-form-ov">For clinicians · Lifestyle Health Summit 2026</span>
       <h2 className="ts-form-h">Get Dr. Danny&apos;s full talk summary</h2>
       <p className="ts-form-sub">
-        The complete evidence summary, with every reference, opens the moment you enter your details.
+        Enter your details and AHPRA registration number. We verify your registration, then email you
+        the full evidence summary with every reference.
       </p>
       <div className="field">
         <label htmlFor="ts-name">Full name</label>
@@ -125,13 +110,24 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
           ))}
         </select>
       </div>
+      <div className="field">
+        <label htmlFor="ts-ahpra">AHPRA registration number</label>
+        <input
+          id="ts-ahpra"
+          name="ahpra"
+          type="text"
+          placeholder="e.g. MED0001234567"
+          autoCapitalize="characters"
+          required
+        />
+      </div>
       <button
         className="btn btn-f"
         type="submit"
         disabled={status === "sending"}
         style={{ width: "100%", justifyContent: "center" }}
       >
-        {status === "sending" ? "Opening…" : "Open the summary"}
+        {status === "sending" ? "Sending…" : "Request the summary"}
       </button>
       {status === "error" && (
         <p className="fine" style={{ color: "#A9603F", marginTop: 8 }}>
@@ -139,7 +135,7 @@ export default function TalkSummaryForm({ teaser }: { teaser?: string | null }) 
         </p>
       )}
       <p className="fine">
-        Your details stay private and are used only to send the summary and follow up.
+        Your details stay private and are used only to verify your registration and send the summary.
       </p>
     </form>
   );
