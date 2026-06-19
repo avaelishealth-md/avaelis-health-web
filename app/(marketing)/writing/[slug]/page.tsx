@@ -11,9 +11,9 @@ export const dynamic = "force-dynamic";
 
 const fetchPost = cache((slug: string, preview: boolean) => getPostBySlug(slug, preview));
 
-// The talk-summary post is delivered ONLY through the /talk-summary email gate. It must never be
-// readable at its public /writing/<slug> URL, whatever its draft/published status (which can change).
-// Authed admin preview (?preview=1) still works for checking it.
+// The talk-summary post is delivered by a private link emailed after AHPRA verification. It stays
+// unlisted: kept out of the /writing index and the sitemap (audience = clinician) and marked
+// noindex below, so it is reachable only by someone who has the direct link, never discoverable.
 const GATED_SLUG = process.env.TALK_SUMMARY_SLUG || "clinical-applications";
 
 function fmtDate(iso: string | null): string {
@@ -53,7 +53,6 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function PostPage({ params, searchParams }: Props) {
   const preview = searchParams.preview === "1";
-  if (params.slug === GATED_SLUG && !preview) notFound();
   const post = await fetchPost(params.slug, preview);
   if (!post) notFound();
 
