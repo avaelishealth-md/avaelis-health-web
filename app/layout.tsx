@@ -45,7 +45,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="preload" as="image" href="/assets/danny-navy.jpg" fetchPriority="high" />
+        <link rel="preload" as="image" href="/assets/danny-navy.jpg" imageSrcSet="/assets/danny-navy-960.jpg 960w, /assets/danny-navy.jpg 1600w" imageSizes="100vw" fetchPriority="high" />
         {/* Load fonts without blocking first paint; they swap in when ready (display=swap). */}
         <noscript>
           <link

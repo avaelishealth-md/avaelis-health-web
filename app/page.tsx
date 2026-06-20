@@ -26,7 +26,7 @@ export default function HomePage() {
 
       <main id="main">
         <section className="hero-fb">
-          <div className="hero-fb-img"><img src="/assets/danny-navy.jpg" alt="Dr. Danny Cai" fetchPriority="high" decoding="async" /></div>
+          <div className="hero-fb-img"><img src="/assets/danny-navy.jpg" srcSet="/assets/danny-navy-960.jpg 960w, /assets/danny-navy.jpg 1600w" sizes="100vw" alt="Dr. Danny Cai" fetchPriority="high" decoding="async" /></div>
           <div className="hero-fb-scrim"></div>
           <div className="wrap hero-fb-in">
             <div className="reveal">
