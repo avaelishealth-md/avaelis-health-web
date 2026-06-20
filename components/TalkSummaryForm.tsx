@@ -91,22 +91,27 @@ export default function TalkSummaryForm() {
         the full evidence summary with every reference.
       </p>
       <div className="field">
-        <label htmlFor="ts-name">Full name</label>
-        <input id="ts-name" name="name" type="text" placeholder="Your name" required />
+        <label htmlFor="ts-email">Email</label>
+        <input id="ts-email" name="email" type="email" autoComplete="email" placeholder="jane@yourclinic.com.au" required />
       </div>
       <div className="field">
-        <label htmlFor="ts-email">Email</label>
-        <input id="ts-email" name="email" type="email" placeholder="you@clinic.com" required />
+        <label htmlFor="ts-name">Full name</label>
+        <input id="ts-name" name="name" type="text" autoComplete="name" placeholder="Jane Smith" required />
       </div>
       <div className="field">
         <label htmlFor="ts-phone">Mobile</label>
-        <input id="ts-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="04xx xxx xxx" required />
+        <input id="ts-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="0412 345 678" required />
       </div>
       <div className="field">
         <label htmlFor="ts-role">I&apos;m a</label>
-        <select id="ts-role" name="role" defaultValue={ROLES[0]}>
+        <select id="ts-role" name="role" defaultValue="" required>
+          <option value="" disabled>
+            Select your profession
+          </option>
           {ROLES.map((r) => (
-            <option key={r}>{r}</option>
+            <option key={r} value={r}>
+              {r}
+            </option>
           ))}
         </select>
       </div>
@@ -116,6 +121,7 @@ export default function TalkSummaryForm() {
           id="ts-ahpra"
           name="ahpra"
           type="text"
+          autoComplete="off"
           placeholder="e.g. MED0001234567"
           autoCapitalize="characters"
           required
