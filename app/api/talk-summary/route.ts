@@ -44,11 +44,15 @@ export async function POST(req: Request) {
     note: `PENDING AHPRA VERIFICATION (Talk QR) · AHPRA: ${ahpra}${role ? ` · Role: ${role}` : ""}${phone ? ` · ${phone}` : ""}${name ? ` · ${name}` : ""}`,
   });
   if (!contact.ok) {
-    console.error("talk-summary: lead capture failed", email, contact.error);
-    return NextResponse.json(
-      { error: "We couldn't register you just now. Please try again in a moment." },
-      { status: 502 },
+    // Never turn a clinician away at the talk. The most common failure is an address already in a
+    // Mailchimp compliance state (a prior unsubscribe or bounce), which a retry cannot fix; the rest
+    // are transient. Log the full lead so it can be recovered and reconciled by hand, and still
+    // confirm to the attendee rather than showing an error and losing the lead.
+    console.error(
+      "talk-summary: MAILCHIMP CAPTURE FAILED, lead logged for recovery:",
+      JSON.stringify({ email, name, phone, role, ahpra, mcError: contact.error }),
     );
+    return NextResponse.json({ ok: true, emailed: false });
   }
 
   // Auto-send only a short confirmation with the CPD hook (no clinical content); the full summary
